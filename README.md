@@ -7,6 +7,7 @@ Some basic evals run on various models that fit on a single DGX Spark.
 <!-- LEADERBOARD -->
 | name | parameters | flags | arc_challenge | mbpp |
 | --- | --- | --- | ---: | ---: |
+| [Gemma4 26B-A4B](results/gemma4-26b/README.md) | 4B active / 26B total |  | 97.35% | 90.66% |
 | [Gemma4 E2B](results/gemma4-e2b/README.md) | 2B |  | 86.43% | 72.76% |
 <!-- /LEADERBOARD -->
 
