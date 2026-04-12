@@ -8,7 +8,7 @@ def format_params(params: Any) -> str:
 		active = params.get("active")
 		total = params.get("total")
 		if active is not None and total is not None:
-			return f"{format_billions(active)} active / {format_billions(total)} total"
+			return f"{format_billions(total)}-A{format_billions(active)}"
 		return ", ".join(f"{key}={value}" for key, value in params.items())
 	if params is None:
 		return ""
@@ -30,9 +30,9 @@ def format_flags(flags: Any) -> str:
 	if flags is None:
 		return ""
 	if isinstance(flags, dict):
-		return ", ".join(f"{key}={value}" for key, value in flags.items())
+		return " ".join(f"{key}={value}" for key, value in flags.items())
 	if isinstance(flags, list):
-		return ", ".join(str(item) for item in flags)
+		return " ".join(str(item) for item in flags)
 	return str(flags)
 
 
