@@ -5,11 +5,13 @@ Some basic evals run on various models that fit on a single DGX Spark.
 ## Leaderboard
 
 <!-- LEADERBOARD -->
-| name | parameters | flags | arc_challenge | mbpp |
-| --- | --- | --- | ---: | ---: |
-| [Qwen3.5 35B-A3B FP8](results/qwen35-35b-fp8/README.md) | 35B-A3B |  | 97.95% | 94.94% |
-| [Gemma4 26B-A4B](results/gemma4-26b/README.md) | 26B-A4B |  | 97.35% | 90.66% |
-| [Gemma4 E2B](results/gemma4-e2b/README.md) | 2B |  | 86.43% | 72.76% |
+| name | parameters | flags | agent_bench_os | arc_challenge | mbpp |
+| --- | --- | --- | ---: | ---: | ---: |
+| [Qwen3.5 35B-A3B FP8](results/qwen35-35b-fp8/README.md) | 35B-A3B |  | 28.00% | 97.95% | 94.94% |
+| [Nemotron 3 Super 120B-A12B NVFP4](results/nemotron-super-nvfp4-fp8kv/README.md) | 120B-A12B | quantization=fp4 kv-cache-dtype=fp8 | 27.20% | 97.18% | 95.72% |
+| [Gemma4 26B-A4B](results/gemma4-26b/README.md) | 26B-A4B |  | 25.60% | 97.35% | 90.66% |
+| [Gemma4 E2B](results/gemma4-e2b/README.md) | 2B |  |  | 86.43% | 72.76% |
+| [Qwen3 Coder Next FP8](results/qwen3-coder-next/README.md) | 80B-A3B |  |  |  |  |
 <!-- /LEADERBOARD -->
 
 ## Running Evals
@@ -44,7 +46,7 @@ docker run --rm -it \
 	-v "$(pwd)/results:/results" \
 	-e OPENAI_BASE_URL="${EVAL_BASE_URL}" \
 	-e OPENAI_API_KEY="NONE" \
-	-e INSPECT_EVAL_MODEL="openai/$SERVER_MODEL_NAME" \
+	-e INSPECT_EVAL_MODEL="openai/$EVAL_MODEL" \
 	-e EVAL_RESULTS_FOLDER="${EVAL_RESULTS_FOLDER}" \
 	-e EVAL_MAX_CONNECTIONS="${EVAL_MAX_CONNECTIONS}" \
 	-e DEBIAN_FRONTEND="noninteractive" \
