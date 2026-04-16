@@ -5,67 +5,86 @@ Some basic evals run on various models that fit on a single DGX Spark.
 ## Leaderboard
 
 <!-- LEADERBOARD -->
-| name | parameters | flags | agent_bench_os | arc_challenge | mbpp |
-| --- | --- | --- | ---: | ---: | ---: |
-| [Qwen3.5 35B-A3B FP8](results/qwen35-35b-fp8/README.md) | 35B-A3B |  | 28.00% | 97.95% | 94.94% |
-| [Nemotron 3 Super 120B-A12B NVFP4](results/nemotron-super-nvfp4-fp8kv/README.md) | 120B-A12B | quantization=fp4 kv-cache-dtype=fp8 | 27.20% | 97.18% | 95.72% |
-| [Gemma4 26B-A4B](results/gemma4-26b/README.md) | 26B-A4B |  | 25.60% | 97.35% | 90.66% |
-| [Gemma4 E2B](results/gemma4-e2b/README.md) | 2B |  |  | 86.43% | 72.76% |
-| [Qwen3 Coder Next FP8](results/qwen3-coder-next/README.md) | 80B-A3B |  |  |  |  |
+| name | AgentBench | ARC Challenge | IfEvalCode | MBPP |
+| --- | ---: | ---: | ---: | ---: |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-fp8/README.md) | <u>**31.2%**</u><br>*4h 45m* | **97.5%**<br>*2h 52m* |  | **93.8%**<br>*2h 6m* |
+| [Qwen3.5 35B-A3B FP8](results/qwen35-35b-fp8/README.md) | **28.0%**<br>*2h 19m* | <u>**98.0%**</u><br>*4h 10m* |  | **94.9%**<br>*2h 13m* |
+| [Qwen3 Coder Next FP8](results/qwen3-coder-next/README.md) | **29.6%**<br>*1h 27m* | **96.2%**<br>*1h 10m* | <u>**11.0%**</u><br>*8h 11m*<br>ts: <u>**0.0%**</u> / <u>**30.0%**</u><br>c#: <u>**24.3%**</u> / <u>**3.9%**</u><br>py: <u>**54.3%**</u> / <u>**36.2%**</u><br>sh: <u>**35.0%**</u> / <u>**52.0%**</u> | **87.5%**<br>*1h 13m* |
+| [Nemotron 3 Super 120B-A12B NVFP4](results/nemotron-super-nvfp4-fp8kv/README.md)<br>quantization=fp4 kv-cache-dtype=fp8 | **27.2%**<br>*11h 44m* | **97.2%**<br>*5h 41m* |  | <u>**95.7%**</u><br>*2h 14m* |
+| [Gemma4 26B-A4B](results/gemma4-26b/README.md) | **25.6%**<br>*9h 12m* | **97.4%**<br>*2h 48m* |  | **90.7%**<br>*1h 8m* |
+| [Gemma4 E2B](results/gemma4-e2b/README.md) |  | **86.4%**<br>*22m 44s* |  | **72.8%**<br>*4m 31s* |
 <!-- /LEADERBOARD -->
 
 ## Running Evals
 
-First clone this repo and `cd` into the repository root.
+Because some of these evals require installing packages and also spawn Docker containers, I recommend running everything inside a VM to avoid changing anything on your host. This does not need to run on the DGX Spark (an if you're running a large model, it might be better to run it on another machine).
 
-```
-git clone https://github.com/DanTup/spark-evals
-cd spark-evals
-```
+On Ubuntu you can use [multipass](https://canonical.com/multipass) to create a VM and mount a folder into it to collect the results:
 
-Set env variables for the URL, model name, results folder name, and max parallel connections.
+### Create the VM
 
 ```bash
-export EVAL_BASE_URL="http://host.docker.internal:8111/v1"
-export EVAL_MODEL="qwen35"
-export EVAL_RESULTS_FOLDER="qwen35-35b-fp8"
-export EVAL_MAX_CONNECTIONS="15"
+multipass launch -n inspect-ai-evals --cpus 4 --disk 100gb --memory 20gb --mount /home/danny/inspect-evals
+
+# I'd recommend doing this in tmux so you can detach and come back later
+multipass shell inspect-ai-evals
 ```
 
-Run the evals in a container. The `./results` folder will be mounted into the container to record the results.
+### Set up the VM
 
-The evals can take a long time, so you might want to run them inside `tmux` or something :)
-
-You can add `--limit 2` after `inspect eval-set` if you want to verify everything works on a smaller set of tasks before running the entire batch.
-
-You might need to play around with `--max-connections`, `--max-samples`, `--max-tasks` to balance throughput and errors (for example set `--max-connections` and `--max-samples` to match `--max-num-seqs` with `--max-tasks=1`).
+Once inside the VM, install the dependencies and Docker:
 
 ```bash
-docker run --rm -it \
-	--add-host host.docker.internal:host-gateway \
-	-v "$(pwd)/results:/results" \
-	-e OPENAI_BASE_URL="${EVAL_BASE_URL}" \
-	-e OPENAI_API_KEY="NONE" \
-	-e INSPECT_EVAL_MODEL="openai/$EVAL_MODEL" \
-	-e EVAL_RESULTS_FOLDER="${EVAL_RESULTS_FOLDER}" \
-	-e EVAL_MAX_CONNECTIONS="${EVAL_MAX_CONNECTIONS}" \
-	-e DEBIAN_FRONTEND="noninteractive" \
-	ubuntu \
-	bash -lc '
-		set -euo pipefail
-		apt-get update
-		apt-get install -y --no-install-recommends ca-certificates curl jq python3 python3-pip python-is-python3
-		python3 -m pip install --break-system-packages openai inspect-evals
-		mkdir -p "/results/$EVAL_RESULTS_FOLDER"
-		inspect eval-set \
-			--log-dir "/results/$EVAL_RESULTS_FOLDER" --log-format json --log-dir-allow-dirty \
-			--no-log-realtime --no-log-samples --no-log-images --log-buffer 200 --no-score-display --no-fail-on-error \
-			--sandbox local --epochs 3 --epochs-reducer median --time-limit 1800 --max-connections "$EVAL_MAX_CONNECTIONS" --max-samples "$EVAL_MAX_CONNECTIONS" --max-tasks 1 \
-			inspect_evals/arc_challenge inspect_evals/mbpp
-	'
+export PATH=$PATH:~/.local/bin
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends ca-certificates curl jq python3 python3-pip python-is-python3
+python3 -m pip install --break-system-packages openai inspect-evals inspect-evals[ifevalcode] inspect-evals[swe_bench] inspect-evals[swe_lancer]
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+chmod +x get-docker.sh
+./get-docker.sh
+sudo usermod -aG docker $USER
+newgrp docker
+rm get-docker.sh
 ```
 
-When the run is complete, create a `README.md` inside your new results folder that includes the full command you used to run the model, along with some YAML frontmatter with a name and a list of any flags that may affect the accuracy.
+### Configure the LLM Endpoint
+
+Now, each time you want to run evals, set some env vars with the details of the LLM endpoint:
+
+```bash
+export EVAL_BASE_URL="http://192.168.0.132:8111/v1"
+export EVAL_MODEL="qwen36"
+export EVAL_RESULTS_FOLDER="qwen36-35b-a3b-fp8"
+export EVAL_MAX_CONNECTIONS="10"
+```
+
+### Start the Evals
+
+```bash
+# IMPORTANT: Change into the mounted folder if using the VM to ensure the results persist outside of the VM!
+cd ~/inspect-evals
+
+export OPENAI_BASE_URL="${EVAL_BASE_URL}"
+export OPENAI_API_KEY="NONE"
+export INSPECT_EVAL_MODEL="openai/$EVAL_MODEL"
+export EVAL_RESULTS_FOLDER="${EVAL_RESULTS_FOLDER}"
+export EVAL_MAX_CONNECTIONS="${EVAL_MAX_CONNECTIONS}"
+export DEBIAN_FRONTEND="noninteractive"
+export PATH=$PATH:~/.local/bin
+
+mkdir -p "results/$EVAL_RESULTS_FOLDER"
+inspect eval-set \
+	--log-dir "results/$EVAL_RESULTS_FOLDER" --log-format json --log-dir-allow-dirty \
+	--no-log-realtime --no-log-samples --no-log-images --log-buffer 200 --no-score-display --no-fail-on-error \
+	--sandbox docker --epochs 3 --epochs-reducer median --time-limit 1800 --max-connections "$EVAL_MAX_CONNECTIONS" --max-samples "$EVAL_MAX_CONNECTIONS" --max-tasks 1 \
+	--max-sandboxes 4 --max-subprocesses 4 \
+	inspect_evals/agent_bench_os inspect_evals/mbpp inspect_evals/arc_challenge inspect_evals/ifevalcode inspect_evals/swe_lancer
+```
+
+### Create a PR
+
+The JSON results will be available in the `results` folder. Copy them into a clone of this repo in the `results/` folder with a new folder for the model/variation you tested. Include the individual results JSON files (but not the full logs json or other metadata files), and a `README.md` containing the exact command used to launch the LLM inference engine with all flags, and some YAML frontmatter:
 
 ```
 ---
@@ -84,4 +103,19 @@ flags:
 
 Run `python3 tool/update_leaderboard.py` to update the leaderboard at the top of this readme.
 
-Finally, open a PR with the results. There should be a new folder with `README.md`, the benchmark-specific JSON files, and an update to the leaderboard. Do not include the other additional files from the results folder (logs, etc).
+Finally, open a PR to share the results!
+
+## Clean up the VM
+
+When you've finished running, you can stop the VM:
+
+```bash
+multipass stop inspect-ai-evals
+```
+
+If you're not running any more, you can also delete:
+
+```bash
+multipass delete inspect-ai-evals
+multipass purge # actually delete the marked VMs
+```

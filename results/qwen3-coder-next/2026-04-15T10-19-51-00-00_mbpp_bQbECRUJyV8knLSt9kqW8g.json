@@ -1,0 +1,1943 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_set_id": "M8qW9n7RrtiEub9LRJCjcD",
+    "eval_id": "Z8aTvJgsqprDNsMwVLUDwk",
+    "run_id": "BDkFeQfdWqaLwjx6nkhZZS",
+    "created": "2026-04-15T10:19:51+00:00",
+    "task": "inspect_evals/mbpp",
+    "task_id": "bQbECRUJyV8knLSt9kqW8g",
+    "task_version": 2,
+    "task_display_name": "mbpp",
+    "task_registry_name": "inspect_evals/mbpp",
+    "task_attribs": {},
+    "task_args": {
+      "temperature": 0.5
+    },
+    "task_args_passed": {},
+    "dataset": {
+      "name": "google-research-datasets/mbpp",
+      "location": "google-research-datasets/mbpp",
+      "samples": 257,
+      "sample_ids": [
+        11,
+        12,
+        14,
+        16,
+        17,
+        18,
+        19,
+        20,
+        56,
+        57,
+        58,
+        59,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        74,
+        75,
+        77,
+        79,
+        80,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        108,
+        109,
+        111,
+        113,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        135,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        145,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        170,
+        171,
+        172,
+        222,
+        223,
+        224,
+        226,
+        227,
+        228,
+        229,
+        230,
+        232,
+        233,
+        234,
+        235,
+        237,
+        238,
+        239,
+        240,
+        242,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        255,
+        256,
+        257,
+        259,
+        260,
+        261,
+        262,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        299,
+        300,
+        301,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        439,
+        440,
+        441,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        448,
+        450,
+        451,
+        452,
+        453,
+        454,
+        455,
+        456,
+        457,
+        458,
+        459,
+        460,
+        461,
+        462,
+        463,
+        464,
+        465,
+        468,
+        470,
+        471,
+        472,
+        473,
+        474,
+        475,
+        476,
+        477,
+        478,
+        479
+      ],
+      "shuffled": false
+    },
+    "sandbox": {
+      "type": "docker"
+    },
+    "model": "openai/qwen3-coder",
+    "model_generate_config": {
+      "max_connections": 10
+    },
+    "model_args": {},
+    "config": {
+      "epochs": 3,
+      "epochs_reducer": [
+        "median"
+      ],
+      "fail_on_error": false,
+      "continue_on_fail": false,
+      "time_limit": 1800,
+      "max_samples": 10,
+      "max_tasks": 1,
+      "max_subprocesses": 2,
+      "max_sandboxes": 2,
+      "sandbox_cleanup": true,
+      "log_samples": false,
+      "log_realtime": false,
+      "log_images": false,
+      "log_model_api": false,
+      "log_buffer": 200,
+      "log_shared": 0,
+      "score_display": false
+    },
+    "packages": {
+      "inspect_ai": "0.3.205",
+      "inspect_evals": "0.8.0"
+    },
+    "metadata": {
+      "full_task_version": "2-A",
+      "task_interface_version": "A",
+      "task_comparability_version": 2
+    },
+    "scorers": [
+      {
+        "name": "verify",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "prompt_template",
+        "params": {
+          "template": "You are an expert Python programmer. You will be given a task, and the tests that your code must pass.\nWrite the Python function to solve the task. Do not give additional explanations, just output the\nPython function. Only use imports that are included in Python's standard library.\n\nFor example:\n\n## Prompt 1\n```python\nWrite a function to find the similar elements from the given two tuple lists.\n```\n\n## Test Case 1\n```python\nassert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)\nassert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)\nassert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)\n```\n\n## Completion 1\n```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\n## Prompt 2\n```python\nWrite a python function to identify non-prime numbers.\n```\n\n## Test Case 2\n```python\nassert is_not_prime(2) == False\nassert is_not_prime(10) == True\nassert is_not_prime(35) == True\n```\n\n## Completion 2\n```python\nimport math\r\ndef is_not_prime(n):\r\n    result = False\r\n    for i in range(2,int(math.sqrt(n)) + 1):\r\n        if n % i == 0:\r\n            result = True\r\n    return result\n```\n\n## Prompt 3\n```python\nWrite a function to find the largest integers from a given list of numbers using heap queue algorithm.\n```\n\n## Test Case 3\n```python\nassert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],3)==[85, 75, 65] \nassert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],2)==[85, 75] \nassert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],5)==[85, 75, 65, 58, 35]\n```\n\n## Completion 3\n```python\nimport heapq as hq\r\ndef heap_queue_largest(nums,n):\r\n  largest_nums = hq.nlargest(n, nums)\r\n  return largest_nums\n```\n\n\n# Now, do it for the following task.\n\n## Prompt:\n```python\n{prompt}\n```\n\n## Test Case:\n```python\n{test_list_str}\n```\n\n## Completion:\n",
+          "params": {}
+        },
+        "params_passed": {
+          "template": "You are an expert Python programmer. You will be given a task, and the tests that your code must pass.\nWrite the Python function to solve the task. Do not give additional explanations, just output the\nPython function. Only use imports that are included in Python's standard library.\n\nFor example:\n\n## Prompt 1\n```python\nWrite a function to find the similar elements from the given two tuple lists.\n```\n\n## Test Case 1\n```python\nassert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)\nassert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)\nassert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)\n```\n\n## Completion 1\n```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\n## Prompt 2\n```python\nWrite a python function to identify non-prime numbers.\n```\n\n## Test Case 2\n```python\nassert is_not_prime(2) == False\nassert is_not_prime(10) == True\nassert is_not_prime(35) == True\n```\n\n## Completion 2\n```python\nimport math\r\ndef is_not_prime(n):\r\n    result = False\r\n    for i in range(2,int(math.sqrt(n)) + 1):\r\n        if n % i == 0:\r\n            result = True\r\n    return result\n```\n\n## Prompt 3\n```python\nWrite a function to find the largest integers from a given list of numbers using heap queue algorithm.\n```\n\n## Test Case 3\n```python\nassert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],3)==[85, 75, 65] \nassert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],2)==[85, 75] \nassert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],5)==[85, 75, 65, 58, 35]\n```\n\n## Completion 3\n```python\nimport heapq as hq\r\ndef heap_queue_largest(nums,n):\r\n  largest_nums = hq.nlargest(n, nums)\r\n  return largest_nums\n```\n\n\n# Now, do it for the following task.\n\n## Prompt:\n```python\n{prompt}\n```\n\n## Test Case:\n```python\n{test_list_str}\n```\n\n## Completion:\n"
+        }
+      },
+      {
+        "solver": "generate",
+        "params": {
+          "tool_calls": "loop",
+          "kwargs": {}
+        },
+        "params_passed": {}
+      }
+    ],
+    "config": {
+      "max_connections": 10,
+      "temperature": 0.5
+    }
+  },
+  "results": {
+    "total_samples": 771,
+    "completed_samples": 771,
+    "scores": [
+      {
+        "name": "verify",
+        "scorer": "verify",
+        "reducer": "median",
+        "scored_samples": 257,
+        "unscored_samples": 0,
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.8754863813229572,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.02063541190233115,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2026-04-15T10:19:51+00:00",
+    "completed_at": "2026-04-15T11:32:59+00:00",
+    "model_usage": {
+      "openai/qwen3-coder": {
+        "input_tokens": 596009,
+        "output_tokens": 45690,
+        "total_tokens": 641699
+      }
+    },
+    "role_usage": {}
+  },
+  "invalidated": false,
+  "tags": [],
+  "metadata": {
+    "full_task_version": "2-A",
+    "task_interface_version": "A",
+    "task_comparability_version": 2
+  },
+  "reductions": [
+    {
+      "scorer": "verify",
+      "reducer": "median",
+      "samples": [
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 11
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef sort_matrix(matrix):\n    return sorted(matrix, key=sum)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef sort_matrix(matrix):\n    return sorted(matrix, key=sum)\n\nassert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]], 'sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]]'\nassert sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2, 4, -5], [1, -1, 1], [1, 2, 3]], 'sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]'\nassert sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2, 1, 4], [6, 4, 3], [5, 8, 9]], 'sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2, 1, 4], [6, 4, 3], [5, 8, 9]]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 12
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 14
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 16
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef square_perimeter(side):\n    return 4 * side\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef square_perimeter(side):\n    return 4 * side\n\nassert square_perimeter(10)==40, 'square_perimeter(10)==40'\nassert square_perimeter(5)==20, 'square_perimeter(5)==20'\nassert square_perimeter(4)==16, 'square_perimeter(4)==16'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 17
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 18
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef test_duplicate(nums):\n    return len(nums) != len(set(nums))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef test_duplicate(nums):\n    return len(nums) != len(set(nums))\n\nassert test_duplicate(([1,2,3,4,5]))==False, 'test_duplicate(([1,2,3,4,5]))==False'\nassert test_duplicate(([1,2,3,4, 4]))==True, 'test_duplicate(([1,2,3,4, 4]))==True'\nassert test_duplicate([1,1,2,2,3,3,4,4,5])==True, 'test_duplicate([1,1,2,2,3,3,4,4,5])==True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 19
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 20
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef check(n):\n    reverse_n = int(str(n)[::-1])\n    return n == 2 * reverse_n - 1\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef check(n):\n    reverse_n = int(str(n)[::-1])\n    return n == 2 * reverse_n - 1\n\nassert check(70) == False, 'check(70) == False'\nassert check(23) == False, 'check(23) == False'\nassert check(73) == True, 'check(73) == True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 56
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 57
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 58
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef is_octagonal(n):\n    return n * (3 * n - 2)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef is_octagonal(n):\n    return n * (3 * n - 2)\n\nassert is_octagonal(5) == 65, 'is_octagonal(5) == 65'\nassert is_octagonal(10) == 280, 'is_octagonal(10) == 280'\nassert is_octagonal(15) == 645, 'is_octagonal(15) == 645'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 59
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef count_Substrings(s):\n    count = 0\n    n = len(s)\n    for i in range(n):\n        total = 0\n        for j in range(i, n):\n            total += int(s[j])\n            if total == j - i + 1:\n                count += 1\n    return count\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef count_Substrings(s):\n    count = 0\n    n = len(s)\n    for i in range(n):\n        total = 0\n        for j in range(i, n):\n            total += int(s[j])\n            if total == j - i + 1:\n                count += 1\n    return count\n\nassert count_Substrings('112112') == 6, \"count_Substrings('112112') == 6\"\nassert count_Substrings('111') == 6, \"count_Substrings('111') == 6\"\nassert count_Substrings('1101112') == 12, \"count_Substrings('1101112') == 12\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 61
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef smallest_num(lst):\n    return min(lst)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef smallest_num(lst):\n    return min(lst)\n\nassert smallest_num([10, 20, 1, 45, 99]) == 1, 'smallest_num([10, 20, 1, 45, 99]) == 1'\nassert smallest_num([1, 2, 3]) == 1, 'smallest_num([1, 2, 3]) == 1'\nassert smallest_num([45, 46, 50, 60]) == 45, 'smallest_num([45, 46, 50, 60]) == 45'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 62
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 63
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 64
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef recursive_list_sum(lst):\n    total = 0\n    for item in lst:\n        if isinstance(item, list):\n            total += recursive_list_sum(item)\n        else:\n            total += item\n    return total\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef recursive_list_sum(lst):\n    total = 0\n    for item in lst:\n        if isinstance(item, list):\n            total += recursive_list_sum(item)\n        else:\n            total += item\n    return total\n\nassert recursive_list_sum(([1, 2, [3,4],[5,6]]))==21, 'recursive_list_sum(([1, 2, [3,4],[5,6]]))==21'\nassert recursive_list_sum(([7, 10, [15,14],[19,41]]))==106, 'recursive_list_sum(([7, 10, [15,14],[19,41]]))==106'\nassert recursive_list_sum(([10, 20, [30,40],[50,60]]))==210, 'recursive_list_sum(([10, 20, [30,40],[50,60]]))==210'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 65
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 66
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 67
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef is_Monotonic(arr):\n    increasing = all(arr[i] <= arr[i+1] for i in range(len(arr)-1))\n    decreasing = all(arr[i] >= arr[i+1] for i in range(len(arr)-1))\n    return increasing or decreasing\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef is_Monotonic(arr):\n    increasing = all(arr[i] <= arr[i+1] for i in range(len(arr)-1))\n    decreasing = all(arr[i] >= arr[i+1] for i in range(len(arr)-1))\n    return increasing or decreasing\n\nassert is_Monotonic([6, 5, 4, 4]) == True, 'is_Monotonic([6, 5, 4, 4]) == True'\nassert is_Monotonic([1, 2, 2, 3]) == True, 'is_Monotonic([1, 2, 2, 3]) == True'\nassert is_Monotonic([1, 3, 2]) == False, 'is_Monotonic([1, 3, 2]) == False'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 68
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 69
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 70
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 71
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef dif_Square(n):\n    if n % 4 == 2:\n        return False\n    return True\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef dif_Square(n):\n    if n % 4 == 2:\n        return False\n    return True\n\nassert dif_Square(5) == True, 'dif_Square(5) == True'\nassert dif_Square(10) == False, 'dif_Square(10) == False'\nassert dif_Square(15) == True, 'dif_Square(15) == True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 72
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef is_samepatterns(patterns, sequence):\n    if len(patterns) != len(sequence):\n        return False\n    \n    pattern_to_seq = {}\n    seq_to_pattern = {}\n    \n    for p, s in zip(patterns, sequence):\n        if p in pattern_to_seq:\n            if pattern_to_seq[p] != s:\n                return False\n        else:\n            pattern_to_seq[p] = s\n        \n        if s in seq_to_pattern:\n            if seq_to_pattern[s] != p:\n                return False\n        else:\n            seq_to_pattern[s] = p\n    \n    return True\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef is_samepatterns(patterns, sequence):\n    if len(patterns) != len(sequence):\n        return False\n    \n    pattern_to_seq = {}\n    seq_to_pattern = {}\n    \n    for p, s in zip(patterns, sequence):\n        if p in pattern_to_seq:\n            if pattern_to_seq[p] != s:\n                return False\n        else:\n            pattern_to_seq[p] = s\n        \n        if s in seq_to_pattern:\n            if seq_to_pattern[s] != p:\n                return False\n        else:\n            seq_to_pattern[s] = p\n    \n    return True\n\nassert is_samepatterns([\"red\",\"green\",\"green\"], [\"a\", \"b\", \"b\"])==True, 'is_samepatterns([\"red\",\"green\",\"green\"], [\"a\", \"b\", \"b\"])==True'\nassert is_samepatterns([\"red\",\"green\",\"greenn\"], [\"a\",\"b\",\"b\"])==False, 'is_samepatterns([\"red\",\"green\",\"greenn\"], [\"a\",\"b\",\"b\"])==False'\nassert is_samepatterns([\"red\",\"green\",\"greenn\"], [\"a\",\"b\"])==False, 'is_samepatterns([\"red\",\"green\",\"greenn\"], [\"a\",\"b\"])==False'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 74
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef find_tuples(test_list, k):\n    result = []\n    for tup in test_list:\n        if all(element % k == 0 for element in tup):\n            result.append(tup)\n    return result\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef find_tuples(test_list, k):\n    result = []\n    for tup in test_list:\n        if all(element % k == 0 for element in tup):\n            result.append(tup)\n    return result\n\nassert find_tuples([(6, 24, 12), (7, 9, 6), (12, 18, 21)], 6) == [(6, 24, 12)], 'find_tuples([(6, 24, 12), (7, 9, 6), (12, 18, 21)], 6) == [(6, 24, 12)]'\nassert find_tuples([(5, 25, 30), (4, 2, 3), (7, 8, 9)], 5) == [(5, 25, 30)], 'find_tuples([(5, 25, 30), (4, 2, 3), (7, 8, 9)], 5) == [(5, 25, 30)]'\nassert find_tuples([(7, 9, 16), (8, 16, 4), (19, 17, 18)], 4) == [(8, 16, 4)], 'find_tuples([(7, 9, 16), (8, 16, 4), (19, 17, 18)], 4) == [(8, 16, 4)]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 75
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 77
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef word_len(word):\n    return len(word) % 2 == 1\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef word_len(word):\n    return len(word) % 2 == 1\n\nassert word_len(\"Hadoop\") == False, 'word_len(\"Hadoop\") == False'\nassert word_len(\"great\") == True, 'word_len(\"great\") == True'\nassert word_len(\"structure\") == True, 'word_len(\"structure\") == True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 79
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef tetrahedral_number(n):\n    return n * (n + 1) * (n + 2) // 6\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef tetrahedral_number(n):\n    return n * (n + 1) * (n + 2) // 6\n\nassert tetrahedral_number(5) == 35, 'tetrahedral_number(5) == 35'\nassert tetrahedral_number(6) == 56, 'tetrahedral_number(6) == 56'\nassert tetrahedral_number(7) == 84, 'tetrahedral_number(7) == 84'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 80
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 82
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 83
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 84
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\nimport math\ndef surfacearea_sphere(radius):\n    return 4 * math.pi * radius ** 2\n```",
+          "explanation": "The following code was executed:\n\n```python\nimport math\ndef surfacearea_sphere(radius):\n    return 4 * math.pi * radius ** 2\n\nassert math.isclose(surfacearea_sphere(10), 1256.6370614359173, rel_tol=0.001), 'math.isclose(surfacearea_sphere(10), 1256.6370614359173, rel_tol=0.001)'\nassert math.isclose(surfacearea_sphere(15), 2827.4333882308138, rel_tol=0.001), 'math.isclose(surfacearea_sphere(15), 2827.4333882308138, rel_tol=0.001)'\nassert math.isclose(surfacearea_sphere(20), 5026.548245743669, rel_tol=0.001), 'math.isclose(surfacearea_sphere(20), 5026.548245743669, rel_tol=0.001)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 85
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef centered_hexagonal_number(n):\n    return 3 * n * (n - 1) + 1\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef centered_hexagonal_number(n):\n    return 3 * n * (n - 1) + 1\n\nassert centered_hexagonal_number(10) == 271, 'centered_hexagonal_number(10) == 271'\nassert centered_hexagonal_number(2) == 7, 'centered_hexagonal_number(2) == 7'\nassert centered_hexagonal_number(9) == 217, 'centered_hexagonal_number(9) == 217'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 86
+        },
+        {
+          "value": 0,
+          "answer": "```python\ndef merge_dictionaries_three(dict1, dict2, dict3):\n    merged = {}\n    for d in [dict1, dict2, dict3]:\n        merged.update(d)\n    return merged\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef merge_dictionaries_three(dict1, dict2, dict3):\n    merged = {}\n    for d in [dict1, dict2, dict3]:\n        merged.update(d)\n    return merged\n\nassert merge_dictionaries_three({ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" }, { \"G\": \"Green\", \"W\": \"White\" },{ \"O\": \"Orange\", \"W\": \"White\", \"B\": \"Black\" })=={'B': 'Black', 'R': 'Red', 'P': 'Pink', 'G': 'Green', 'W': 'White', 'O': 'Orange'}, 'merge_dictionaries_three({ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" }, { \"G\": \"Green\", \"W\": \"White\" },{ \"O\": \"Orange\", \"W\": \"White\", \"B\": \"Black\" })=={\\'B\\': \\'Black\\', \\'R\\': \\'Red\\', \\'P\\': \\'Pink\\', \\'G\\': \\'Green\\', \\'W\\': \\'White\\', \\'O\\': \\'Orange\\'}'\nassert merge_dictionaries_three({ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" }, { \"G\": \"Green\", \"W\": \"White\" },{\"L\":\"lavender\",\"B\":\"Blue\"})=={'W': 'White', 'P': 'Pink', 'B': 'Black', 'R': 'Red', 'G': 'Green', 'L': 'lavender'}, 'merge_dictionaries_three({ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" }, { \"G\": \"Green\", \"W\": \"White\" },{\"L\":\"lavender\",\"B\":\"Blue\"})=={\\'W\\': \\'White\\', \\'P\\': \\'Pink\\', \\'B\\': \\'Black\\', \\'R\\': \\'Red\\', \\'G\\': \\'Green\\', \\'L\\': \\'lavender\\'}'\nassert merge_dictionaries_three({ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" },{\"L\":\"lavender\",\"B\":\"Blue\"},{ \"G\": \"Green\", \"W\": \"White\" })=={'B': 'Black', 'P': 'Pink', 'R': 'Red', 'G': 'Green', 'L': 'lavender', 'W': 'White'}, 'merge_dictionaries_three({ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" },{\"L\":\"lavender\",\"B\":\"Blue\"},{ \"G\": \"Green\", \"W\": \"White\" })=={\\'B\\': \\'Black\\', \\'P\\': \\'Pink\\', \\'R\\': \\'Red\\', \\'G\\': \\'Green\\', \\'L\\': \\'lavender\\', \\'W\\': \\'White\\'}'\n```\nCode did not pass all test cases.\nSee details below.\n```python\nTraceback (most recent call last):\n  File \"<string>\", line 8, in <module>\nAssertionError: merge_dictionaries_three({ \"R\": \"Red\", \"B\": \"Black\", \"P\": \"Pink\" }, { \"G\": \"Green\", \"W\": \"White\" },{\"L\":\"lavender\",\"B\":\"Blue\"})=={'W': 'White', 'P': 'Pink', 'B': 'Black', 'R': 'Red', 'G': 'Green', 'L': 'lavender'}\n\n```\n",
+          "history": [],
+          "sample_id": 87
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 88
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef closest_num(n):\n    return n - 1\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef closest_num(n):\n    return n - 1\n\nassert closest_num(11) == 10, 'closest_num(11) == 10'\nassert closest_num(7) == 6, 'closest_num(7) == 6'\nassert closest_num(12) == 11, 'closest_num(12) == 11'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 89
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef len_log(words):\n    return max(len(word) for word in words)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef len_log(words):\n    return max(len(word) for word in words)\n\nassert len_log([\"python\",\"PHP\",\"bigdata\"]) == 7, 'len_log([\"python\",\"PHP\",\"bigdata\"]) == 7'\nassert len_log([\"a\",\"ab\",\"abc\"]) == 3, 'len_log([\"a\",\"ab\",\"abc\"]) == 3'\nassert len_log([\"small\",\"big\",\"tall\"]) == 5, 'len_log([\"small\",\"big\",\"tall\"]) == 5'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 90
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 91
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 92
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef power(a, b):\n    return a ** b\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef power(a, b):\n    return a ** b\n\nassert power(3,4) == 81, 'power(3,4) == 81'\nassert power(2,3) == 8, 'power(2,3) == 8'\nassert power(5,5) == 3125, 'power(5,5) == 3125'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 93
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef index_minimum(tuples_list):\n    return min(tuples_list, key=lambda x: x[1])[0]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef index_minimum(tuples_list):\n    return min(tuples_list, key=lambda x: x[1])[0]\n\nassert index_minimum([('Rash', 143), ('Manjeet', 200), ('Varsha', 100)]) == 'Varsha', \"index_minimum([('Rash', 143), ('Manjeet', 200), ('Varsha', 100)]) == 'Varsha'\"\nassert index_minimum([('Yash', 185), ('Dawood', 125), ('Sanya', 175)]) == 'Dawood', \"index_minimum([('Yash', 185), ('Dawood', 125), ('Sanya', 175)]) == 'Dawood'\"\nassert index_minimum([('Sai', 345), ('Salman', 145), ('Ayesha', 96)]) == 'Ayesha', \"index_minimum([('Sai', 345), ('Salman', 145), ('Ayesha', 96)]) == 'Ayesha'\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 94
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 95
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef divisor(n):\n    count = 0\n    for i in range(1, int(n**0.5) + 1):\n        if n % i == 0:\n            if i * i == n:\n                count += 1\n            else:\n                count += 2\n    return count\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef divisor(n):\n    count = 0\n    for i in range(1, int(n**0.5) + 1):\n        if n % i == 0:\n            if i * i == n:\n                count += 1\n            else:\n                count += 2\n    return count\n\nassert divisor(15) == 4, 'divisor(15) == 4'\nassert divisor(12) == 6, 'divisor(12) == 6'\nassert divisor(9) == 3, 'divisor(9) == 3'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 96
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 97
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 98
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef decimal_to_binary(n):\n    if n == 0:\n        return '0'\n    binary = ''\n    while n > 0:\n        binary = str(n % 2) + binary\n        n = n // 2\n    return binary\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef decimal_to_binary(n):\n    if n == 0:\n        return '0'\n    binary = ''\n    while n > 0:\n        binary = str(n % 2) + binary\n        n = n // 2\n    return binary\n\nassert decimal_to_binary(8) == '1000', \"decimal_to_binary(8) == '1000'\"\nassert decimal_to_binary(18) == '10010', \"decimal_to_binary(18) == '10010'\"\nassert decimal_to_binary(7) == '111', \"decimal_to_binary(7) == '111'\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 99
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef next_smallest_palindrome(n):\n    n += 1\n    while str(n) != str(n)[::-1]:\n        n += 1\n    return n\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef next_smallest_palindrome(n):\n    n += 1\n    while str(n) != str(n)[::-1]:\n        n += 1\n    return n\n\nassert next_smallest_palindrome(99)==101, 'next_smallest_palindrome(99)==101'\nassert next_smallest_palindrome(1221)==1331, 'next_smallest_palindrome(1221)==1331'\nassert next_smallest_palindrome(120)==121, 'next_smallest_palindrome(120)==121'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 100
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef kth_element(arr, k):\n    return arr[k - 1]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef kth_element(arr, k):\n    return arr[k - 1]\n\nassert kth_element([12,3,5,7,19], 2) == 3, 'kth_element([12,3,5,7,19], 2) == 3'\nassert kth_element([17,24,8,23], 3) == 8, 'kth_element([17,24,8,23], 3) == 8'\nassert kth_element([16,21,25,36,4], 4) == 36, 'kth_element([16,21,25,36,4], 4) == 36'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 101
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 102
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 103
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef sort_sublists(list_of_lists):\n    return [sorted(sublist) for sublist in list_of_lists]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef sort_sublists(list_of_lists):\n    return [sorted(sublist) for sublist in list_of_lists]\n\nassert sort_sublists(([\"green\", \"orange\"], [\"black\", \"white\"], [\"white\", \"black\", \"orange\"]))==[['green', 'orange'], ['black', 'white'], ['black', 'orange', 'white']], 'sort_sublists(([\"green\", \"orange\"], [\"black\", \"white\"], [\"white\", \"black\", \"orange\"]))==[[\\'green\\', \\'orange\\'], [\\'black\\', \\'white\\'], [\\'black\\', \\'orange\\', \\'white\\']]'\nassert sort_sublists(([\" red \",\"green\" ],[\"blue \",\" black\"],[\" orange\",\"brown\"]))==[[' red ', 'green'], [' black', 'blue '], [' orange', 'brown']], 'sort_sublists(([\" red \",\"green\" ],[\"blue \",\" black\"],[\" orange\",\"brown\"]))==[[\\' red \\', \\'green\\'], [\\' black\\', \\'blue \\'], [\\' orange\\', \\'brown\\']]'\nassert sort_sublists(([\"zilver\",\"gold\"], [\"magnesium\",\"aluminium\"], [\"steel\", \"bronze\"]))==[['gold', 'zilver'],['aluminium', 'magnesium'], ['bronze', 'steel']], 'sort_sublists(([\"zilver\",\"gold\"], [\"magnesium\",\"aluminium\"], [\"steel\", \"bronze\"]))==[[\\'gold\\', \\'zilver\\'],[\\'aluminium\\', \\'magnesium\\'], [\\'bronze\\', \\'steel\\']]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 104
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef count(lst):\n    return sum(lst)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef count(lst):\n    return sum(lst)\n\nassert count([True,False,True]) == 2, 'count([True,False,True]) == 2'\nassert count([False,False]) == 0, 'count([False,False]) == 0'\nassert count([True,True,True]) == 3, 'count([True,True,True]) == 3'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 105
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef add_lists(list1, tuple1):\n    return tuple(list(tuple1) + list1)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef add_lists(list1, tuple1):\n    return tuple(list(tuple1) + list1)\n\nassert add_lists([5, 6, 7], (9, 10)) == (9, 10, 5, 6, 7), 'add_lists([5, 6, 7], (9, 10)) == (9, 10, 5, 6, 7)'\nassert add_lists([6, 7, 8], (10, 11)) == (10, 11, 6, 7, 8), 'add_lists([6, 7, 8], (10, 11)) == (10, 11, 6, 7, 8)'\nassert add_lists([7, 8, 9], (11, 12)) == (11, 12, 7, 8, 9), 'add_lists([7, 8, 9], (11, 12)) == (11, 12, 7, 8, 9)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 106
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 108
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 109
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 111
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef check_integer(s):\n    try:\n        int(s)\n        return True\n    except ValueError:\n        return False\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef check_integer(s):\n    try:\n        int(s)\n        return True\n    except ValueError:\n        return False\n\nassert check_integer(\"python\")==False, 'check_integer(\"python\")==False'\nassert check_integer(\"1\")==True, 'check_integer(\"1\")==True'\nassert check_integer(\"12345\")==True, 'check_integer(\"12345\")==True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 113
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 115
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef tuple_to_int(tup):\n    return int(''.join(map(str, tup)))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef tuple_to_int(tup):\n    return int(''.join(map(str, tup)))\n\nassert tuple_to_int((1,2,3))==123, 'tuple_to_int((1,2,3))==123'\nassert tuple_to_int((4,5,6))==456, 'tuple_to_int((4,5,6))==456'\nassert tuple_to_int((5,6,7))==567, 'tuple_to_int((5,6,7))==567'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 116
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 117
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef string_to_list(s):\n    return s.split()\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef string_to_list(s):\n    return s.split()\n\nassert string_to_list(\"python programming\")==['python','programming'], 'string_to_list(\"python programming\")==[\\'python\\',\\'programming\\']'\nassert string_to_list(\"lists tuples strings\")==['lists','tuples','strings'], 'string_to_list(\"lists tuples strings\")==[\\'lists\\',\\'tuples\\',\\'strings\\']'\nassert string_to_list(\"write a program\")==['write','a','program'], 'string_to_list(\"write a program\")==[\\'write\\',\\'a\\',\\'program\\']'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 118
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 119
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 120
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 123
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 124
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 125
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef sum(a, b):\n    def gcd(x, y):\n        while y:\n            x, y = y, x % y\n        return x\n    \n    g = gcd(a, b)\n    result = 0\n    i = 1\n    while i * i <= g:\n        if g % i == 0:\n            result += i\n            if i != g // i:\n                result += g // i\n        i += 1\n    return result\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef sum(a, b):\n    def gcd(x, y):\n        while y:\n            x, y = y, x % y\n        return x\n    \n    g = gcd(a, b)\n    result = 0\n    i = 1\n    while i * i <= g:\n        if g % i == 0:\n            result += i\n            if i != g // i:\n                result += g // i\n        i += 1\n    return result\n\nassert sum(10,15) == 6, 'sum(10,15) == 6'\nassert sum(100,150) == 93, 'sum(100,150) == 93'\nassert sum(4,6) == 3, 'sum(4,6) == 3'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 126
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef multiply_int(a, b):\n    return a * b\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef multiply_int(a, b):\n    return a * b\n\nassert multiply_int(10,20)==200, 'multiply_int(10,20)==200'\nassert multiply_int(5,10)==50, 'multiply_int(5,10)==50'\nassert multiply_int(4,8)==32, 'multiply_int(4,8)==32'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 127
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef long_words(n, text):\n    words = text.split()\n    return [word for word in words if len(word) > n]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef long_words(n, text):\n    words = text.split()\n    return [word for word in words if len(word) > n]\n\nassert long_words(3,\"python is a programming language\")==['python','programming','language'], 'long_words(3,\"python is a programming language\")==[\\'python\\',\\'programming\\',\\'language\\']'\nassert long_words(2,\"writing a program\")==['writing','program'], 'long_words(2,\"writing a program\")==[\\'writing\\',\\'program\\']'\nassert long_words(5,\"sorting list\")==['sorting'], 'long_words(5,\"sorting list\")==[\\'sorting\\']'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 128
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 129
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 130
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 131
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef tup_string(tup):\n    return ''.join(tup)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef tup_string(tup):\n    return ''.join(tup)\n\nassert tup_string(('e', 'x', 'e', 'r', 'c', 'i', 's', 'e', 's'))==(\"exercises\"), 'tup_string((\\'e\\', \\'x\\', \\'e\\', \\'r\\', \\'c\\', \\'i\\', \\'s\\', \\'e\\', \\'s\\'))==(\"exercises\")'\nassert tup_string(('p','y','t','h','o','n'))==(\"python\"), 'tup_string((\\'p\\',\\'y\\',\\'t\\',\\'h\\',\\'o\\',\\'n\\'))==(\"python\")'\nassert tup_string(('p','r','o','g','r','a','m'))==(\"program\"), 'tup_string((\\'p\\',\\'r\\',\\'o\\',\\'g\\',\\'r\\',\\'a\\',\\'m\\'))==(\"program\")'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 132
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 133
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef hexagonal_num(n):\n    return n * (2 * n - 1)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef hexagonal_num(n):\n    return n * (2 * n - 1)\n\nassert hexagonal_num(10) == 190, 'hexagonal_num(10) == 190'\nassert hexagonal_num(5) == 45, 'hexagonal_num(5) == 45'\nassert hexagonal_num(7) == 91, 'hexagonal_num(7) == 91'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 135
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 137
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 138
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 139
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 140
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 141
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef count_samepair(list1, list2, list3):\n    count = 0\n    for i in range(len(list1)):\n        if list1[i] == list2[i] == list3[i]:\n            count += 1\n    return count\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef count_samepair(list1, list2, list3):\n    count = 0\n    for i in range(len(list1)):\n        if list1[i] == list2[i] == list3[i]:\n            count += 1\n    return count\n\nassert count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,9],[2,1,3,1,2,6,7,9])==3, 'count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,9],[2,1,3,1,2,6,7,9])==3'\nassert count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==4, 'count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==4'\nassert count_samepair([1,2,3,4,2,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==5, 'count_samepair([1,2,3,4,2,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==5'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 142
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 143
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef max_Abs_Diff(arr):\n    if len(arr) < 2:\n        return 0\n    return max(arr) - min(arr)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef max_Abs_Diff(arr):\n    if len(arr) < 2:\n        return 0\n    return max(arr) - min(arr)\n\nassert max_Abs_Diff((2,1,5,3)) == 4, 'max_Abs_Diff((2,1,5,3)) == 4'\nassert max_Abs_Diff((9,3,2,5,1)) == 8, 'max_Abs_Diff((9,3,2,5,1)) == 8'\nassert max_Abs_Diff((3,2,1)) == 2, 'max_Abs_Diff((3,2,1)) == 2'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 145
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 160
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef remove_elements(list1, list2):\n    return [x for x in list1 if x not in list2]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef remove_elements(list1, list2):\n    return [x for x in list1 if x not in list2]\n\nassert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8]) == [1, 3, 5, 7, 9, 10], 'remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8]) == [1, 3, 5, 7, 9, 10]'\nassert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7]) == [2, 4, 6, 8, 9, 10], 'remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7]) == [2, 4, 6, 8, 9, 10]'\nassert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [5, 7]) == [1, 2, 3, 4, 6, 8, 9, 10], 'remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [5, 7]) == [1, 2, 3, 4, 6, 8, 9, 10]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 161
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 162
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 163
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 164
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 165
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef find_even_pair(nums):\n    count = 0\n    n = len(nums)\n    for i in range(n):\n        for j in range(i + 1, n):\n            if (nums[i] ^ nums[j]) % 2 == 0:\n                count += 1\n    return count\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef find_even_pair(nums):\n    count = 0\n    n = len(nums)\n    for i in range(n):\n        for j in range(i + 1, n):\n            if (nums[i] ^ nums[j]) % 2 == 0:\n                count += 1\n    return count\n\nassert find_even_pair([5, 4, 7, 2, 1]) == 4, 'find_even_pair([5, 4, 7, 2, 1]) == 4'\nassert find_even_pair([7, 2, 8, 1, 0, 5, 11]) == 9, 'find_even_pair([7, 2, 8, 1, 0, 5, 11]) == 9'\nassert find_even_pair([1, 2, 3]) == 1, 'find_even_pair([1, 2, 3]) == 1'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 166
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef next_power_of_2(n):\n    if n <= 0:\n        return 1\n    power = 1\n    while power < n:\n        power *= 2\n    return power\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef next_power_of_2(n):\n    if n <= 0:\n        return 1\n    power = 1\n    while power < n:\n        power *= 2\n    return power\n\nassert next_power_of_2(0) == 1, 'next_power_of_2(0) == 1'\nassert next_power_of_2(5) == 8, 'next_power_of_2(5) == 8'\nassert next_power_of_2(17) == 32, 'next_power_of_2(17) == 32'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 167
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef frequency(lst, num):\n    return lst.count(num)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef frequency(lst, num):\n    return lst.count(num)\n\nassert frequency([1,2,3], 4) == 0, 'frequency([1,2,3], 4) == 0'\nassert frequency([1,2,2,3,3,3,4], 3) == 3, 'frequency([1,2,2,3,3,3,4], 3) == 3'\nassert frequency([0,1,2,3,1,2], 1) == 2, 'frequency([0,1,2,3,1,2], 1) == 2'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 168
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 170
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef perimeter_pentagon(side_length):\n    return 5 * side_length\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef perimeter_pentagon(side_length):\n    return 5 * side_length\n\nassert perimeter_pentagon(5) == 25, 'perimeter_pentagon(5) == 25'\nassert perimeter_pentagon(10) == 50, 'perimeter_pentagon(10) == 50'\nassert perimeter_pentagon(15) == 75, 'perimeter_pentagon(15) == 75'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 171
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef count_occurance(s):\n    return s.count('std')\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef count_occurance(s):\n    return s.count('std')\n\nassert count_occurance(\"letstdlenstdporstd\") == 3, 'count_occurance(\"letstdlenstdporstd\") == 3'\nassert count_occurance(\"truststdsolensporsd\") == 1, 'count_occurance(\"truststdsolensporsd\") == 1'\nassert count_occurance(\"makestdsostdworthit\") == 2, 'count_occurance(\"makestdsostdworthit\") == 2'\nassert count_occurance(\"stds\") == 1, 'count_occurance(\"stds\") == 1'\nassert count_occurance(\"\") == 0, 'count_occurance(\"\") == 0'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 172
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 222
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 223
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef count_Set_Bits(n):\n    return bin(n).count('1')\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef count_Set_Bits(n):\n    return bin(n).count('1')\n\nassert count_Set_Bits(2) == 1, 'count_Set_Bits(2) == 1'\nassert count_Set_Bits(4) == 1, 'count_Set_Bits(4) == 1'\nassert count_Set_Bits(6) == 2, 'count_Set_Bits(6) == 2'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 224
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 226
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef min_of_three(a, b, c):\n    return min(a, b, c)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef min_of_three(a, b, c):\n    return min(a, b, c)\n\nassert min_of_three(10,20,0)==0, 'min_of_three(10,20,0)==0'\nassert min_of_three(19,15,18)==15, 'min_of_three(19,15,18)==15'\nassert min_of_three(-10,-20,-30)==-30, 'min_of_three(-10,-20,-30)==-30'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 227
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 228
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 229
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 230
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 232
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 233
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 234
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 235
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 237
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef number_of_substrings(s):\n    n = len(s)\n    return n * (n + 1) // 2\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef number_of_substrings(s):\n    n = len(s)\n    return n * (n + 1) // 2\n\nassert number_of_substrings(\"abc\") == 6, 'number_of_substrings(\"abc\") == 6'\nassert number_of_substrings(\"abcd\") == 10, 'number_of_substrings(\"abcd\") == 10'\nassert number_of_substrings(\"abcde\") == 15, 'number_of_substrings(\"abcde\") == 15'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 238
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 239
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 240
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef count_charac(s):\n    return len(s)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef count_charac(s):\n    return len(s)\n\nassert count_charac(\"python programming\")==18, 'count_charac(\"python programming\")==18'\nassert count_charac(\"language\")==8, 'count_charac(\"language\")==8'\nassert count_charac(\"words\")==5, 'count_charac(\"words\")==5'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 242
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 244
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 245
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 246
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 247
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 248
+        },
+        {
+          "value": 0,
+          "answer": "```python\ndef intersection_array(arr1, arr2):\n    return list(set(arr1) & set(arr2))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef intersection_array(arr1, arr2):\n    return list(set(arr1) & set(arr2))\n\nassert intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[1, 2, 4, 8, 9])==[1, 2, 8, 9], 'intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[1, 2, 4, 8, 9])==[1, 2, 8, 9]'\nassert intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[3,5,7,9])==[3,5,7,9], 'intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[3,5,7,9])==[3,5,7,9]'\nassert intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[10,20,30,40])==[10], 'intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[10,20,30,40])==[10]'\n```\nCode did not pass all test cases.\nSee details below.\n```python\nTraceback (most recent call last):\n  File \"<string>\", line 4, in <module>\nAssertionError: intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[1, 2, 4, 8, 9])==[1, 2, 8, 9]\n\n```\n",
+          "history": [],
+          "sample_id": 249
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef count_X(tup, element):\n    return tup.count(element)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef count_X(tup, element):\n    return tup.count(element)\n\nassert count_X((10, 8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2),4) == 0, 'count_X((10, 8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2),4) == 0'\nassert count_X((10, 8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2),10) == 3, 'count_X((10, 8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2),10) == 3'\nassert count_X((10, 8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2),8) == 4, 'count_X((10, 8, 5, 2, 10, 15, 10, 8, 5, 8, 8, 2),8) == 4'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 250
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 251
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 252
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 253
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 255
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 256
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef swap_numbers(a, b):\n    return (b, a)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef swap_numbers(a, b):\n    return (b, a)\n\nassert swap_numbers(10,20)==(20,10), 'swap_numbers(10,20)==(20,10)'\nassert swap_numbers(15,17)==(17,15), 'swap_numbers(15,17)==(17,15)'\nassert swap_numbers(100,200)==(200,100), 'swap_numbers(100,200)==(200,100)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 257
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 259
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 260
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef division_elements(tup1, tup2):\n    return tuple(a // b for a, b in zip(tup1, tup2))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef division_elements(tup1, tup2):\n    return tuple(a // b for a, b in zip(tup1, tup2))\n\nassert division_elements((10, 4, 6, 9),(5, 2, 3, 3)) == (2, 2, 2, 3), 'division_elements((10, 4, 6, 9),(5, 2, 3, 3)) == (2, 2, 2, 3)'\nassert division_elements((12, 6, 8, 16),(6, 3, 4, 4)) == (2, 2, 2, 4), 'division_elements((12, 6, 8, 16),(6, 3, 4, 4)) == (2, 2, 2, 4)'\nassert division_elements((20, 14, 36, 18),(5, 7, 6, 9)) == (4, 2, 6, 2), 'division_elements((20, 14, 36, 18),(5, 7, 6, 9)) == (4, 2, 6, 2)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 261
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef split_two_parts(lst, L):\n    return (lst[:L], lst[L:])\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef split_two_parts(lst, L):\n    return (lst[:L], lst[L:])\n\nassert split_two_parts([1,1,2,3,4,4,5,1],3)==([1, 1, 2], [3, 4, 4, 5, 1]), 'split_two_parts([1,1,2,3,4,4,5,1],3)==([1, 1, 2], [3, 4, 4, 5, 1])'\nassert split_two_parts(['a', 'b', 'c', 'd'],2)==(['a', 'b'], ['c', 'd']), \"split_two_parts(['a', 'b', 'c', 'd'],2)==(['a', 'b'], ['c', 'd'])\"\nassert split_two_parts(['p', 'y', 't', 'h', 'o', 'n'],4)==(['p', 'y', 't', 'h'], ['o', 'n']), \"split_two_parts(['p', 'y', 't', 'h', 'o', 'n'],4)==(['p', 'y', 't', 'h'], ['o', 'n'])\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 262
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef dog_age(human_years):\n    if human_years <= 2:\n        return human_years * 10.5 * 2 // 2  # First 2 years: 10.5 each\n    else:\n        return int(21 + (human_years - 2) * 4)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef dog_age(human_years):\n    if human_years <= 2:\n        return human_years * 10.5 * 2 // 2  # First 2 years: 10.5 each\n    else:\n        return int(21 + (human_years - 2) * 4)\n\nassert dog_age(12)==61, 'dog_age(12)==61'\nassert dog_age(15)==73, 'dog_age(15)==73'\nassert dog_age(24)==109, 'dog_age(24)==109'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 264
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef list_split(lst, n):\n    result = []\n    for i in range(n):\n        result.append(lst[i::n])\n    return result\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef list_split(lst, n):\n    result = []\n    for i in range(n):\n        result.append(lst[i::n])\n    return result\n\nassert list_split(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'],3)==[['a', 'd', 'g', 'j', 'm'], ['b', 'e', 'h', 'k', 'n'], ['c', 'f', 'i', 'l']], \"list_split(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'],3)==[['a', 'd', 'g', 'j', 'm'], ['b', 'e', 'h', 'k', 'n'], ['c', 'f', 'i', 'l']]\"\nassert list_split([1,2,3,4,5,6,7,8,9,10,11,12,13,14],3)==[[1,4,7,10,13], [2,5,8,11,14], [3,6,9,12]], 'list_split([1,2,3,4,5,6,7,8,9,10,11,12,13,14],3)==[[1,4,7,10,13], [2,5,8,11,14], [3,6,9,12]]'\nassert list_split(['python','java','C','C++','DBMS','SQL'],2)==[['python', 'C', 'DBMS'], ['java', 'C++', 'SQL']], \"list_split(['python','java','C','C++','DBMS','SQL'],2)==[['python', 'C', 'DBMS'], ['java', 'C++', 'SQL']]\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 265
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef lateralsurface_cube(side):\n    return 4 * side * side\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef lateralsurface_cube(side):\n    return 4 * side * side\n\nassert lateralsurface_cube(5)==100, 'lateralsurface_cube(5)==100'\nassert lateralsurface_cube(9)==324, 'lateralsurface_cube(9)==324'\nassert lateralsurface_cube(10)==400, 'lateralsurface_cube(10)==400'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 266
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 267
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef find_star_num(n):\n    return 6 * n * (n - 1) + 1\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef find_star_num(n):\n    return 6 * n * (n - 1) + 1\n\nassert find_star_num(3) == 37, 'find_star_num(3) == 37'\nassert find_star_num(4) == 73, 'find_star_num(4) == 73'\nassert find_star_num(5) == 121, 'find_star_num(5) == 121'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 268
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef ascii_value(char):\n    return ord(char)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef ascii_value(char):\n    return ord(char)\n\nassert ascii_value('A')==65, \"ascii_value('A')==65\"\nassert ascii_value('R')==82, \"ascii_value('R')==82\"\nassert ascii_value('S')==83, \"ascii_value('S')==83\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 269
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 270
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 271
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef rear_extract(tuples_list):\n    return [t[-1] for t in tuples_list]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef rear_extract(tuples_list):\n    return [t[-1] for t in tuples_list]\n\nassert rear_extract([(1, 'Rash', 21), (2, 'Varsha', 20), (3, 'Kil', 19)]) == [21, 20, 19], \"rear_extract([(1, 'Rash', 21), (2, 'Varsha', 20), (3, 'Kil', 19)]) == [21, 20, 19]\"\nassert rear_extract([(1, 'Sai', 36), (2, 'Ayesha', 25), (3, 'Salman', 45)]) == [36, 25, 45], \"rear_extract([(1, 'Sai', 36), (2, 'Ayesha', 25), (3, 'Salman', 45)]) == [36, 25, 45]\"\nassert rear_extract([(1, 'Sudeep', 14), (2, 'Vandana', 36), (3, 'Dawood', 56)]) == [14, 36, 56], \"rear_extract([(1, 'Sudeep', 14), (2, 'Vandana', 36), (3, 'Dawood', 56)]) == [14, 36, 56]\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 272
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef substract_elements(tup1, tup2):\n    return tuple(a - b for a, b in zip(tup1, tup2))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef substract_elements(tup1, tup2):\n    return tuple(a - b for a, b in zip(tup1, tup2))\n\nassert substract_elements((10, 4, 5), (2, 5, 18)) == (8, -1, -13), 'substract_elements((10, 4, 5), (2, 5, 18)) == (8, -1, -13)'\nassert substract_elements((11, 2, 3), (24, 45 ,16)) == (-13, -43, -13), 'substract_elements((11, 2, 3), (24, 45 ,16)) == (-13, -43, -13)'\nassert substract_elements((7, 18, 9), (10, 11, 12)) == (-3, 7, -3), 'substract_elements((7, 18, 9), (10, 11, 12)) == (-3, 7, -3)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 273
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef even_binomial_Coeff_Sum(n):\n    return 2 ** (n - 1)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef even_binomial_Coeff_Sum(n):\n    return 2 ** (n - 1)\n\nassert even_binomial_Coeff_Sum(4) == 8, 'even_binomial_Coeff_Sum(4) == 8'\nassert even_binomial_Coeff_Sum(6) == 32, 'even_binomial_Coeff_Sum(6) == 32'\nassert even_binomial_Coeff_Sum(2) == 2, 'even_binomial_Coeff_Sum(2) == 2'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 274
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 276
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef dict_filter(d, n):\n    return {k: v for k, v in d.items() if v >= n}\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef dict_filter(d, n):\n    return {k: v for k, v in d.items() if v >= n}\n\nassert dict_filter({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},170)=={'Cierra Vega': 175, 'Alden Cantrell': 180, 'Pierre Cox': 190}, \"dict_filter({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},170)=={'Cierra Vega': 175, 'Alden Cantrell': 180, 'Pierre Cox': 190}\"\nassert dict_filter({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},180)=={ 'Alden Cantrell': 180, 'Pierre Cox': 190}, \"dict_filter({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},180)=={ 'Alden Cantrell': 180, 'Pierre Cox': 190}\"\nassert dict_filter({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},190)=={ 'Pierre Cox': 190}, \"dict_filter({'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190},190)=={ 'Pierre Cox': 190}\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 277
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 278
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 279
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef sequential_search(arr, element):\n    for i, val in enumerate(arr):\n        if val == element:\n            return (True, i)\n    return (False, -1)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef sequential_search(arr, element):\n    for i, val in enumerate(arr):\n        if val == element:\n            return (True, i)\n    return (False, -1)\n\nassert sequential_search([11,23,58,31,56,77,43,12,65,19],31) == (True, 3), 'sequential_search([11,23,58,31,56,77,43,12,65,19],31) == (True, 3)'\nassert sequential_search([12, 32, 45, 62, 35, 47, 44, 61],61) == (True, 7), 'sequential_search([12, 32, 45, 62, 35, 47, 44, 61],61) == (True, 7)'\nassert sequential_search([9, 10, 17, 19, 22, 39, 48, 56],48) == (True, 6), 'sequential_search([9, 10, 17, 19, 22, 39, 48, 56],48) == (True, 6)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 280
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef all_unique(lst):\n    return len(lst) == len(set(lst))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef all_unique(lst):\n    return len(lst) == len(set(lst))\n\nassert all_unique([1,2,3]) == True, 'all_unique([1,2,3]) == True'\nassert all_unique([1,2,1,2]) == False, 'all_unique([1,2,1,2]) == False'\nassert all_unique([1,2,3,4,5]) == True, 'all_unique([1,2,3,4,5]) == True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 281
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef sub_list(list1, list2):\n    return [a - b for a, b in zip(list1, list2)]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef sub_list(list1, list2):\n    return [a - b for a, b in zip(list1, list2)]\n\nassert sub_list([1, 2, 3],[4,5,6])==[-3,-3,-3], 'sub_list([1, 2, 3],[4,5,6])==[-3,-3,-3]'\nassert sub_list([1,2],[3,4])==[-2,-2], 'sub_list([1,2],[3,4])==[-2,-2]'\nassert sub_list([90,120],[50,70])==[40,50], 'sub_list([90,120],[50,70])==[40,50]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 282
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 283
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef check_element(lst, element):\n    return all(item == element for item in lst)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef check_element(lst, element):\n    return all(item == element for item in lst)\n\nassert check_element([\"green\", \"orange\", \"black\", \"white\"],'blue')==False, 'check_element([\"green\", \"orange\", \"black\", \"white\"],\\'blue\\')==False'\nassert check_element([1,2,3,4],7)==False, 'check_element([1,2,3,4],7)==False'\nassert check_element([\"green\", \"green\", \"green\", \"green\"],'green')==True, 'check_element([\"green\", \"green\", \"green\", \"green\"],\\'green\\')==True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 284
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 285
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 286
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 287
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 290
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 291
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef find(a, b):\n    return a // b\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef find(a, b):\n    return a // b\n\nassert find(10,3) == 3, 'find(10,3) == 3'\nassert find(4,2) == 2, 'find(4,2) == 2'\nassert find(20,5) == 4, 'find(20,5) == 4'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 292
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\nimport math\ndef otherside_rightangle(a, b):\n    return math.sqrt(a**2 + b**2)\n```",
+          "explanation": "The following code was executed:\n\n```python\nimport math\ndef otherside_rightangle(a, b):\n    return math.sqrt(a**2 + b**2)\n\nassert otherside_rightangle(7,8)==10.63014581273465, 'otherside_rightangle(7,8)==10.63014581273465'\nassert otherside_rightangle(3,4)==5, 'otherside_rightangle(3,4)==5'\nassert otherside_rightangle(7,15)==16.55294535724685, 'otherside_rightangle(7,15)==16.55294535724685'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 293
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef max_val(lst):\n    numeric_values = [x for x in lst if isinstance(x, (int, float)) and not isinstance(x, bool)]\n    return max(numeric_values)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef max_val(lst):\n    numeric_values = [x for x in lst if isinstance(x, (int, float)) and not isinstance(x, bool)]\n    return max(numeric_values)\n\nassert max_val(['Python', 3, 2, 4, 5, 'version'])==5, \"max_val(['Python', 3, 2, 4, 5, 'version'])==5\"\nassert max_val(['Python', 15, 20, 25])==25, \"max_val(['Python', 15, 20, 25])==25\"\nassert max_val(['Python', 30, 20, 40, 50, 'version'])==50, \"max_val(['Python', 30, 20, 40, 50, 'version'])==50\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 294
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef sum_div(n):\n    if n == 1:\n        return 0\n    total = 1\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef sum_div(n):\n    if n == 1:\n        return 0\n    total = 1\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total\n\nassert sum_div(8)==7, 'sum_div(8)==7'\nassert sum_div(12)==16, 'sum_div(12)==16'\nassert sum_div(7)==1, 'sum_div(7)==1'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 295
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef get_Inv_Count(arr):\n    inv_count = 0\n    n = len(arr)\n    for i in range(n):\n        for j in range(i + 1, n):\n            if arr[i] > arr[j]:\n                inv_count += 1\n    return inv_count\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef get_Inv_Count(arr):\n    inv_count = 0\n    n = len(arr)\n    for i in range(n):\n        for j in range(i + 1, n):\n            if arr[i] > arr[j]:\n                inv_count += 1\n    return inv_count\n\nassert get_Inv_Count([1,20,6,4,5]) == 5, 'get_Inv_Count([1,20,6,4,5]) == 5'\nassert get_Inv_Count([1,2,1]) == 1, 'get_Inv_Count([1,2,1]) == 1'\nassert get_Inv_Count([1,2,5,6,1]) == 3, 'get_Inv_Count([1,2,5,6,1]) == 3'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 296
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef flatten_list(nested_list):\n    result = []\n    for item in nested_list:\n        if isinstance(item, list):\n            result.extend(flatten_list(item))\n        else:\n            result.append(item)\n    return result\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef flatten_list(nested_list):\n    result = []\n    for item in nested_list:\n        if isinstance(item, list):\n            result.extend(flatten_list(item))\n        else:\n            result.append(item)\n    return result\n\nassert flatten_list([0, 10, [20, 30], 40, 50, [60, 70, 80], [90, 100, 110, 120]])==[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120], 'flatten_list([0, 10, [20, 30], 40, 50, [60, 70, 80], [90, 100, 110, 120]])==[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]'\nassert flatten_list([[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]])==[10, 20, 40, 30, 56, 25, 10, 20, 33, 40], 'flatten_list([[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]])==[10, 20, 40, 30, 56, 25, 10, 20, 33, 40]'\nassert flatten_list([[1,2,3], [4,5,6], [10,11,12], [7,8,9]])==[1, 2, 3, 4, 5, 6, 10, 11, 12, 7, 8, 9], 'flatten_list([[1,2,3], [4,5,6], [10,11,12], [7,8,9]])==[1, 2, 3, 4, 5, 6, 10, 11, 12, 7, 8, 9]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 297
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 299
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 300
+        },
+        {
+          "value": 0,
+          "answer": "```python\ndef dict_depth(d):\n    if not isinstance(d, dict) or not d:\n        return 0\n    return 1 + max(dict_depth(v) for v in d.values())\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef dict_depth(d):\n    if not isinstance(d, dict) or not d:\n        return 0\n    return 1 + max(dict_depth(v) for v in d.values())\n\nassert dict_depth({'a':1, 'b': {'c': {'d': {}}}})==4, \"dict_depth({'a':1, 'b': {'c': {'d': {}}}})==4\"\nassert dict_depth({'a':1, 'b': {'c':'python'}})==2, \"dict_depth({'a':1, 'b': {'c':'python'}})==2\"\nassert dict_depth({1: 'Sun', 2: {3: {4:'Mon'}}})==3, \"dict_depth({1: 'Sun', 2: {3: {4:'Mon'}}})==3\"\n```\nCode did not pass all test cases.\nSee details below.\n```python\nTraceback (most recent call last):\n  File \"<string>\", line 6, in <module>\nAssertionError: dict_depth({'a':1, 'b': {'c': {'d': {}}}})==4\n\n```\n",
+          "history": [],
+          "sample_id": 301
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 304
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 305
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 306
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 307
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 308
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef maximum(a, b):\n    return a if a > b else b\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef maximum(a, b):\n    return a if a > b else b\n\nassert maximum(5,10) == 10, 'maximum(5,10) == 10'\nassert maximum(-1,-2) == -1, 'maximum(-1,-2) == -1'\nassert maximum(9,7) == 9, 'maximum(9,7) == 9'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 309
+        },
+        {
+          "value": 0,
+          "answer": "```python\ndef string_to_tuple(s):\n    return tuple(s)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef string_to_tuple(s):\n    return tuple(s)\n\nassert string_to_tuple(\"python 3.0\")==('p', 'y', 't', 'h', 'o', 'n', '3', '.', '0'), 'string_to_tuple(\"python 3.0\")==(\\'p\\', \\'y\\', \\'t\\', \\'h\\', \\'o\\', \\'n\\', \\'3\\', \\'.\\', \\'0\\')'\nassert string_to_tuple(\"item1\")==('i', 't', 'e', 'm', '1'), 'string_to_tuple(\"item1\")==(\\'i\\', \\'t\\', \\'e\\', \\'m\\', \\'1\\')'\nassert string_to_tuple(\"15.10\")==('1', '5', '.', '1', '0'), 'string_to_tuple(\"15.10\")==(\\'1\\', \\'5\\', \\'.\\', \\'1\\', \\'0\\')'\n```\nCode did not pass all test cases.\nSee details below.\n```python\nTraceback (most recent call last):\n  File \"<string>\", line 4, in <module>\nAssertionError: string_to_tuple(\"python 3.0\")==('p', 'y', 't', 'h', 'o', 'n', '3', '.', '0')\n\n```\n",
+          "history": [],
+          "sample_id": 310
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 311
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 312
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef highest_Power_of_2(n):\n    power = 1\n    while power * 2 <= n:\n        power *= 2\n    return power\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef highest_Power_of_2(n):\n    power = 1\n    while power * 2 <= n:\n        power *= 2\n    return power\n\nassert highest_Power_of_2(10) == 8, 'highest_Power_of_2(10) == 8'\nassert highest_Power_of_2(19) == 16, 'highest_Power_of_2(19) == 16'\nassert highest_Power_of_2(32) == 32, 'highest_Power_of_2(32) == 32'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 388
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 389
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef add_string(lst, format_str):\n    return [format_str.format(item) for item in lst]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef add_string(lst, format_str):\n    return [format_str.format(item) for item in lst]\n\nassert add_string([1,2,3,4],'temp{0}')==['temp1', 'temp2', 'temp3', 'temp4'], \"add_string([1,2,3,4],'temp{0}')==['temp1', 'temp2', 'temp3', 'temp4']\"\nassert add_string(['a','b','c','d'], 'python{0}')==[ 'pythona', 'pythonb', 'pythonc', 'pythond'], \"add_string(['a','b','c','d'], 'python{0}')==[ 'pythona', 'pythonb', 'pythonc', 'pythond']\"\nassert add_string([5,6,7,8],'string{0}')==['string5', 'string6', 'string7', 'string8'], \"add_string([5,6,7,8],'string{0}')==['string5', 'string6', 'string7', 'string8']\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 390
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef convert_list_dictionary(keys, values1, values2):\n    result = []\n    for i in range(len(keys)):\n        result.append({keys[i]: {values1[i]: values2[i]}})\n    return result\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef convert_list_dictionary(keys, values1, values2):\n    result = []\n    for i in range(len(keys)):\n        result.append({keys[i]: {values1[i]: values2[i]}})\n    return result\n\nassert convert_list_dictionary([\"S001\", \"S002\", \"S003\", \"S004\"],[\"Adina Park\", \"Leyton Marsh\", \"Duncan Boyle\", \"Saim Richards\"] ,[85, 98, 89, 92])==[{'S001': {'Adina Park': 85}}, {'S002': {'Leyton Marsh': 98}}, {'S003': {'Duncan Boyle': 89}}, {'S004': {'Saim Richards': 92}}], 'convert_list_dictionary([\"S001\", \"S002\", \"S003\", \"S004\"],[\"Adina Park\", \"Leyton Marsh\", \"Duncan Boyle\", \"Saim Richards\"] ,[85, 98, 89, 92])==[{\\'S001\\': {\\'Adina Park\\': 85}}, {\\'S002\\': {\\'Leyton Marsh\\': 98}}, {\\'S003\\': {\\'Duncan Boyle\\': 89}}, {\\'S004\\': {\\'Saim Richards\\': 92}}]'\nassert convert_list_dictionary([\"abc\",\"def\",\"ghi\",\"jkl\"],[\"python\",\"program\",\"language\",\"programs\"],[100,200,300,400])==[{'abc':{'python':100}},{'def':{'program':200}},{'ghi':{'language':300}},{'jkl':{'programs':400}}], 'convert_list_dictionary([\"abc\",\"def\",\"ghi\",\"jkl\"],[\"python\",\"program\",\"language\",\"programs\"],[100,200,300,400])==[{\\'abc\\':{\\'python\\':100}},{\\'def\\':{\\'program\\':200}},{\\'ghi\\':{\\'language\\':300}},{\\'jkl\\':{\\'programs\\':400}}]'\nassert convert_list_dictionary([\"A1\",\"A2\",\"A3\",\"A4\"],[\"java\",\"C\",\"C++\",\"DBMS\"],[10,20,30,40])==[{'A1':{'java':10}},{'A2':{'C':20}},{'A3':{'C++':30}},{'A4':{'DBMS':40}}], 'convert_list_dictionary([\"A1\",\"A2\",\"A3\",\"A4\"],[\"java\",\"C\",\"C++\",\"DBMS\"],[10,20,30,40])==[{\\'A1\\':{\\'java\\':10}},{\\'A2\\':{\\'C\\':20}},{\\'A3\\':{\\'C++\\':30}},{\\'A4\\':{\\'DBMS\\':40}}]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 391
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 392
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 393
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef check_distinct(test_tup):\n    return len(test_tup) == len(set(test_tup))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef check_distinct(test_tup):\n    return len(test_tup) == len(set(test_tup))\n\nassert check_distinct((1, 4, 5, 6, 1, 4)) == False, 'check_distinct((1, 4, 5, 6, 1, 4)) == False'\nassert check_distinct((1, 4, 5, 6)) == True, 'check_distinct((1, 4, 5, 6)) == True'\nassert check_distinct((2, 3, 4, 5, 6)) == True, 'check_distinct((2, 3, 4, 5, 6)) == True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 394
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 395
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef check_char(s):\n    if len(s) == 0:\n        return \"Invalid\"\n    return \"Valid\" if s[0] == s[-1] else \"Invalid\"\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef check_char(s):\n    if len(s) == 0:\n        return \"Invalid\"\n    return \"Valid\" if s[0] == s[-1] else \"Invalid\"\n\nassert check_char(\"abba\") == \"Valid\", 'check_char(\"abba\") == \"Valid\"'\nassert check_char(\"a\") == \"Valid\", 'check_char(\"a\") == \"Valid\"'\nassert check_char(\"abcd\") == \"Invalid\", 'check_char(\"abcd\") == \"Invalid\"'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 396
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef median_numbers(a, b, c):\n    return float(sorted([a, b, c])[1])\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef median_numbers(a, b, c):\n    return float(sorted([a, b, c])[1])\n\nassert median_numbers(25,55,65)==55.0, 'median_numbers(25,55,65)==55.0'\nassert median_numbers(20,10,30)==20.0, 'median_numbers(20,10,30)==20.0'\nassert median_numbers(15,45,75)==45.0, 'median_numbers(15,45,75)==45.0'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 397
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 398
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef bitwise_xor(tup1, tup2):\n    return tuple(a ^ b for a, b in zip(tup1, tup2))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef bitwise_xor(tup1, tup2):\n    return tuple(a ^ b for a, b in zip(tup1, tup2))\n\nassert bitwise_xor((10, 4, 6, 9), (5, 2, 3, 3)) == (15, 6, 5, 10), 'bitwise_xor((10, 4, 6, 9), (5, 2, 3, 3)) == (15, 6, 5, 10)'\nassert bitwise_xor((11, 5, 7, 10), (6, 3, 4, 4)) == (13, 6, 3, 14), 'bitwise_xor((11, 5, 7, 10), (6, 3, 4, 4)) == (13, 6, 3, 14)'\nassert bitwise_xor((12, 6, 8, 11), (7, 4, 5, 6)) == (11, 2, 13, 13), 'bitwise_xor((12, 6, 8, 11), (7, 4, 5, 6)) == (11, 2, 13, 13)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 399
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 400
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 401
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef minimum(a, b):\n    return a if a < b else b\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef minimum(a, b):\n    return a if a < b else b\n\nassert minimum(1,2) == 1, 'minimum(1,2) == 1'\nassert minimum(-5,-4) == -5, 'minimum(-5,-4) == -5'\nassert minimum(0,0) == 0, 'minimum(0,0) == 0'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 404
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef check_tuplex(tup, element):\n    return element in tup\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef check_tuplex(tup, element):\n    return element in tup\n\nassert check_tuplex((\"w\", 3, \"r\", \"e\", \"s\", \"o\", \"u\", \"r\", \"c\", \"e\"),'r')==True, 'check_tuplex((\"w\", 3, \"r\", \"e\", \"s\", \"o\", \"u\", \"r\", \"c\", \"e\"),\\'r\\')==True'\nassert check_tuplex((\"w\", 3, \"r\", \"e\", \"s\", \"o\", \"u\", \"r\", \"c\", \"e\"),'5')==False, 'check_tuplex((\"w\", 3, \"r\", \"e\", \"s\", \"o\", \"u\", \"r\", \"c\", \"e\"),\\'5\\')==False'\nassert check_tuplex((\"w\", 3, \"r\", \"e\", \"s\", \"o\", \"u\", \"r\", \"c\",\"e\"),3)==True, 'check_tuplex((\"w\", 3, \"r\", \"e\", \"s\", \"o\", \"u\", \"r\", \"c\",\"e\"),3)==True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 405
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef find_Parity(n):\n    return n % 2 == 1\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef find_Parity(n):\n    return n % 2 == 1\n\nassert find_Parity(12) == False, 'find_Parity(12) == False'\nassert find_Parity(7) == True, 'find_Parity(7) == True'\nassert find_Parity(10) == False, 'find_Parity(10) == False'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 406
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 407
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 408
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef min_product_tuple(tuples_list):\n    min_product = float('inf')\n    for a, b in tuples_list:\n        product = a * b\n        if product < min_product:\n            min_product = product\n    return min_product\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef min_product_tuple(tuples_list):\n    min_product = float('inf')\n    for a, b in tuples_list:\n        product = a * b\n        if product < min_product:\n            min_product = product\n    return min_product\n\nassert min_product_tuple([(2, 7), (2, 6), (1, 8), (4, 9)] )==8, 'min_product_tuple([(2, 7), (2, 6), (1, 8), (4, 9)] )==8'\nassert min_product_tuple([(10,20), (15,2), (5,10)] )==30, 'min_product_tuple([(10,20), (15,2), (5,10)] )==30'\nassert min_product_tuple([(11,44), (10,15), (20,5), (12, 9)] )==100, 'min_product_tuple([(11,44), (10,15), (20,5), (12, 9)] )==100'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 409
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 410
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 411
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef remove_odd(nums):\n    return [num for num in nums if num % 2 == 0]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef remove_odd(nums):\n    return [num for num in nums if num % 2 == 0]\n\nassert remove_odd([1,2,3]) == [2], 'remove_odd([1,2,3]) == [2]'\nassert remove_odd([2,4,6]) == [2,4,6], 'remove_odd([2,4,6]) == [2,4,6]'\nassert remove_odd([10,20,3]) == [10,20], 'remove_odd([10,20,3]) == [10,20]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 412
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 413
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef overlapping(seq1, seq2):\n    return bool(set(seq1) & set(seq2))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef overlapping(seq1, seq2):\n    return bool(set(seq1) & set(seq2))\n\nassert overlapping([1,2,3,4,5],[6,7,8,9]) == False, 'overlapping([1,2,3,4,5],[6,7,8,9]) == False'\nassert overlapping([1,2,3],[4,5,6]) == False, 'overlapping([1,2,3],[4,5,6]) == False'\nassert overlapping([1,4,5],[1,4,5]) == True, 'overlapping([1,4,5],[1,4,5]) == True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 414
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 415
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 417
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef Find_Max(lst):\n    return max(lst, key=len)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef Find_Max(lst):\n    return max(lst, key=len)\n\nassert Find_Max([['A'],['A','B'],['A','B','C']]) == ['A','B','C'], \"Find_Max([['A'],['A','B'],['A','B','C']]) == ['A','B','C']\"\nassert Find_Max([[1],[1,2],[1,2,3]]) == [1,2,3], 'Find_Max([[1],[1,2],[1,2,3]]) == [1,2,3]'\nassert Find_Max([[1,1],[1,2,3],[1,5,6,1]]) == [1,5,6,1], 'Find_Max([[1,1],[1,2,3],[1,5,6,1]]) == [1,5,6,1]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 418
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 419
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef cube_Sum(n):\n    return 2 * n * n * (n + 1) * (n + 1)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef cube_Sum(n):\n    return 2 * n * n * (n + 1) * (n + 1)\n\nassert cube_Sum(2) == 72, 'cube_Sum(2) == 72'\nassert cube_Sum(3) == 288, 'cube_Sum(3) == 288'\nassert cube_Sum(4) == 800, 'cube_Sum(4) == 800'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 420
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef concatenate_tuple(tup):\n    return '-'.join(map(str, tup))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef concatenate_tuple(tup):\n    return '-'.join(map(str, tup))\n\nassert concatenate_tuple((\"ID\", \"is\", 4, \"UTS\") ) == 'ID-is-4-UTS', 'concatenate_tuple((\"ID\", \"is\", 4, \"UTS\") ) == \\'ID-is-4-UTS\\''\nassert concatenate_tuple((\"QWE\", \"is\", 4, \"RTY\") ) == 'QWE-is-4-RTY', 'concatenate_tuple((\"QWE\", \"is\", 4, \"RTY\") ) == \\'QWE-is-4-RTY\\''\nassert concatenate_tuple((\"ZEN\", \"is\", 4, \"OP\") ) == 'ZEN-is-4-OP', 'concatenate_tuple((\"ZEN\", \"is\", 4, \"OP\") ) == \\'ZEN-is-4-OP\\''\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 421
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 422
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef extract_rear(strings):\n    return [s[-1] for s in strings]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef extract_rear(strings):\n    return [s[-1] for s in strings]\n\nassert extract_rear(('Mers', 'for', 'Vers') ) == ['s', 'r', 's'], \"extract_rear(('Mers', 'for', 'Vers') ) == ['s', 'r', 's']\"\nassert extract_rear(('Avenge', 'for', 'People') ) == ['e', 'r', 'e'], \"extract_rear(('Avenge', 'for', 'People') ) == ['e', 'r', 'e']\"\nassert extract_rear(('Gotta', 'get', 'go') ) == ['a', 't', 'o'], \"extract_rear(('Gotta', 'get', 'go') ) == ['a', 't', 'o']\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 424
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef count_element_in_list(list_of_lists, element):\n    count = 0\n    for sublist in list_of_lists:\n        if element in sublist:\n            count += 1\n    return count\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef count_element_in_list(list_of_lists, element):\n    count = 0\n    for sublist in list_of_lists:\n        if element in sublist:\n            count += 1\n    return count\n\nassert count_element_in_list([[1, 3], [5, 7], [1, 11], [1, 15, 7]],1)==3, 'count_element_in_list([[1, 3], [5, 7], [1, 11], [1, 15, 7]],1)==3'\nassert count_element_in_list([['A', 'B'], ['A', 'C'], ['A', 'D', 'E'], ['B', 'C', 'D']],'A')==3, \"count_element_in_list([['A', 'B'], ['A', 'C'], ['A', 'D', 'E'], ['B', 'C', 'D']],'A')==3\"\nassert count_element_in_list([['A', 'B'], ['A', 'C'], ['A', 'D', 'E'], ['B', 'C', 'D']],'E')==1, \"count_element_in_list([['A', 'B'], ['A', 'C'], ['A', 'D', 'E'], ['B', 'C', 'D']],'E')==1\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 425
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 426
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 427
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef shell_sort(arr):\n    n = len(arr)\n    gap = n // 2\n    \n    while gap > 0:\n        for i in range(gap, n):\n            temp = arr[i]\n            j = i\n            while j >= gap and arr[j - gap] > temp:\n                arr[j] = arr[j - gap]\n                j -= gap\n            arr[j] = temp\n        gap //= 2\n    \n    return arr\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef shell_sort(arr):\n    n = len(arr)\n    gap = n // 2\n    \n    while gap > 0:\n        for i in range(gap, n):\n            temp = arr[i]\n            j = i\n            while j >= gap and arr[j - gap] > temp:\n                arr[j] = arr[j - gap]\n                j -= gap\n            arr[j] = temp\n        gap //= 2\n    \n    return arr\n\nassert shell_sort([12, 23, 4, 5, 3, 2, 12, 81, 56, 95]) == [2, 3, 4, 5, 12, 12, 23, 56, 81, 95], 'shell_sort([12, 23, 4, 5, 3, 2, 12, 81, 56, 95]) == [2, 3, 4, 5, 12, 12, 23, 56, 81, 95]'\nassert shell_sort([24, 22, 39, 34, 87, 73, 68]) == [22, 24, 34, 39, 68, 73, 87], 'shell_sort([24, 22, 39, 34, 87, 73, 68]) == [22, 24, 34, 39, 68, 73, 87]'\nassert shell_sort([32, 30, 16, 96, 82, 83, 74]) == [16, 30, 32, 74, 82, 83, 96], 'shell_sort([32, 30, 16, 96, 82, 83, 74]) == [16, 30, 32, 74, 82, 83, 96]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 428
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef and_tuples(tup1, tup2):\n    return tuple(a & b for a, b in zip(tup1, tup2))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef and_tuples(tup1, tup2):\n    return tuple(a & b for a, b in zip(tup1, tup2))\n\nassert and_tuples((10, 4, 6, 9), (5, 2, 3, 3)) == (0, 0, 2, 1), 'and_tuples((10, 4, 6, 9), (5, 2, 3, 3)) == (0, 0, 2, 1)'\nassert and_tuples((1, 2, 3, 4), (5, 6, 7, 8)) == (1, 2, 3, 0), 'and_tuples((1, 2, 3, 4), (5, 6, 7, 8)) == (1, 2, 3, 0)'\nassert and_tuples((8, 9, 11, 12), (7, 13, 14, 17)) == (0, 9, 10, 0), 'and_tuples((8, 9, 11, 12), (7, 13, 14, 17)) == (0, 9, 10, 0)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 429
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 430
+        },
+        {
+          "value": 0,
+          "answer": "```python\ndef common_element(list1, list2):\n    return bool(set(list1) & set(list2))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef common_element(list1, list2):\n    return bool(set(list1) & set(list2))\n\nassert common_element([1,2,3,4,5], [5,6,7,8,9])==True, 'common_element([1,2,3,4,5], [5,6,7,8,9])==True'\nassert common_element([1,2,3,4,5], [6,7,8,9])==None, 'common_element([1,2,3,4,5], [6,7,8,9])==None'\nassert common_element(['a','b','c'], ['d','b','e'])==True, \"common_element(['a','b','c'], ['d','b','e'])==True\"\n```\nCode did not pass all test cases.\nSee details below.\n```python\nTraceback (most recent call last):\n  File \"<string>\", line 5, in <module>\nAssertionError: common_element([1,2,3,4,5], [6,7,8,9])==None\n\n```\n",
+          "history": [],
+          "sample_id": 431
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef median_trapezium(a, b, h):\n    return (a + b) / 2\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef median_trapezium(a, b, h):\n    return (a + b) / 2\n\nassert median_trapezium(15,25,35)==20, 'median_trapezium(15,25,35)==20'\nassert median_trapezium(10,20,30)==15, 'median_trapezium(10,20,30)==15'\nassert median_trapezium(6,9,4)==7.5, 'median_trapezium(6,9,4)==7.5'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 432
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef check_greater(arr, num):\n    return num > max(arr)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef check_greater(arr, num):\n    return num > max(arr)\n\nassert check_greater([1, 2, 3, 4, 5], 4) == False, 'check_greater([1, 2, 3, 4, 5], 4) == False'\nassert check_greater([2, 3, 4, 5, 6], 8) == True, 'check_greater([2, 3, 4, 5, 6], 8) == True'\nassert check_greater([9, 7, 4, 8, 6, 1], 11) == True, 'check_greater([9, 7, 4, 8, 6, 1], 11) == True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 433
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\nimport re\ndef text_match_one(text):\n    return bool(re.search(r'ab+', text))\n```",
+          "explanation": "The following code was executed:\n\n```python\nimport re\ndef text_match_one(text):\n    return bool(re.search(r'ab+', text))\n\nassert text_match_one(\"ac\")==False, 'text_match_one(\"ac\")==False'\nassert text_match_one(\"dc\")==False, 'text_match_one(\"dc\")==False'\nassert text_match_one(\"abba\")==True, 'text_match_one(\"abba\")==True'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 434
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef last_Digit(n):\n    return abs(n) % 10\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef last_Digit(n):\n    return abs(n) % 10\n\nassert last_Digit(123) == 3, 'last_Digit(123) == 3'\nassert last_Digit(25) == 5, 'last_Digit(25) == 5'\nassert last_Digit(30) == 0, 'last_Digit(30) == 0'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 435
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef neg_nos(lst):\n    return [x for x in lst if x < 0]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef neg_nos(lst):\n    return [x for x in lst if x < 0]\n\nassert neg_nos([-1,4,5,-6]) == [-1,-6], 'neg_nos([-1,4,5,-6]) == [-1,-6]'\nassert neg_nos([-1,-2,3,4]) == [-1,-2], 'neg_nos([-1,-2,3,4]) == [-1,-2]'\nassert neg_nos([-7,-6,8,9]) == [-7,-6], 'neg_nos([-7,-6,8,9]) == [-7,-6]'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 436
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef remove_odd(s):\n    return ''.join(s[i] for i in range(1, len(s), 2))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef remove_odd(s):\n    return ''.join(s[i] for i in range(1, len(s), 2))\n\nassert remove_odd(\"python\")==(\"yhn\"), 'remove_odd(\"python\")==(\"yhn\")'\nassert remove_odd(\"program\")==(\"rga\"), 'remove_odd(\"program\")==(\"rga\")'\nassert remove_odd(\"language\")==(\"agae\"), 'remove_odd(\"language\")==(\"agae\")'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 437
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 438
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 439
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 440
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef surfacearea_cube(side):\n    return 6 * side * side\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef surfacearea_cube(side):\n    return 6 * side * side\n\nassert surfacearea_cube(5)==150, 'surfacearea_cube(5)==150'\nassert surfacearea_cube(3)==54, 'surfacearea_cube(3)==54'\nassert surfacearea_cube(10)==600, 'surfacearea_cube(10)==600'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 441
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 442
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 443
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 444
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 445
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 446
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef cube_nums(nums):\n    return [x**3 for x in nums]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef cube_nums(nums):\n    return [x**3 for x in nums]\n\nassert cube_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])==[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000], 'cube_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])==[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]'\nassert cube_nums([10,20,30])==([1000, 8000, 27000]), 'cube_nums([10,20,30])==([1000, 8000, 27000])'\nassert cube_nums([12,15])==([1728, 3375]), 'cube_nums([12,15])==([1728, 3375])'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 447
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 448
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef extract_string(strings, size):\n    return [s for s in strings if len(s) == size]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef extract_string(strings, size):\n    return [s for s in strings if len(s) == size]\n\nassert extract_string(['Python', 'list', 'exercises', 'practice', 'solution'] ,8)==['practice', 'solution'], \"extract_string(['Python', 'list', 'exercises', 'practice', 'solution'] ,8)==['practice', 'solution']\"\nassert extract_string(['Python', 'list', 'exercises', 'practice', 'solution'] ,6)==['Python'], \"extract_string(['Python', 'list', 'exercises', 'practice', 'solution'] ,6)==['Python']\"\nassert extract_string(['Python', 'list', 'exercises', 'practice', 'solution'] ,9)==['exercises'], \"extract_string(['Python', 'list', 'exercises', 'practice', 'solution'] ,9)==['exercises']\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 450
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef remove_whitespaces(s):\n    return ''.join(s.split())\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef remove_whitespaces(s):\n    return ''.join(s.split())\n\nassert remove_whitespaces(' Google    Flutter ') == 'GoogleFlutter', \"remove_whitespaces(' Google    Flutter ') == 'GoogleFlutter'\"\nassert remove_whitespaces(' Google    Dart ') == 'GoogleDart', \"remove_whitespaces(' Google    Dart ') == 'GoogleDart'\"\nassert remove_whitespaces(' iOS    Swift ') == 'iOSSwift', \"remove_whitespaces(' iOS    Swift ') == 'iOSSwift'\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 451
+        },
+        {
+          "value": 0,
+          "answer": "```python\ndef loss_amount(cost_price, selling_price):\n    if selling_price < cost_price:\n        return cost_price - selling_price\n    return 0\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef loss_amount(cost_price, selling_price):\n    if selling_price < cost_price:\n        return cost_price - selling_price\n    return 0\n\nassert loss_amount(1500,1200)==0, 'loss_amount(1500,1200)==0'\nassert loss_amount(100,200)==100, 'loss_amount(100,200)==100'\nassert loss_amount(2000,5000)==3000, 'loss_amount(2000,5000)==3000'\n```\nCode did not pass all test cases.\nSee details below.\n```python\nTraceback (most recent call last):\n  File \"<string>\", line 6, in <module>\nAssertionError: loss_amount(1500,1200)==0\n\n```\n",
+          "history": [],
+          "sample_id": 452
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 453
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 454
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 455
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef reverse_string_list(strings):\n    return [s[::-1] for s in strings]\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef reverse_string_list(strings):\n    return [s[::-1] for s in strings]\n\nassert reverse_string_list(['Red', 'Green', 'Blue', 'White', 'Black'])==['deR', 'neerG', 'eulB', 'etihW', 'kcalB'], \"reverse_string_list(['Red', 'Green', 'Blue', 'White', 'Black'])==['deR', 'neerG', 'eulB', 'etihW', 'kcalB']\"\nassert reverse_string_list(['john','amal','joel','george'])==['nhoj','lama','leoj','egroeg'], \"reverse_string_list(['john','amal','joel','george'])==['nhoj','lama','leoj','egroeg']\"\nassert reverse_string_list(['jack','john','mary'])==['kcaj','nhoj','yram'], \"reverse_string_list(['jack','john','mary'])==['kcaj','nhoj','yram']\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 456
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 457
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef rectangle_area(length, width):\n    return length * width\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef rectangle_area(length, width):\n    return length * width\n\nassert rectangle_area(10,20)==200, 'rectangle_area(10,20)==200'\nassert rectangle_area(10,5)==50, 'rectangle_area(10,5)==50'\nassert rectangle_area(4,2)==8, 'rectangle_area(4,2)==8'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 458
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef remove_uppercase(s):\n    return ''.join(char for char in s if not char.isupper())\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef remove_uppercase(s):\n    return ''.join(char for char in s if not char.isupper())\n\nassert remove_uppercase('cAstyoUrFavoRitETVshoWs') == 'cstyoravoitshos', \"remove_uppercase('cAstyoUrFavoRitETVshoWs') == 'cstyoravoitshos'\"\nassert remove_uppercase('wAtchTheinTernEtrAdIo') == 'wtchheinerntrdo', \"remove_uppercase('wAtchTheinTernEtrAdIo') == 'wtchheinerntrdo'\"\nassert remove_uppercase('VoicESeaRchAndreComMendaTionS') == 'oiceachndreomendaion', \"remove_uppercase('VoicESeaRchAndreComMendaTionS') == 'oiceachndreomendaion'\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 459
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 460
+        },
+        {
+          "value": 0,
+          "answer": "```python\ndef upper_ctr(s):\n    return sum(1 for c in s if c.isupper())\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef upper_ctr(s):\n    return sum(1 for c in s if c.isupper())\n\nassert upper_ctr('PYthon') == 1, \"upper_ctr('PYthon') == 1\"\nassert upper_ctr('BigData') == 1, \"upper_ctr('BigData') == 1\"\nassert upper_ctr('program') == 0, \"upper_ctr('program') == 0\"\n```\nCode did not pass all test cases.\nSee details below.\n```python\nTraceback (most recent call last):\n  File \"<string>\", line 4, in <module>\nAssertionError: upper_ctr('PYthon') == 1\n\n```\n",
+          "history": [],
+          "sample_id": 461
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 462
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 463
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 464
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef drop_empty(d):\n    return {k: v for k, v in d.items() if v is not None}\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef drop_empty(d):\n    return {k: v for k, v in d.items() if v is not None}\n\nassert drop_empty({'c1': 'Red', 'c2': 'Green', 'c3':None})=={'c1': 'Red', 'c2': 'Green'}, \"drop_empty({'c1': 'Red', 'c2': 'Green', 'c3':None})=={'c1': 'Red', 'c2': 'Green'}\"\nassert drop_empty({'c1': 'Red', 'c2': None, 'c3':None})=={'c1': 'Red'}, \"drop_empty({'c1': 'Red', 'c2': None, 'c3':None})=={'c1': 'Red'}\"\nassert drop_empty({'c1': None, 'c2': 'Green', 'c3':None})=={ 'c2': 'Green'}, \"drop_empty({'c1': None, 'c2': 'Green', 'c3':None})=={ 'c2': 'Green'}\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 465
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 468
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef add_pairwise(test_tup):\n    return tuple(test_tup[i] + test_tup[i+1] for i in range(len(test_tup) - 1))\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef add_pairwise(test_tup):\n    return tuple(test_tup[i] + test_tup[i+1] for i in range(len(test_tup) - 1))\n\nassert add_pairwise((1, 5, 7, 8, 10)) == (6, 12, 15, 18), 'add_pairwise((1, 5, 7, 8, 10)) == (6, 12, 15, 18)'\nassert add_pairwise((2, 6, 8, 9, 11)) == (8, 14, 17, 20), 'add_pairwise((2, 6, 8, 9, 11)) == (8, 14, 17, 20)'\nassert add_pairwise((3, 7, 9, 10, 12)) == (10, 16, 19, 22), 'add_pairwise((3, 7, 9, 10, 12)) == (10, 16, 19, 22)'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 470
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 471
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 472
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 473
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef replace_char(s, old, new):\n    return s.replace(old, new)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef replace_char(s, old, new):\n    return s.replace(old, new)\n\nassert replace_char(\"polygon\",'y','l')==(\"pollgon\"), 'replace_char(\"polygon\",\\'y\\',\\'l\\')==(\"pollgon\")'\nassert replace_char(\"character\",'c','a')==(\"aharaater\"), 'replace_char(\"character\",\\'c\\',\\'a\\')==(\"aharaater\")'\nassert replace_char(\"python\",'l','a')==(\"python\"), 'replace_char(\"python\",\\'l\\',\\'a\\')==(\"python\")'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 474
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef sort_counter(d):\n    return sorted(d.items(), key=lambda x: x[1], reverse=True)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef sort_counter(d):\n    return sorted(d.items(), key=lambda x: x[1], reverse=True)\n\nassert sort_counter({'Math':81, 'Physics':83, 'Chemistry':87})==[('Chemistry', 87), ('Physics', 83), ('Math', 81)], \"sort_counter({'Math':81, 'Physics':83, 'Chemistry':87})==[('Chemistry', 87), ('Physics', 83), ('Math', 81)]\"\nassert sort_counter({'Math':400, 'Physics':300, 'Chemistry':250})==[('Math', 400), ('Physics', 300), ('Chemistry', 250)], \"sort_counter({'Math':400, 'Physics':300, 'Chemistry':250})==[('Math', 400), ('Physics', 300), ('Chemistry', 250)]\"\nassert sort_counter({'Math':900, 'Physics':1000, 'Chemistry':1250})==[('Chemistry', 1250), ('Physics', 1000), ('Math', 900)], \"sort_counter({'Math':900, 'Physics':1000, 'Chemistry':1250})==[('Chemistry', 1250), ('Physics', 1000), ('Math', 900)]\"\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 475
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef big_sum(arr):\n    return min(arr) + max(arr)\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef big_sum(arr):\n    return min(arr) + max(arr)\n\nassert big_sum([1,2,3]) == 4, 'big_sum([1,2,3]) == 4'\nassert big_sum([-1,2,3,4]) == 3, 'big_sum([-1,2,3,4]) == 3'\nassert big_sum([2,3,6]) == 8, 'big_sum([2,3,6]) == 8'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 476
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef is_lower(s):\n    return s.lower()\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef is_lower(s):\n    return s.lower()\n\nassert is_lower(\"InValid\") == \"invalid\", 'is_lower(\"InValid\") == \"invalid\"'\nassert is_lower(\"TruE\") == \"true\", 'is_lower(\"TruE\") == \"true\"'\nassert is_lower(\"SenTenCE\") == \"sentence\", 'is_lower(\"SenTenCE\") == \"sentence\"'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 477
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef remove_lowercase(s):\n    return ''.join(char for char in s if not char.islower())\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef remove_lowercase(s):\n    return ''.join(char for char in s if not char.islower())\n\nassert remove_lowercase(\"PYTHon\")==('PYTH'), 'remove_lowercase(\"PYTHon\")==(\\'PYTH\\')'\nassert remove_lowercase(\"FInD\")==('FID'), 'remove_lowercase(\"FInD\")==(\\'FID\\')'\nassert remove_lowercase(\"STRinG\")==('STRG'), 'remove_lowercase(\"STRinG\")==(\\'STRG\\')'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 478
+        },
+        {
+          "value": 1.0,
+          "answer": "```python\ndef first_Digit(n):\n    n = abs(n)\n    while n >= 10:\n        n //= 10\n    return n\n```",
+          "explanation": "The following code was executed:\n\n```python\ndef first_Digit(n):\n    n = abs(n)\n    while n >= 10:\n        n //= 10\n    return n\n\nassert first_Digit(123) == 1, 'first_Digit(123) == 1'\nassert first_Digit(456) == 4, 'first_Digit(456) == 4'\nassert first_Digit(12) == 1, 'first_Digit(12) == 1'\n```\nAll test cases passed.\n",
+          "history": [],
+          "sample_id": 479
+        }
+      ]
+    }
+  ]
+}
