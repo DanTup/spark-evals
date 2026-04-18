@@ -7,12 +7,12 @@ Some basic evals run on various models that fit on a single DGX Spark.
 <!-- LEADERBOARD -->
 | name | AgentBench | IfEvalCode |
 | --- | ---: | ---: |
-| [Qwen3 Coder Next FP8](results/qwen3-coder-next/README.md) | **29.6%**<br>*1h 27m* | <u>**11.0%**</u><br>*8h 11m*<br>ts: <u>**0.0%**</u> / **30.0%**<br>c#: <u>**24.3%**</u> / **3.9%**<br>py: <u>**54.3%**</u> / <u>**36.2%**</u><br>sh: **35.0%** / **52.0%** |
-| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-fp8/README.md) | <u>**34.4%**</u><br>*1h 0m* | **8.7%**<br>*4h 59m*<br>ts: <u>**0.0%**</u> / <u>**37.0%**</u><br>c#: **17.0%** / <u>**6.0%**</u><br>sh: <u>**40.0%**</u> / <u>**59.0%**</u> |
-| [Qwen3.5 35B-A3B FP8](results/qwen35-35b-fp8/README.md) | **28.0%**<br>*2h 19m* |  |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-fp8/README.md) | <u>**34.4%**</u><br>*1h 0m* | <u>**8.7%**</u><br>*4h 59m*<br>ts: <u>**0.0%**</u> / <u>**37.0%**</u><br>c#: **17.0%** / <u>**6.0%**</u><br>sh: <u>**40.0%**</u> / <u>**59.0%**</u> |
+| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/README.md) | **28.8%**<br>*19m 23s* | **6.7%**<br>*27m 11s*<br>ts: <u>**0.0%**</u> / **31.0%**<br>c#: <u>**20.0%**</u> / **4.0%**<br>sh: **36.0%** / **47.0%** |
 | [Nemotron 3 Super 120B-A12B NVFP4](results/nemotron-super-nvfp4-fp8kv/README.md)<br>quantization=fp4 kv-cache-dtype=fp8 | **27.2%**<br>*11h 44m* |  |
-| [Gemma4 26B-A4B](results/gemma4-26b/README.md) | **27.2%**<br>*1h 28m* | **6.3%**<br>*2h 19m*<br>ts: <u>**0.0%**</u> / **29.0%**<br>c#: **20.0%** / **5.0%**<br>sh: **38.0%** / **51.0%** |
+| [Gemma4 26B-A4B](results/gemma4-26b/README.md) | **27.2%**<br>*1h 28m* | **6.3%**<br>*2h 19m*<br>ts: <u>**0.0%**</u> / **29.0%**<br>c#: <u>**20.0%**</u> / **5.0%**<br>sh: **38.0%** / **51.0%** |
 | [Gemma4 E2B](results/gemma4-e2b/README.md) | **20.0%**<br>*12m 58s* | **2.0%**<br>*18m 28s*<br>ts: <u>**0.0%**</u> / **26.0%**<br>c#: **8.0%** / **4.0%**<br>sh: **14.0%** / **51.0%** |
+| [Qwen3.5 35B-A3B FP8](results/qwen35-35b-fp8/README.md) |  |  |
 <!-- /LEADERBOARD -->
 
 ## Running Evals

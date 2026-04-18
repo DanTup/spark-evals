@@ -23,7 +23,7 @@ docker run \
   -e VLLM_FLASHINFER_ALLREDUCE_BACKEND=trtllm \
   -e VLLM_USE_FLASHINFER_MOE_FP4=0 \
   --ulimit memlock=-1 --ulimit stack=67108864 --shm-size=64gb \
-  vllm/vllm-openai:cu130-nightly \
+  vllm/vllm-openai:gemma4-cu130 \
   nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4 \
     --served-model-name nemo-super \
     --gpu-memory-utilization 0.90 \
