@@ -1,13 +1,13 @@
 ---
-name: Qwen3 Coder Next FP8
+name: Qwen3.6 35B-A3B NVFP4
 params:
-  total: 80
+  total: 35
   active: 3
 ---
 
 ```bash
 docker run \
-  --name qwen3-coder \
+  --name qwen36 \
   -d \
   --gpus all \
   --restart unless-stopped \
@@ -17,16 +17,19 @@ docker run \
   -v ~/ext/cache/vllm:/root/.cache/vllm \
   -e VLLM_NO_USAGE_STATS=1 \
   vllm/vllm-openai:v0.19.1-cu130 \
-    Qwen/Qwen3-Coder-Next-FP8 \
+    RedHatAI/Qwen3.6-35B-A3B-NVFP4 \
     --host 0.0.0.0 \
-    --gpu-memory-utilization 0.8 \
-    --served-model-name qwen3-coder \
+    --gpu-memory-utilization 0.85 \
+    --served-model-name qwen36 \
     --max-model-len 256k \
+    --language-model-only \
+    --reasoning-parser qwen3 \
+    --moe_backend flashinfer_cutlass \
     --enable-auto-tool-choice \
     --tool-call-parser qwen3_coder \
     --enable-chunked-prefill \
     --max-num-batched-tokens 32768 \
     --max-num-seqs 10 \
     --enable-prefix-caching \
-    --trust-remote-code
+    --speculative-config '{"method": "mtp", "num_speculative_tokens": 2}'
 ```

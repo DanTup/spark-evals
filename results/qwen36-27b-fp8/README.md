@@ -1,8 +1,6 @@
 ---
-name: Qwen3.6 35B-A3B FP8
-params:
-  total: 35
-  active: 3
+name: Qwen3.6 27B FP8
+params: 27
 ---
 
 ```bash
@@ -16,9 +14,8 @@ docker run \
   -v ~/ext/cache/huggingface:/root/.cache/huggingface \
   -v ~/ext/cache/vllm:/root/.cache/vllm \
   -e VLLM_NO_USAGE_STATS=1 \
-  vllm/vllm-openai:latest-aarch64-cu130-ubuntu2404 \
-    Qwen/Qwen3.6-35B-A3B-FP8 \
-    --port 8000 \
+  vllm/vllm-openai:v0.19.1-cu130 \
+    Qwen/Qwen3.6-27B-FP8 \
     --host 0.0.0.0 \
     --gpu-memory-utilization 0.85 \
     --served-model-name qwen36 \
@@ -28,8 +25,8 @@ docker run \
     --enable-auto-tool-choice \
     --tool-call-parser qwen3_coder \
     --enable-chunked-prefill \
-    --max-num-batched-tokens 65536 \
-    --max-num-seqs 15 \
+    --max-num-batched-tokens 32768 \
+    --max-num-seqs 10 \
     --enable-prefix-caching \
     --speculative-config '{"method": "mtp", "num_speculative_tokens": 2}'
 ```

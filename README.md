@@ -5,20 +5,18 @@ Some basic evals run on various models that fit on a single DGX Spark.
 ## Leaderboard
 
 <!-- LEADERBOARD -->
-| name | AgentBench | IfEvalCode |
-| --- | ---: | ---: |
-| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-fp8/README.md) | <u>**34.4%**</u><br>*1h 0m* | <u>**8.7%**</u><br>*4h 59m*<br>ts: <u>**0.0%**</u> / <u>**37.0%**</u><br>c#: **17.0%** / <u>**6.0%**</u><br>sh: **40.0%** / <u>**59.0%**</u> |
-| [Qwen3.6 35B-A3B](results/qwen36-35b/README.md) | **29.6%**<br>*1h 27m* | <u>**8.7%**</u><br>*9h 38m*<br>ts: <u>**0.0%**</u> / **27.0%**<br>c#: **14.0%** / <u>**6.0%**</u><br>sh: <u>**41.0%**</u> / **57.0%** |
-| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/README.md) | **28.8%**<br>*19m 23s* | **6.7%**<br>*27m 11s*<br>ts: <u>**0.0%**</u> / **31.0%**<br>c#: <u>**20.0%**</u> / **4.0%**<br>sh: **36.0%** / **47.0%** |
-| [Nemotron 3 Super 120B-A12B NVFP4](results/nemotron-super-nvfp4-fp8kv/README.md)<br>quantization=fp4 kv-cache-dtype=fp8 | **27.2%**<br>*11h 44m* |  |
-| [Gemma4 26B-A4B](results/gemma4-26b/README.md) | **27.2%**<br>*1h 28m* | **6.3%**<br>*2h 19m*<br>ts: <u>**0.0%**</u> / **29.0%**<br>c#: <u>**20.0%**</u> / **5.0%**<br>sh: **38.0%** / **51.0%** |
-| [Gemma4 E2B](results/gemma4-e2b/README.md) | **20.0%**<br>*12m 58s* | **2.0%**<br>*18m 28s*<br>ts: <u>**0.0%**</u> / **26.0%**<br>c#: **8.0%** / **4.0%**<br>sh: **14.0%** / **51.0%** |
-| [Qwen3.5 35B-A3B FP8](results/qwen35-35b-fp8/README.md) |  |  |
+| name | AgentBench |
+| --- | ---: |
+| [Qwen3.6 27B](results/qwen36-27b/README.md) | <u>**59.3%**</u><br>*2h 41m* |
+| [Qwen3.6 27B FP8](results/qwen36-27b-fp8/README.md) | **58.7%**<br>*1h 44m* |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/README.md) | **55.3%**<br>*2h 9m* |
+| [Qwen3.6 35B-A3B](results/qwen36-35b-a3b/README.md) | **52.7%**<br>*2h 34m* |
+| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/README.md) | **46.0%**<br>*32m 49s* |
+| [Gemma4 26B-A4B](results/gemma4-26b-a4b/README.md) | **44.0%**<br>*2h 16m* |
+| [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/README.md) |  |
 <!-- /LEADERBOARD -->
 
 ## Running Evals
-
-The commands below only run a subset (100 samples) of each and only two epochs (keeping the highest score). This might lead to some variance in scores but avoids the benchmarks taking too long.
 
 Because some of these evals require installing packages and also spawn Docker containers, I recommend running everything inside a VM or on a spare machine. This does not need to run on the DGX Spark (and if you're running a large model, it might be better to run it on another machine). The instructions below assume a clean Ubuntu installation.
 
@@ -28,7 +26,7 @@ Because some of these evals require installing packages and also spawn Docker co
 export PATH=$PATH:~/.local/bin
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends ca-certificates curl jq python3 python3-pip python-is-python3
-python3 -m pip install --break-system-packages openai inspect-evals inspect-evals[ifevalcode]
+python3 -m pip install --break-system-packages openai inspect-evals
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 chmod +x get-docker.sh
@@ -45,7 +43,7 @@ Each time you want to run evals, set some env vars with the details of the LLM e
 ```bash
 export EVAL_BASE_URL="http://192.168.0.132:8111/v1"
 export EVAL_MODEL="gemma4"
-export EVAL_RESULTS_FOLDER="gemma4-26b"
+export EVAL_RESULTS_FOLDER="gemma4-26b-a4b"
 ```
 
 ### Start the Evals
@@ -63,10 +61,9 @@ export PATH=$PATH:~/.local/bin
 mkdir -p "results/$EVAL_RESULTS_FOLDER"
 inspect eval-set \
 	--log-dir "results/$EVAL_RESULTS_FOLDER" --log-format json --log-dir-allow-dirty \
-	--no-log-realtime --no-log-samples --no-log-images --log-buffer 500 --no-score-display --no-fail-on-error \
-	--time-limit 1800 --max-tasks 1 --limit 1-300 \
-	inspect_evals/ifevalcode inspect_evals/agent_bench_os \
-	-T languages=typescript,csharp,shell -T samples-per-language=100
+	--no-log-realtime --no-log-samples --no-log-images --log-buffer 100 --no-score-display --no-fail-on-error \
+	--time-limit 900 --max-tasks 1 --max-connections 4 --max-subprocesses 4 --max-sandboxes 4 --limit 1-50 --epochs 3 \
+	inspect_evals/agent_bench_os
 ```
 
 ### Create a PR
