@@ -1,8 +1,8 @@
 ---
-name: Qwen3.6 35B-A3B NVFP4
-params:
-  total: 35
-  active: 3
+name: Qwen3.6 27B
+params: 27
+flags:
+  speculative-config: dflash(15)
 ---
 
 ```bash
@@ -17,7 +17,7 @@ docker run \
   -v ~/ext/cache/vllm:/root/.cache/vllm \
   -e VLLM_NO_USAGE_STATS=1 \
   vllm/vllm-openai:cu130-nightly \
-    RedHatAI/Qwen3.6-35B-A3B-NVFP4 \
+    Qwen/Qwen3.6-27B \
     --host 0.0.0.0 \
     --gpu-memory-utilization 0.85 \
     --served-model-name qwen36 \
@@ -30,5 +30,6 @@ docker run \
     --max-num-batched-tokens 32768 \
     --max-num-seqs 10 \
     --enable-prefix-caching \
-    --speculative-config '{"method": "mtp", "num_speculative_tokens": 2}'
+    --speculative-config '{"method": "dflash", "model": "z-lab/Qwen3.6-27B-DFlash", "num_speculative_tokens": 15}' \
+    --attention-backend flash_attn
 ```

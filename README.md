@@ -5,15 +5,18 @@ Some basic evals run on various models that fit on a single DGX Spark.
 ## Leaderboard
 
 <!-- LEADERBOARD -->
-| name | AgentBench |
-| --- | ---: |
-| [Qwen3.6 27B](results/qwen36-27b/README.md) | <u>**59.3%**</u><br>*2h 41m* |
-| [Qwen3.6 27B FP8](results/qwen36-27b-fp8/README.md) | **58.7%**<br>*1h 44m* |
-| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/README.md) | **55.3%**<br>*2h 9m* |
-| [Qwen3.6 35B-A3B](results/qwen36-35b-a3b/README.md) | **52.7%**<br>*2h 34m* |
-| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/README.md) | **46.0%**<br>*32m 49s* |
-| [Gemma4 26B-A4B](results/gemma4-26b-a4b/README.md) | **44.0%**<br>*2h 16m* |
-| [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/README.md) |  |
+| name | AgentBench | bfcl |
+| --- | ---: | ---: |
+| [Qwen3.6 27B](results/qwen36-27b/README.md) | <u>**59.3%**</u><br>*2h 41m* | **77.3%**<br>*1h 13m* |
+| [Qwen3.6 27B](results/qwen36-27b-dflash/README.md)<br>speculative-config=dflash(15) | **58.0%**<br>*2h 42m* | **77.3%**<br>*48m 58s* |
+| [Qwen3.6 27B FP8](results/qwen36-27b-fp8/README.md) | **58.7%**<br>*1h 44m* | **75.3%**<br>*37m 26s* |
+| [Qwen3.6 27B](results/qwen36-27b-nothink/README.md)<br>enable_thinking=False | **56.0%**<br>*1h 40m* | <u>**78.0%**</u><br>*11m 52s* |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/README.md) | **55.3%**<br>*2h 9m* | <u>**78.0%**</u><br>*17m 3s* |
+| [Qwen3.6 35B-A3B](results/qwen36-35b-a3b/README.md) | **52.7%**<br>*2h 34m* | <u>**78.0%**</u><br>*25m 5s* |
+| [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/README.md) | **52.7%**<br>*2h 0m* | **77.3%**<br>*18m 32s* |
+| [Gemma4 31B](results/gemma4-31b/README.md) | **45.3%**<br>*2h 4m* | **77.3%**<br>*19m 49s* |
+| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/README.md) | **46.0%**<br>*32m 49s* |  |
+| [Gemma4 26B-A4B](results/gemma4-26b-a4b/README.md) | **44.0%**<br>*2h 16m* |  |
 <!-- /LEADERBOARD -->
 
 ## Running Evals
@@ -60,10 +63,11 @@ export PATH=$PATH:~/.local/bin
 
 mkdir -p "results/$EVAL_RESULTS_FOLDER"
 inspect eval-set \
-	--log-dir "results/$EVAL_RESULTS_FOLDER" --log-format json --log-dir-allow-dirty \
-	--no-log-realtime --no-log-samples --no-log-images --log-buffer 100 --no-score-display --no-fail-on-error \
-	--time-limit 900 --max-tasks 1 --max-connections 4 --max-subprocesses 4 --max-sandboxes 4 --limit 1-50 --epochs 3 \
-	inspect_evals/agent_bench_os
+  --log-dir "results/$EVAL_RESULTS_FOLDER" --log-format json --log-dir-allow-dirty \
+  --no-log-realtime --no-log-samples --no-log-images --log-buffer 100 --no-score-display --no-fail-on-error \
+  --time-limit 900 --max-tasks 1 --max-connections 4 --max-subprocesses 4 --max-sandboxes 4 --limit 1-50 --epochs 3 \
+  inspect_evals/bfcl inspect_evals/agent_bench_os \
+  -T "categories=['exec_parallel_multiple','irrelevance']"
 ```
 
 ### Create a PR

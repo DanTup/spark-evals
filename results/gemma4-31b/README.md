@@ -1,13 +1,11 @@
 ---
-name: Qwen3.6 35B-A3B NVFP4
-params:
-  total: 35
-  active: 3
+name: Gemma4 31B
+params: 31
 ---
 
 ```bash
 docker run \
-  --name qwen36 \
+  --name gemma4 \
   -d \
   --gpus all \
   --restart unless-stopped \
@@ -16,19 +14,18 @@ docker run \
   -v ~/ext/cache/huggingface:/root/.cache/huggingface \
   -v ~/ext/cache/vllm:/root/.cache/vllm \
   -e VLLM_NO_USAGE_STATS=1 \
-  vllm/vllm-openai:cu130-nightly \
-    RedHatAI/Qwen3.6-35B-A3B-NVFP4 \
+  vllm/vllm-openai:v0.19.1-cu130 \
+    google/gemma-4-31B-it \
     --host 0.0.0.0 \
-    --gpu-memory-utilization 0.85 \
-    --served-model-name qwen36 \
-    --max-model-len 256k \
-    --language-model-only \
-    --reasoning-parser qwen3 \
+    --gpu-memory-utilization 0.9 \
+    --served-model-name gemma4 \
+    --max-model-len 120k \
+    --reasoning-parser gemma4 \
     --enable-auto-tool-choice \
-    --tool-call-parser qwen3_coder \
+    --tool-call-parser gemma4 \
     --enable-chunked-prefill \
     --max-num-batched-tokens 32768 \
     --max-num-seqs 10 \
     --enable-prefix-caching \
-    --speculative-config '{"method": "mtp", "num_speculative_tokens": 2}'
+    --trust-remote-code
 ```
