@@ -21,7 +21,7 @@ docker run \
     --host 0.0.0.0 \
     --gpu-memory-utilization 0.85 \
     --served-model-name qwen36 \
-    --max-model-len 256k \
+    --max-model-len 256K \
     --language-model-only \
     --reasoning-parser qwen3 \
     --enable-auto-tool-choice \

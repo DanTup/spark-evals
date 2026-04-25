@@ -19,7 +19,7 @@ docker run \
     --host 0.0.0.0 \
     --gpu-memory-utilization 0.9 \
     --served-model-name gemma4 \
-    --max-model-len 120k \
+    --max-model-len 128K \
     --reasoning-parser gemma4 \
     --enable-auto-tool-choice \
     --tool-call-parser gemma4 \
