@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
-from leaderboard_formatting import escape_markdown, format_flags, format_score_cell, format_score_display, join_cell_lines
+from leaderboard_formatting import escape_markdown, format_flags, format_score, format_score_cell, format_score_display, join_cell_lines
 from leaderboard_frontmatter import load_frontmatter
 
 
@@ -18,14 +19,21 @@ RESULTS_DIR = ROOT_DIR / "results"
 README_PATH = ROOT_DIR / "README.md"
 LEADERBOARD_START = "<!-- LEADERBOARD -->"
 LEADERBOARD_END = "<!-- /LEADERBOARD -->"
+SORT_BENCHMARK_MIN_COVERAGE = 0.75
+# Flip this on to render the computed sort field as a debug column in the README.
+# Keep this off for the normal leaderboard output.
+SHOW_SORT_DEBUG_COLUMN = False
 LANGUAGES = ["typescript", "csharp", "dart", "python", "shell"]
 BENCHMARK_ALIASES = {
-	"agent_bench_os": "AgentBench",
-	"arc_challenge": "ARC Challenge",
+	"agent_bench_os": "Agent<br>Bench",
+	"arc_challenge": "ARC<br>Challenge",
 	"ifevalcode": "IfEvalCode",
 	"mbpp": "MBPP",
 	"swe_bench": "SWE-bench",
 	"swe_lancer": "SWE Lancer",
+	"assistant_bench_closed_book_one_shot": "Assis'<br>Bench<br>CBOS",
+	"assistant_bench_closed_book_zero_shot": "Assis'<br>Bench<br>CBZS",
+	"theagentcompany": "The<br>Agent<br>Co",
 }
 LANGUAGE_ALIASES = {
 	"typescript": "ts",
@@ -60,10 +68,10 @@ def main() -> None:
 	benchmarks = ordered_benchmarks(models)
 	columns = ordered_benchmark_columns(models)
 	highest_scores = benchmark_high_scores(models, benchmarks)
-	primary_benchmarks = [benchmark for benchmark in benchmarks if not is_language_benchmark(benchmark)]
-	models.sort(key=lambda model: average_score(model, primary_benchmarks, highest_scores), reverse=True)
+	sort_benchmarks = sortable_benchmarks(models, benchmarks)
+	models.sort(key=lambda model: average_score(model, sort_benchmarks, highest_scores), reverse=True)
 
-	leaderboard = render_leaderboard(models, columns, highest_scores)
+	leaderboard = render_leaderboard(models, columns, highest_scores, sort_benchmarks)
 	update_readme(leaderboard)
 
 
@@ -128,7 +136,7 @@ def extract_benchmark_scores(result: dict[str, Any], result_path: Path) -> dict[
 	scores = result.get("results", {}).get("scores", [])
 	for score in scores:
 		metrics = score.get("metrics", {})
-		accuracy = metrics.get("accuracy") or metrics.get("overall_accuracy")
+		accuracy = metrics.get("accuracy") or metrics.get("overall_accuracy") or metrics.get("assistant_bench_accuracy")
 		if not isinstance(metrics, dict):
 			continue
 
@@ -202,6 +210,19 @@ def ordered_benchmark_columns(models: list[ModelResult]) -> list[BenchmarkColumn
 	return columns
 
 
+def sortable_benchmarks(models: list[ModelResult], benchmarks: list[str]) -> list[str]:
+	primary_benchmarks = [benchmark for benchmark in benchmarks if not is_language_benchmark(benchmark)]
+	minimum_models = math.ceil(len(models) * SORT_BENCHMARK_MIN_COVERAGE)
+	eligible_benchmarks = [
+		benchmark
+		for benchmark in primary_benchmarks
+		if sum(1 for model in models if benchmark in model.scores) >= minimum_models
+	]
+	if eligible_benchmarks:
+		return eligible_benchmarks
+	return primary_benchmarks
+
+
 def base_benchmark_name(benchmark: str) -> str:
 	for language in LANGUAGES:
 		instruction_suffix = f" {language} instruction"
@@ -243,9 +264,13 @@ def render_leaderboard(
 	models: list[ModelResult],
 	columns: list[BenchmarkColumn],
 	highest_scores: dict[str, float | None],
+	sort_benchmarks: list[str],
 ) -> str:
 	headers = ["name", *(display_benchmark_name(column.benchmark) for column in columns)]
 	alignments = ["---", *("---:" for _ in columns)]
+	if SHOW_SORT_DEBUG_COLUMN:
+		headers.append("Average Normalized")
+		alignments.append("---:")
 	rows = [
 		"| " + " | ".join(headers) + " |",
 		"| " + " | ".join(alignments) + " |",
@@ -257,6 +282,8 @@ def render_leaderboard(
 		row = [join_cell_lines(link, flags)]
 		for column in columns:
 			row.append(render_benchmark_cell(model, column, highest_scores))
+		if SHOW_SORT_DEBUG_COLUMN:
+			row.append(format_score(average_score(model, sort_benchmarks, highest_scores)))
 		rows.append("| " + " | ".join(row) + " |")
 
 	return "\n".join(rows)

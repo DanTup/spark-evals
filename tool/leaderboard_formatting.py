@@ -60,15 +60,16 @@ def join_cell_lines(*lines: str) -> str:
 
 
 def format_score_display(score: float, is_highest: bool = False) -> str:
-	formatted = f"**{format_score(score)}**"
+	formatted = f"<nobr>{format_score(score)}</nobr>"
 	if is_highest:
-		return f"<u>{formatted}</u>"
+		return f"***{formatted}***"
 	return formatted
 
 
 def format_score_cell(score: float, duration: timedelta | None, is_highest: bool = False) -> str:
 	runtime = format_duration(duration)
-	return join_cell_lines(format_score_display(score, is_highest), f"*{runtime}*" if runtime else "")
+	formatted_runtime = f"<nobr>{runtime}</nobr>" if runtime else ""
+	return join_cell_lines(format_score_display(score, is_highest), formatted_runtime)
 
 
 def escape_markdown(value: str) -> str:
