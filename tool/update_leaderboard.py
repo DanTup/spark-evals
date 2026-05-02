@@ -24,6 +24,7 @@ SORT_BENCHMARK_MIN_COVERAGE = 0.75
 # Keep this off for the normal leaderboard output.
 SHOW_SORT_DEBUG_COLUMN = False
 LANGUAGES = ["typescript", "csharp", "dart", "python", "shell"]
+IGNORED_RESULT_FILENAMES = {"eval-set.json", "logs.json"}
 BENCHMARK_ALIASES = {
 	"agent_bench_os": "Agent<br>Bench",
 	"arc_challenge": "ARC<br>Challenge",
@@ -95,6 +96,9 @@ def load_scores(model_dir: Path) -> dict[str, BenchmarkResult]:
 	scores_by_benchmark: dict[str, tuple[str, BenchmarkResult]] = {}
 
 	for result_path in sorted(model_dir.glob("*.json")):
+		if result_path.name in IGNORED_RESULT_FILENAMES:
+			continue
+
 		with result_path.open(encoding="utf-8") as handle:
 			result = json.load(handle)
 
@@ -135,10 +139,14 @@ def extract_benchmark_scores(result: dict[str, Any], result_path: Path) -> dict[
 	benchmark = extract_benchmark_name(result, result_path)
 	scores = result.get("results", {}).get("scores", [])
 	for score in scores:
+		if not isinstance(score, dict):
+			continue
+
 		metrics = score.get("metrics", {})
-		accuracy = metrics.get("accuracy") or metrics.get("overall_accuracy") or metrics.get("assistant_bench_accuracy")
 		if not isinstance(metrics, dict):
 			continue
+
+		accuracy = metrics.get("accuracy") or metrics.get("overall_accuracy") or metrics.get("assistant_bench_accuracy")
 
 		benchmark_scores: dict[str, float] = {}
 		if isinstance(accuracy, dict) and isinstance(accuracy.get("value"), (int, float)):
@@ -162,7 +170,31 @@ def extract_benchmark_scores(result: dict[str, Any], result_path: Path) -> dict[
 		if benchmark_scores:
 			return benchmark_scores
 
-	raise ValueError("Could not find accuracy metric in result file")
+	raise ValueError(
+		"Could not find accuracy metric in result file "
+		f"{result_path}: {describe_result_payload(result)}"
+	)
+
+
+def describe_result_payload(result: dict[str, Any]) -> str:
+	results = result.get("results")
+	if isinstance(results, dict):
+		results_summary = {
+			"results_keys": sorted(results.keys()),
+			"score_count": len(results.get("scores", [])) if isinstance(results.get("scores"), list) else None,
+			"score_metric_keys": [
+				sorted(score.get("metrics", {}).keys())
+				for score in results.get("scores", [])
+				if isinstance(score, dict) and isinstance(score.get("metrics"), dict)
+			],
+		}
+	else:
+		results_summary = {
+			"results_type": type(results).__name__,
+			"top_level_keys": sorted(result.keys()),
+		}
+
+	return json.dumps(results_summary, ensure_ascii=True, sort_keys=True, indent=2)
 
 
 def extract_metric_value(metric: Any) -> float | None:
@@ -277,7 +309,7 @@ def render_leaderboard(
 	]
 
 	for model in models:
-		link = f"[{escape_markdown(model.name)}](results/{model.folder_name}/README.md)"
+		link = f"[{escape_markdown(model.name)}](results/{model.folder_name}/)"
 		flags = escape_markdown(format_flags(model.flags))
 		row = [join_cell_lines(link, flags)]
 		for column in columns:
