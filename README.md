@@ -7,9 +7,9 @@ Some basic evals run on various models that fit on a single DGX Spark.
 <!-- LEADERBOARD -->
 | name | Agent<br>Bench | Assis'<br>Bench<br>CBOS | Assis'<br>Bench<br>CBZS | bfcl | The<br>Agent<br>Co |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/) | <nobr>55.3%</nobr><br><nobr>2h 9m</nobr> |  |  | <nobr>78.0%</nobr><br><nobr>17m 3s</nobr> |  |
 | [Qwen3.6 35B-A3B](results/qwen36-35b-a3b/) | <nobr>52.7%</nobr><br><nobr>2h 34m</nobr> | <nobr>35.7%</nobr><br><nobr>54m 49s</nobr> | <nobr>37.9%</nobr><br><nobr>59m 20s</nobr> | <nobr>78.0%</nobr><br><nobr>25m 5s</nobr> | ***<nobr>16.7%</nobr>***<br><nobr>1h 40m</nobr> |
 | [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/) | <nobr>52.7%</nobr><br><nobr>2h 0m</nobr> | ***<nobr>40.6%</nobr>***<br><nobr>36m 4s</nobr> | ***<nobr>39.7%</nobr>***<br><nobr>34m 55s</nobr> | <nobr>77.3%</nobr><br><nobr>18m 32s</nobr> | <nobr>13.3%</nobr><br><nobr>1h 26m</nobr> |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/) | <nobr>55.3%</nobr><br><nobr>2h 9m</nobr> | <nobr>33.4%</nobr><br><nobr>37m 15s</nobr> | <nobr>33.8%</nobr><br><nobr>37m 10s</nobr> | <nobr>78.0%</nobr><br><nobr>17m 3s</nobr> | ***<nobr>16.7%</nobr>***<br><nobr>1h 28m</nobr> |
 | [Qwen3.6 27B FP8](results/qwen36-27b-fp8/) | <nobr>58.7%</nobr><br><nobr>1h 44m</nobr> | <nobr>37.1%</nobr><br><nobr>1h 32m</nobr> | <nobr>37.5%</nobr><br><nobr>1h 37m</nobr> | <nobr>75.3%</nobr><br><nobr>37m 26s</nobr> | <nobr>10.0%</nobr><br><nobr>1h 47m</nobr> |
 | [Qwen3.6 27B](results/qwen36-27b-nothink/)<br>enable_thinking=False | <nobr>56.0%</nobr><br><nobr>1h 40m</nobr> | <nobr>40.6%</nobr><br><nobr>35m 36s</nobr> | <nobr>34.4%</nobr><br><nobr>46m 52s</nobr> | <nobr>78.0%</nobr><br><nobr>11m 52s</nobr> | <nobr>10.0%</nobr><br><nobr>1h 46m</nobr> |
 | [Qwen3.6 27B](results/qwen36-27b/) | ***<nobr>59.3%</nobr>***<br><nobr>2h 41m</nobr> | <nobr>34.0%</nobr><br><nobr>2h 21m</nobr> | <nobr>38.0%</nobr><br><nobr>2h 55m</nobr> | <nobr>77.3%</nobr><br><nobr>1h 13m</nobr> | <nobr>10.0%</nobr><br><nobr>1h 53m</nobr> |
