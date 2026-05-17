@@ -1,0 +1,644 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_set_id": "RpGaQQSJKqkjSy43iKGYy9",
+    "eval_id": "7VjtAnSk922vAsTesTebSJ",
+    "run_id": "UBxb4xzn7YuUaVoXuai97t",
+    "created": "2026-05-11T01:11:40+00:00",
+    "task": "inspect_evals/bfcl",
+    "task_id": "RZA6LRcxHCmU6UGBWsNxv9",
+    "task_version": 5,
+    "task_display_name": "bfcl",
+    "task_registry_name": "inspect_evals/bfcl",
+    "task_attribs": {},
+    "task_args": {
+      "categories": [
+        "exec_parallel_multiple",
+        "irrelevance"
+      ]
+    },
+    "task_args_passed": {
+      "categories": [
+        "exec_parallel_multiple",
+        "irrelevance"
+      ]
+    },
+    "dataset": {
+      "name": "BFCL",
+      "location": "/home/ubuntu/.cache/inspect_evals/BFCL",
+      "samples": 280,
+      "sample_ids": [
+        "exec_parallel_multiple_0",
+        "exec_parallel_multiple_1",
+        "exec_parallel_multiple_10",
+        "exec_parallel_multiple_11",
+        "exec_parallel_multiple_12",
+        "exec_parallel_multiple_13",
+        "exec_parallel_multiple_14",
+        "exec_parallel_multiple_15",
+        "exec_parallel_multiple_16",
+        "exec_parallel_multiple_17",
+        "exec_parallel_multiple_18",
+        "exec_parallel_multiple_19",
+        "exec_parallel_multiple_2",
+        "exec_parallel_multiple_20",
+        "exec_parallel_multiple_21",
+        "exec_parallel_multiple_22",
+        "exec_parallel_multiple_23",
+        "exec_parallel_multiple_24",
+        "exec_parallel_multiple_25",
+        "exec_parallel_multiple_26",
+        "exec_parallel_multiple_27",
+        "exec_parallel_multiple_28",
+        "exec_parallel_multiple_29",
+        "exec_parallel_multiple_3",
+        "exec_parallel_multiple_30",
+        "exec_parallel_multiple_31",
+        "exec_parallel_multiple_32",
+        "exec_parallel_multiple_33",
+        "exec_parallel_multiple_34",
+        "exec_parallel_multiple_35",
+        "exec_parallel_multiple_36",
+        "exec_parallel_multiple_37",
+        "exec_parallel_multiple_38",
+        "exec_parallel_multiple_39",
+        "exec_parallel_multiple_4",
+        "exec_parallel_multiple_5",
+        "exec_parallel_multiple_6",
+        "exec_parallel_multiple_7",
+        "exec_parallel_multiple_8",
+        "exec_parallel_multiple_9",
+        "irrelevance_0",
+        "irrelevance_1",
+        "irrelevance_10",
+        "irrelevance_100",
+        "irrelevance_101",
+        "irrelevance_102",
+        "irrelevance_103",
+        "irrelevance_104",
+        "irrelevance_105",
+        "irrelevance_106"
+      ],
+      "shuffled": false
+    },
+    "model": "openai/gemma4",
+    "model_generate_config": {
+      "max_connections": 6
+    },
+    "model_args": {},
+    "config": {
+      "limit": [
+        0,
+        50
+      ],
+      "epochs": 7,
+      "epochs_reducer": [
+        "median"
+      ],
+      "fail_on_error": false,
+      "continue_on_fail": false,
+      "score_on_error": false,
+      "message_limit": 1000,
+      "time_limit": 1800,
+      "max_tasks": 1,
+      "max_subprocesses": 8,
+      "max_sandboxes": 8,
+      "sandbox_cleanup": true,
+      "log_samples": false,
+      "log_realtime": false,
+      "log_images": false,
+      "log_buffer": 100,
+      "log_shared": 0,
+      "score_display": false
+    },
+    "packages": {
+      "inspect_ai": "0.3.217",
+      "inspect_evals": "0.10.1"
+    },
+    "metadata": {
+      "full_task_version": "5-B",
+      "task_interface_version": "B",
+      "task_comparability_version": 5
+    },
+    "scorers": [
+      {
+        "name": "bfcl_scorer",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/grouped",
+            "options": {
+              "metric": {
+                "type": "metric",
+                "name": "accuracy",
+                "params": {}
+              },
+              "group_key": "category_name",
+              "name_template": "{group_name}_acc"
+            }
+          },
+          {
+            "name": "inspect_ai/grouped",
+            "options": {
+              "metric": {
+                "type": "metric",
+                "name": "stderr",
+                "params": {}
+              },
+              "group_key": "category_name",
+              "name_template": "{group_name}_sterr"
+            }
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "inspect_evals/bfcl_solver",
+        "params": {},
+        "params_passed": {}
+      }
+    ],
+    "config": {
+      "max_connections": 6
+    }
+  },
+  "results": {
+    "total_samples": 350,
+    "completed_samples": 350,
+    "scores": [
+      {
+        "name": "bfcl_scorer",
+        "scorer": "bfcl_scorer",
+        "reducer": "median",
+        "scored_samples": 50,
+        "unscored_samples": 0,
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.8,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.05714285714285715,
+            "params": {}
+          },
+          "exec_parallel_multiple_acc": {
+            "name": "exec_parallel_multiple_acc",
+            "value": 0.75,
+            "params": {
+              "metric": {
+                "type": "metric",
+                "name": "accuracy",
+                "params": {}
+              },
+              "group_key": "category_name",
+              "name_template": "{group_name}_acc"
+            }
+          },
+          "irrelevance_acc": {
+            "name": "irrelevance_acc",
+            "value": 1.0,
+            "params": {
+              "metric": {
+                "type": "metric",
+                "name": "accuracy",
+                "params": {}
+              },
+              "group_key": "category_name",
+              "name_template": "{group_name}_acc"
+            }
+          },
+          "all": {
+            "name": "all",
+            "value": 0.8,
+            "params": {
+              "metric": {
+                "type": "metric",
+                "name": "accuracy",
+                "params": {}
+              },
+              "group_key": "category_name",
+              "name_template": "{group_name}_acc"
+            }
+          },
+          "exec_parallel_multiple_sterr": {
+            "name": "exec_parallel_multiple_sterr",
+            "value": 0.06933752452815363,
+            "params": {
+              "metric": {
+                "type": "metric",
+                "name": "stderr",
+                "params": {}
+              },
+              "group_key": "category_name",
+              "name_template": "{group_name}_sterr"
+            }
+          },
+          "irrelevance_sterr": {
+            "name": "irrelevance_sterr",
+            "value": 0.0,
+            "params": {
+              "metric": {
+                "type": "metric",
+                "name": "stderr",
+                "params": {}
+              },
+              "group_key": "category_name",
+              "name_template": "{group_name}_sterr"
+            }
+          },
+          "all2": {
+            "name": "all2",
+            "value": 0.05714285714285715,
+            "params": {
+              "metric": {
+                "type": "metric",
+                "name": "stderr",
+                "params": {}
+              },
+              "group_key": "category_name",
+              "name_template": "{group_name}_sterr"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2026-05-11T01:11:40+00:00",
+    "completed_at": "2026-05-11T01:21:20+00:00",
+    "model_usage": {
+      "openai/gemma4": {
+        "input_tokens": 134344,
+        "output_tokens": 38238,
+        "total_tokens": 172582
+      }
+    },
+    "role_usage": {},
+    "connection_limit_history": []
+  },
+  "invalidated": false,
+  "tags": [],
+  "metadata": {
+    "full_task_version": "5-B",
+    "task_interface_version": "B",
+    "task_comparability_version": 5
+  },
+  "reductions": [
+    {
+      "scorer": "bfcl_scorer",
+      "reducer": "median",
+      "samples": [
+        {
+          "value": 1.0,
+          "answer": "[get_weather_data(coordinates=[45.4215, -75.6972]), calc_binomial_probability(k=5, n=10, p=0.5)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_0"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_cosine_similarity(vectorA=[1, 2, 3], vectorB=[4, 5, 6]), get_stock_price_by_stock_name(stock_name='AAPL')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_1"
+        },
+        {
+          "value": 0.0,
+          "answer": "[get_company_name_by_stock_name(stock_name='AAPL'), math_lcm(a=18, b=12), calculate_triangle_area(base=10, height=15)]",
+          "explanation": "No match found for: math_lcm",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_10"
+        },
+        {
+          "value": 0.0,
+          "answer": "get_stock_history(diffandsplits='false', interval='1mo', stock_name='AAPL')",
+          "explanation": "Wrong number of function calls: expected 2, got 1",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_11"
+        },
+        {
+          "value": 0.0,
+          "explanation": "No match found for: math_gcd",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_12"
+        },
+        {
+          "value": 1.0,
+          "answer": "[find_term_on_urban_dictionary(term='Bitcoin'), convert_currency(amount=1000, from_currency='CNY', to_currency='USD'), convert_currency(amount=1000, from_currency='CNY', to_currency='EUR'), get_distance(pointA=[3, 5], pointB=[7, 9])]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_13"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_electrostatic_potential_energy(charge=5, voltage=10), geometry_area_circle(radius=7)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_14"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_covid_death_by_country(country='Italy'), get_active_covid_case_by_country(country='Italy'), get_covid_death_by_country(country='Spain'), get_active_covid_case_by_country(country='Spain')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_15"
+        },
+        {
+          "value": 0.0,
+          "answer": "[math_gcd(a=21406, b=1200), get_stock_price_by_stock_name(stock_name='AAPL')]",
+          "explanation": "No match found for: math_gcd",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_16"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_coordinate_by_ip_address(ip_address='192.168.1.1'), get_covid_death_by_country(country='Italy')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_17"
+        },
+        {
+          "value": 0.0,
+          "answer": "[calculate_mean(numbers=[1, 3, 4, 6, 8]), get_coordinates_from_city(city_name='Cupertino')]",
+          "explanation": "No match found for: calculate_mean",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_18"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_product_name_by_amazon_ASIN(ASIN='B08PPDJWC8'), calculate_electrostatic_potential_energy(charge=5, voltage=10), retrieve_holiday_by_year(country='US', year='2022'), get_covid_death_by_country(country='Italy')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_19"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_density(mass=50, volume=10), calculate_future_value(interest_rate=0.05, periods=10, present_value=5000), get_stock_price_by_stock_name(stock_name='AAPL'), get_rating_by_amazon_ASIN(ASIN='B08PPDJWC8')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_2"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_fibonacci_number(n=5), get_fibonacci_number(n=8), get_distance(pointA=[3, 4], pointB=[8, 10])]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_20"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_fibonacci_sequence(n=10), get_stock_price_by_stock_name(stock_name='MSFT')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_21"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_covid_death_by_country(country='Brazil'), get_price_by_amazon_ASIN(ASIN='B08PPDJWC8'), find_term_on_urban_dictionary(term='Savage')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_22"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_standard_deviation(numbers=[23, 436, 1231, 123]), mortgage_calculator(interest_rate=0.035, loan_amount=350000, loan_period=30), get_coordinates_from_city(city_name='San Francisco')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_23"
+        },
+        {
+          "value": 0.0,
+          "answer": "[get_product_name_by_amazon_ASIN(ASIN='B075H2B962'), calculate_permutations(k=4, n=10), math_gcd(a=48, b=36), mortgage_calculator(interest_rate=0.05, loan_amount=200000, loan_period=30)]",
+          "explanation": "No match found for: math_gcd",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_24"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_rating_by_amazon_ASIN(ASIN='B08PPDJWC8'), get_rating_by_amazon_ASIN(ASIN='B08BHXG144'), geometry_area_circle(radius=50), geometry_area_circle(radius=75)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_25"
+        },
+        {
+          "value": 1.0,
+          "answer": "[estimate_derivative(function='lambda x: x**2', x=5), geometry_area_circle(radius=10), get_stock_history(diffandsplits='false', interval='1mo', stock_name='AAPL'), get_active_covid_case_by_country(country='United States')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_26"
+        },
+        {
+          "value": 1.0,
+          "answer": "[mortgage_calculator(interest_rate=0.035, loan_amount=350000, loan_period=30), get_stock_price_by_stock_name(stock_name='AAPL'), calculate_standard_deviation(numbers=[45, 67, 34, 89, 23, 56, 78, 90, 32, 67])]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_27"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_time_zone_by_coord(lat='23.973875', long='120.97388'), geometry_area_circle(radius=15), get_stock_price_by_stock_name(stock_name='AAPL')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_28"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calc_binomial_probability(k=5, n=10, p=0.5), get_covid_death_by_country(country='Italy'), get_weather_data(coordinates=[40.7128, -74.006])]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_29"
+        },
+        {
+          "value": 1.0,
+          "answer": "[retrieve_holiday_by_year(country='ES', year='2020'), calculate_displacement(acceleration=2, initial_velocity=10, time=5)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_3"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_displacement(acceleration=2, initial_velocity=20, time=10), retrieve_city_based_on_zipcode(zipcode='08540')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_30"
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": "exec_parallel_multiple_31"
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": "exec_parallel_multiple_32"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_density(mass=0.3, volume=5e-05), get_fibonacci_sequence(n=5), math_gcd(a=300, b=50)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_33"
+        },
+        {
+          "value": 0.0,
+          "answer": "[mortgage_calculator(interest_rate=0.035, loan_amount=350000, loan_period=30), math_lcm(a=25, b=15), math_factorial(n=7), estimate_derivative(function='3*x**2 + 2*x - 1', x=5)]",
+          "explanation": "No match found for: math_lcm",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_34"
+        },
+        {
+          "value": 0.0,
+          "answer": "[quadratic_roots(a=2, b=-3, c=5), estimate_derivative(function='2*x**2 - 3*x + 5', x=4)]",
+          "explanation": "No match found for: estimate_derivative",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_35"
+        },
+        {
+          "value": 0.0,
+          "answer": "[calculate_future_value(interest_rate=0.05, periods=10, present_value=5000), get_price_by_amazon_ASIN(ASIN='B08BHXG144'), retrieve_city_based_on_zipcode(zipcode='10001'), estimate_derivative(function='3*x**2 + 2*x - 1', x=2)]",
+          "explanation": "No match found for: estimate_derivative",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_36"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_time_zone_by_coord(lat='41.8902', long='12.4924'), retrieve_holiday_by_year(country='GB', year='2022')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_37"
+        },
+        {
+          "value": 1.0,
+          "answer": "[find_term_on_urban_dictionary(term='Hello World'), get_stock_history(diffandsplits='true', interval='1mo', stock_name='AAPL'), calculate_density(mass=10, volume=2), sort_array(array=[5, 2, 9, 1, 7, 4, 6, 3, 8], reverse=True)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_38"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_weather_data(coordinates=[45.4215, -75.6972]), calc_binomial_probability(k=3, n=5, p=0.5)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_39"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_electrostatic_potential_energy(charge=5, voltage=10), get_zipcode_by_ip_address(ip_address='192.168.1.1')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_4"
+        },
+        {
+          "value": 0.0,
+          "answer": "[calculate_final_velocity(acceleration=2, initial_velocity=10, time=5), calculate_final_velocity(acceleration=1.5, initial_velocity=15, time=7), mortgage_calculator(interest_rate=0.05, loan_amount=200000, loan_period=30)]",
+          "explanation": "Wrong number of function calls: expected 4, got 3",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_5"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_future_value(interest_rate=0.05, periods=10, present_value=5000), get_fibonacci_number(n=15), sort_array(array=[45, 23, 67, 89, 12, 34, 56, 78], reverse=True)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_6"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_mean(numbers=[5, 10, 15, 20, 25]), get_time_zone_by_coord(lat='14.6042', long='120.97388')]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_7"
+        },
+        {
+          "value": 1.0,
+          "answer": "[calculate_future_value(interest_rate=0.05, periods=10, present_value=5000), get_company_name_by_stock_name(stock_name='AAPL'), calculate_permutations(k=3, n=7)]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_8"
+        },
+        {
+          "value": 1.0,
+          "answer": "[get_fibonacci_sequence(n=10), calculate_standard_deviation(numbers=[0, 1, 1, 2, 3, 5, 8, 13, 21, 34])]",
+          "explanation": "Correct",
+          "history": [],
+          "sample_id": "exec_parallel_multiple_9"
+        },
+        {
+          "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
+          "history": [],
+          "sample_id": "irrelevance_0"
+        },
+        {
+          "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
+          "history": [],
+          "sample_id": "irrelevance_1"
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": "irrelevance_10"
+        },
+        {
+          "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
+          "history": [],
+          "sample_id": "irrelevance_100"
+        },
+        {
+          "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
+          "history": [],
+          "sample_id": "irrelevance_101"
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": "irrelevance_102"
+        },
+        {
+          "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
+          "history": [],
+          "sample_id": "irrelevance_103"
+        },
+        {
+          "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
+          "history": [],
+          "sample_id": "irrelevance_104"
+        },
+        {
+          "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
+          "history": [],
+          "sample_id": "irrelevance_105"
+        },
+        {
+          "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
+          "history": [],
+          "sample_id": "irrelevance_106"
+        }
+      ]
+    }
+  ]
+}

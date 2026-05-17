@@ -4,6 +4,16 @@ from datetime import timedelta
 from typing import Any
 
 
+def format_int(value: int) -> str:
+	return str(value)
+
+
+def format_token_count(value: int) -> str:
+	if value >= 1000:
+		return f"{value // 1000:,}k"
+	return str(value)
+
+
 def format_params(params: Any) -> str:
 	if isinstance(params, dict):
 		active = params.get("active")
@@ -55,6 +65,12 @@ def format_duration(duration: timedelta | None) -> str:
 	return f"{seconds}s"
 
 
+def format_tokens(input_tokens: int | None, output_tokens: int | None) -> str:
+	if input_tokens is None or output_tokens is None:
+		return ""
+	return f"{format_token_count(input_tokens)} in, {format_token_count(output_tokens)} out"
+
+
 def join_cell_lines(*lines: str) -> str:
 	return "<br>".join(line for line in lines if line)
 
@@ -64,12 +80,6 @@ def format_score_display(score: float, is_highest: bool = False) -> str:
 	if is_highest:
 		return f"***{formatted}***"
 	return formatted
-
-
-def format_score_cell(score: float, duration: timedelta | None, is_highest: bool = False) -> str:
-	runtime = format_duration(duration)
-	formatted_runtime = f"<nobr>{runtime}</nobr>" if runtime else ""
-	return join_cell_lines(format_score_display(score, is_highest), formatted_runtime)
 
 
 def escape_markdown(value: str) -> str:

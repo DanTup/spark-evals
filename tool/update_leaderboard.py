@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
-from leaderboard_formatting import escape_markdown, format_flags, format_score, format_score_cell, format_score_display, join_cell_lines
+from leaderboard_formatting import escape_markdown, format_duration, format_flags, format_score, format_score_display, format_tokens, join_cell_lines
 from leaderboard_frontmatter import load_frontmatter
 
 
@@ -20,6 +20,9 @@ README_PATH = ROOT_DIR / "README.md"
 LEADERBOARD_START = "<!-- LEADERBOARD -->"
 LEADERBOARD_END = "<!-- /LEADERBOARD -->"
 SORT_BENCHMARK_MIN_COVERAGE = 0.75
+SORT_BENCHMARKS_TO_SKIP = [
+	"theagentcompany",  # Excluded from sorting because it only has 10 samples and 10% jumps skew the ranking.
+]
 # Flip this on to render the computed sort field as a debug column in the README.
 # Keep this off for the normal leaderboard output.
 SHOW_SORT_DEBUG_COLUMN = False
@@ -48,6 +51,8 @@ LANGUAGE_ALIASES = {
 class BenchmarkResult:
 	score: float
 	duration: timedelta | None
+	input_tokens: int | None
+	output_tokens: int | None
 
 
 @dataclass
@@ -56,6 +61,9 @@ class ModelResult:
 	name: str
 	flags: Any
 	scores: dict[str, BenchmarkResult]
+	total_duration: timedelta | None
+	total_input_tokens: int | None
+	total_output_tokens: int | None
 
 
 @dataclass(frozen=True)
@@ -80,20 +88,23 @@ def collect_model_results() -> list[ModelResult]:
 	models: list[ModelResult] = []
 	for model_dir in sorted(path for path in RESULTS_DIR.iterdir() if path.is_dir()):
 		frontmatter = load_frontmatter(model_dir / "README.md")
-		scores = load_scores(model_dir)
+		scores, total_duration, total_input_tokens, total_output_tokens = load_scores(model_dir)
 		models.append(
 			ModelResult(
 				folder_name=model_dir.name,
 				name=str(frontmatter.get("name", model_dir.name)),
 				flags=frontmatter.get("flags"),
 				scores=scores,
+				total_duration=total_duration,
+				total_input_tokens=total_input_tokens,
+				total_output_tokens=total_output_tokens,
 			)
 		)
 	return models
 
 
-def load_scores(model_dir: Path) -> dict[str, BenchmarkResult]:
-	scores_by_benchmark: dict[str, tuple[str, BenchmarkResult]] = {}
+def load_scores(model_dir: Path) -> tuple[dict[str, BenchmarkResult], timedelta | None, int | None, int | None]:
+	selected_results: dict[str, tuple[str, dict[str, float], timedelta | None, int | None, int | None]] = {}
 
 	for result_path in sorted(model_dir.glob("*.json")):
 		if result_path.name in IGNORED_RESULT_FILENAMES:
@@ -103,15 +114,45 @@ def load_scores(model_dir: Path) -> dict[str, BenchmarkResult]:
 			result = json.load(handle)
 
 		benchmark_scores = extract_benchmark_scores(result, result_path)
+		benchmark = extract_benchmark_name(result, result_path)
 		created = str(result.get("eval", {}).get("created", ""))
 		duration = extract_duration(result)
+		input_tokens, output_tokens = extract_token_usage(result)
+		previous = selected_results.get(benchmark)
+		if previous is None or created >= previous[0]:
+			selected_results[benchmark] = (created, benchmark_scores, duration, input_tokens, output_tokens)
 
-		for benchmark, accuracy in benchmark_scores.items():
-			previous = scores_by_benchmark.get(benchmark)
-			if previous is None or created >= previous[0]:
-				scores_by_benchmark[benchmark] = (created, BenchmarkResult(score=accuracy, duration=duration))
+	scores_by_benchmark: dict[str, BenchmarkResult] = {}
+	total_duration = timedelta()
+	has_duration = False
+	total_input_tokens = 0
+	total_output_tokens = 0
+	has_tokens = False
 
-	return {benchmark: score for benchmark, (_, score) in scores_by_benchmark.items()}
+	for _, benchmark_scores, duration, input_tokens, output_tokens in selected_results.values():
+		for benchmark_name, accuracy in benchmark_scores.items():
+			scores_by_benchmark[benchmark_name] = BenchmarkResult(
+				score=accuracy,
+				duration=duration,
+				input_tokens=input_tokens,
+				output_tokens=output_tokens,
+			)
+
+		if duration is not None:
+			total_duration += duration
+			has_duration = True
+
+		if input_tokens is not None and output_tokens is not None:
+			total_input_tokens += input_tokens
+			total_output_tokens += output_tokens
+			has_tokens = True
+
+	return (
+		scores_by_benchmark,
+		total_duration if has_duration else None,
+		total_input_tokens if has_tokens else None,
+		total_output_tokens if has_tokens else None,
+	)
 
 
 def extract_duration(result: dict[str, Any]) -> timedelta | None:
@@ -125,6 +166,31 @@ def extract_duration(result: dict[str, Any]) -> timedelta | None:
 		return datetime.fromisoformat(completed_at) - datetime.fromisoformat(started_at)
 	except ValueError:
 		return None
+
+
+def extract_token_usage(result: dict[str, Any]) -> tuple[int | None, int | None]:
+	stats = result.get("stats", {})
+	model_usage = stats.get("model_usage")
+	if not isinstance(model_usage, dict):
+		return None, None
+
+	input_tokens = 0
+	output_tokens = 0
+	found_usage = False
+	for usage in model_usage.values():
+		if not isinstance(usage, dict):
+			continue
+		usage_input_tokens = usage.get("input_tokens")
+		usage_output_tokens = usage.get("output_tokens")
+		if not isinstance(usage_input_tokens, int) or not isinstance(usage_output_tokens, int):
+			continue
+		input_tokens += usage_input_tokens
+		output_tokens += usage_output_tokens
+		found_usage = True
+
+	if not found_usage:
+		return None, None
+	return input_tokens, output_tokens
 
 
 def extract_benchmark_name(result: dict[str, Any], result_path: Path) -> str:
@@ -146,7 +212,7 @@ def extract_benchmark_scores(result: dict[str, Any], result_path: Path) -> dict[
 		if not isinstance(metrics, dict):
 			continue
 
-		accuracy = metrics.get("accuracy") or metrics.get("overall_accuracy") or metrics.get("assistant_bench_accuracy")
+		accuracy = metrics.get("accuracy") or metrics.get("mean") or metrics.get("overall_accuracy") or metrics.get("assistant_bench_accuracy")
 
 		benchmark_scores: dict[str, float] = {}
 		if isinstance(accuracy, dict) and isinstance(accuracy.get("value"), (int, float)):
@@ -243,7 +309,11 @@ def ordered_benchmark_columns(models: list[ModelResult]) -> list[BenchmarkColumn
 
 
 def sortable_benchmarks(models: list[ModelResult], benchmarks: list[str]) -> list[str]:
-	primary_benchmarks = [benchmark for benchmark in benchmarks if not is_language_benchmark(benchmark)]
+	primary_benchmarks = [
+		benchmark
+		for benchmark in benchmarks
+		if not is_language_benchmark(benchmark) and benchmark not in SORT_BENCHMARKS_TO_SKIP
+	]
 	minimum_models = math.ceil(len(models) * SORT_BENCHMARK_MIN_COVERAGE)
 	eligible_benchmarks = [
 		benchmark
@@ -311,7 +381,13 @@ def render_leaderboard(
 	for model in models:
 		link = f"[{escape_markdown(model.name)}](results/{model.folder_name}/)"
 		flags = escape_markdown(format_flags(model.flags))
-		row = [join_cell_lines(link, flags)]
+		row = [
+			join_cell_lines(
+				link,
+				flags,
+				format_model_totals(model.total_duration, model.total_input_tokens, model.total_output_tokens),
+			)
+		]
 		for column in columns:
 			row.append(render_benchmark_cell(model, column, highest_scores))
 		if SHOW_SORT_DEBUG_COLUMN:
@@ -329,13 +405,7 @@ def render_benchmark_cell(
 	lines: list[str] = []
 	base_result = model.scores.get(column.benchmark)
 	if base_result is not None:
-		lines.append(
-			format_score_cell(
-				base_result.score,
-				base_result.duration,
-				base_result.score == highest_scores[column.benchmark],
-			)
-		)
+		lines.append(format_score_display(base_result.score, base_result.score == highest_scores[column.benchmark]))
 
 	for language in column.languages:
 		language_line = render_language_line(model, column.benchmark, language, highest_scores)
@@ -371,6 +441,24 @@ def display_benchmark_name(benchmark: str) -> str:
 
 def display_language_name(language: str) -> str:
 	return LANGUAGE_ALIASES.get(language, language)
+
+
+def format_model_totals(duration: timedelta | None, input_tokens: int | None, output_tokens: int | None) -> str:
+	lines: list[str] = []
+	lines.append("<nobr>")
+
+	runtime = format_duration(duration)
+	tokens = format_tokens(input_tokens, output_tokens)
+
+	if runtime:
+		lines.append(f"{runtime}")
+	if runtime and tokens:
+		lines.append(", ")
+	if tokens:
+		lines.append(tokens)
+
+	lines.append("</nobr>")
+	return "".join(lines)
 
 
 def update_readme(leaderboard: str) -> None:

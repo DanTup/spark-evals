@@ -5,26 +5,27 @@ Some basic evals run on various models that fit on a single DGX Spark.
 ## Leaderboard
 
 <!-- LEADERBOARD -->
-| name | Agent<br>Bench | Assis'<br>Bench<br>CBOS | Assis'<br>Bench<br>CBZS | bfcl | The<br>Agent<br>Co |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| [Qwen3.6 35B-A3B](results/qwen36-35b-a3b/) | <nobr>52.7%</nobr><br><nobr>2h 34m</nobr> | <nobr>35.7%</nobr><br><nobr>54m 49s</nobr> | <nobr>37.9%</nobr><br><nobr>59m 20s</nobr> | <nobr>78.0%</nobr><br><nobr>25m 5s</nobr> | ***<nobr>16.7%</nobr>***<br><nobr>1h 40m</nobr> |
-| [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/) | <nobr>52.7%</nobr><br><nobr>2h 0m</nobr> | ***<nobr>40.6%</nobr>***<br><nobr>36m 4s</nobr> | ***<nobr>39.7%</nobr>***<br><nobr>34m 55s</nobr> | <nobr>77.3%</nobr><br><nobr>18m 32s</nobr> | <nobr>13.3%</nobr><br><nobr>1h 26m</nobr> |
-| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/) | <nobr>55.3%</nobr><br><nobr>2h 9m</nobr> | <nobr>33.4%</nobr><br><nobr>37m 15s</nobr> | <nobr>33.8%</nobr><br><nobr>37m 10s</nobr> | <nobr>78.0%</nobr><br><nobr>17m 3s</nobr> | ***<nobr>16.7%</nobr>***<br><nobr>1h 28m</nobr> |
-| [Qwen3.6 27B FP8](results/qwen36-27b-fp8/) | <nobr>58.7%</nobr><br><nobr>1h 44m</nobr> | <nobr>37.1%</nobr><br><nobr>1h 32m</nobr> | <nobr>37.5%</nobr><br><nobr>1h 37m</nobr> | <nobr>75.3%</nobr><br><nobr>37m 26s</nobr> | <nobr>10.0%</nobr><br><nobr>1h 47m</nobr> |
-| [Qwen3.6 27B](results/qwen36-27b-nothink/)<br>enable_thinking=False | <nobr>56.0%</nobr><br><nobr>1h 40m</nobr> | <nobr>40.6%</nobr><br><nobr>35m 36s</nobr> | <nobr>34.4%</nobr><br><nobr>46m 52s</nobr> | <nobr>78.0%</nobr><br><nobr>11m 52s</nobr> | <nobr>10.0%</nobr><br><nobr>1h 46m</nobr> |
-| [Qwen3.6 27B](results/qwen36-27b/) | ***<nobr>59.3%</nobr>***<br><nobr>2h 41m</nobr> | <nobr>34.0%</nobr><br><nobr>2h 21m</nobr> | <nobr>38.0%</nobr><br><nobr>2h 55m</nobr> | <nobr>77.3%</nobr><br><nobr>1h 13m</nobr> | <nobr>10.0%</nobr><br><nobr>1h 53m</nobr> |
-| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/) | <nobr>46.0%</nobr><br><nobr>32m 49s</nobr> | <nobr>28.0%</nobr><br><nobr>7m 25s</nobr> | <nobr>32.3%</nobr><br><nobr>9m 10s</nobr> | <nobr>76.0%</nobr><br><nobr>3m 8s</nobr> | ***<nobr>16.7%</nobr>***<br><nobr>1h 4m</nobr> |
-| [Gemma4 31B](results/gemma4-31b/) | <nobr>45.3%</nobr><br><nobr>2h 4m</nobr> | <nobr>34.7%</nobr><br><nobr>23m 24s</nobr> | <nobr>33.3%</nobr><br><nobr>23m 12s</nobr> | <nobr>77.3%</nobr><br><nobr>19m 49s</nobr> | <nobr>6.7%</nobr><br><nobr>1h 48m</nobr> |
-| [Gemma4 26B-A4B](results/gemma4-26b-a4b/) | <nobr>44.0%</nobr><br><nobr>2h 16m</nobr> | <nobr>30.7%</nobr><br><nobr>6m 28s</nobr> | <nobr>26.3%</nobr><br><nobr>7m 30s</nobr> | ***<nobr>78.0%</nobr>***<br><nobr>5m 4s</nobr> | <nobr>6.7%</nobr><br><nobr>1h 5m</nobr> |
-| [Nemotron3 Nano Omni 30B-A3B BF16](results/nemo-nano-omni-bf16/) | <nobr>28.0%</nobr><br><nobr>4h 14m</nobr> | <nobr>29.8%</nobr><br><nobr>1h 12m</nobr> | <nobr>32.4%</nobr><br><nobr>1h 19m</nobr> | <nobr>76.0%</nobr><br><nobr>21m 20s</nobr> | <nobr>6.7%</nobr><br><nobr>1h 55m</nobr> |
-| [Nemotron3 Super 120B-A12B NVFP4](results/nemo-super-nvfp4/) | <nobr>50.7%</nobr><br><nobr>3h 3m</nobr> | <nobr>33.2%</nobr><br><nobr>1h 9m</nobr> | <nobr>33.0%</nobr><br><nobr>51m 27s</nobr> | <nobr>17.3%</nobr><br><nobr>13m 9s</nobr> | <nobr>3.3%</nobr><br><nobr>1h 56m</nobr> |
-| [Jackrong Qwopus 3.6 27B](results/qwen36-qwopus-preview/)<br>v1-preview | <nobr>0.0%</nobr><br><nobr>8h 37m</nobr> | <nobr>29.6%</nobr><br><nobr>2h 33m</nobr> | <nobr>33.8%</nobr><br><nobr>2h 40m</nobr> | <nobr>20.0%</nobr><br><nobr>28m 52s</nobr> | <nobr>0.0%</nobr><br><nobr>1h 29m</nobr> |
-| [Qwen3.6 27B](results/qwen36-27b-dflash/)<br>speculative-config=dflash(15) |  |  |  |  |  |
+| name | bfcl | bigcodebench | IfEvalCode | The<br>Agent<br>Co |
+| --- | ---: | ---: | ---: | ---: |
+| [Gemma4 31B](results/gemma4-31b/)<br><nobr>14h 57m, 37,212k in, 690k out</nobr> | <nobr>78.0%</nobr> | ***<nobr>72.0%</nobr>*** | ***<nobr>18.0%</nobr>***<br>ts: ***<nobr>36.0%</nobr>*** / <nobr>38.0%</nobr> | <nobr>0.0%</nobr> |
+| [Gemma4 26B-A4B](results/gemma4-26b-a4b/)<br><nobr>9h 10m, 469,371k in, 1,009k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>62.0%</nobr> | ***<nobr>18.0%</nobr>***<br>ts: <nobr>30.0%</nobr> / ***<nobr>44.0%</nobr>*** | <nobr>0.0%</nobr> |
+| [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/)<br><nobr>12h 42m, 118,842k in, 6,245k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>64.0%</nobr> | <nobr>12.0%</nobr><br>ts: ***<nobr>36.0%</nobr>*** / ***<nobr>44.0%</nobr>*** | <nobr>10.0%</nobr> |
+| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/)<br><nobr>5h 33m, 136,584k in, 1,253k out</nobr> | <nobr>78.0%</nobr> | <nobr>62.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>24.0%</nobr> / <nobr>34.0%</nobr> | ***<nobr>20.0%</nobr>*** |
+| [Qwen3.6 27B](results/qwen36-27b/)<br><nobr>39h 51m, 43,822k in, 2,398k out</nobr> | <nobr>78.0%</nobr> | <nobr>62.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>22.0%</nobr> / <nobr>14.0%</nobr> | <nobr>10.0%</nobr> |
+| [Qwen3.6 35B-A3B](results/qwen36-35b-a3b/)<br><nobr>24h 20m, 98,688k in, 4,815k out</nobr> | <nobr>76.0%</nobr> | <nobr>62.0%</nobr> | <nobr>10.0%</nobr><br>ts: <nobr>28.0%</nobr> / <nobr>38.0%</nobr> | ***<nobr>20.0%</nobr>*** |
+| [Nemotron3 Nano Omni 30B-A3B BF16](results/nemo-nano-omni-bf16/)<br><nobr>21h 37m, 20,238k in, 2,593k out</nobr> | <nobr>76.0%</nobr> | <nobr>54.0%</nobr> | <nobr>4.0%</nobr><br>ts: <nobr>10.0%</nobr> / <nobr>18.0%</nobr> | <nobr>0.0%</nobr> |
+| [Nemotron3 Super 120B-A12B NVFP4](results/nemo-super-nvfp4/)<br><nobr></nobr> |  |  |  |  |
+| [Qwen3.6 27B](results/qwen36-27b-dflash/)<br>speculative-config=dflash(15)<br><nobr></nobr> |  |  |  |  |
+| [Qwen3.6 27B FP8](results/qwen36-27b-fp8/)<br><nobr></nobr> |  |  |  |  |
+| [Qwen3.6 27B](results/qwen36-27b-nothink/)<br>enable_thinking=False<br><nobr></nobr> |  |  |  |  |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/)<br><nobr></nobr> |  |  |  |  |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8-fp8kv/)<br>kv-cache-dtype=fp8<br><nobr></nobr> |  |  |  |  |
+| [Jackrong Qwopus 3.6 27B](results/qwen36-qwopus-preview/)<br>v1-preview<br><nobr></nobr> |  |  |  |  |
 <!-- /LEADERBOARD -->
 
 ## Running Evals
 
-Because some of these evals require installing packages and also spawn Docker containers, I recommend running everything inside a VM or on a spare machine. This does not need to run on the DGX Spark (and if you're running a large model, it might be better to run it on another machine). The instructions below assume a clean Ubuntu installation.
+Because some of these evals require installing packages and also spawn Docker containers, I recommend running everything inside a VM or on a spare machine. This does not need to run on the DGX Spark (and if you're running a large model, it might be better to run it on another machine). The instructions below assume a clean Ubuntu installation (I used `multipass launch --cpus 12 --disk 50G --memory 32G --name inspect-evals --mount ~/inspect-eval-results:/home/ubuntu/inspect-evals/results` to create a VM for this).
 
 ### Set up Dependencies
 
@@ -32,7 +33,7 @@ Because some of these evals require installing packages and also spawn Docker co
 export PATH=$PATH:~/.local/bin
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends ca-certificates curl jq python3 python3-pip python-is-python3
-python3 -m pip install --break-system-packages openai inspect-evals inspect-evals[theagentcompany]
+python3 -m pip install --break-system-packages openai inspect-evals inspect-evals[theagentcompany] inspect-evals[ifevalcode]
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 chmod +x get-docker.sh
@@ -42,19 +43,16 @@ newgrp docker
 rm get-docker.sh
 ```
 
-### Configure the LLM Endpoint
+### Run the Evals
 
 Each time you want to run evals, set some env vars with the details of the LLM endpoint:
 
 ```bash
+# Set these env vars for the model
 export EVAL_BASE_URL="http://192.168.0.132:8111/v1"
-export EVAL_MODEL="gemma4"
-export EVAL_RESULTS_FOLDER="gemma4-26b-a4b"
-```
+export EVAL_MODEL="qwen36"
+export EVAL_RESULTS_FOLDER="qwen36-27b-nothink"
 
-### Start the Evals
-
-```bash
 mkdir -p ~/inspect-evals
 cd ~/inspect-evals
 
@@ -68,9 +66,10 @@ mkdir -p "results/$EVAL_RESULTS_FOLDER"
 inspect eval-set \
   --log-dir "results/$EVAL_RESULTS_FOLDER" --log-format json --log-dir-allow-dirty \
   --no-log-realtime --no-log-samples --no-log-images --log-buffer 100 --no-score-display --no-fail-on-error \
-  --time-limit 900 --max-tasks 1 --max-connections 4 --max-subprocesses 4 --max-sandboxes 4 --limit 1-50 --epochs 3 \
-  inspect_evals/theagentcompany inspect_evals/bfcl inspect_evals/agent_bench_os inspect_evals/assistant_bench_closed_book_zero_shot inspect_evals/assistant_bench_closed_book_one_shot \
-  -T "categories=['exec_parallel_multiple','irrelevance']"
+  --time-limit 1800 --max-tasks 1 --max-connections 6 --max-subprocesses 8 --max-sandboxes 8 --message-limit 1000 \
+  --limit 1-50 --epochs 7 --epochs-reducer median \
+  inspect_evals/theagentcompany inspect_evals/bfcl inspect_evals/ifevalcode inspect_evals/bigcodebench \
+  -T "categories=['exec_parallel_multiple','irrelevance']" -T "languages=typescript"
 ```
 
 ### Create a PR
