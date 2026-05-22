@@ -4,23 +4,25 @@ Some basic evals run on various models that fit on a single DGX Spark.
 
 ## Leaderboard
 
+`Overall` is the sample-weighted pass rate across all benchmarks so every scored sample counts equally.
+
 <!-- LEADERBOARD -->
-| name | bfcl | bigcodebench | IfEvalCode | The<br>Agent<br>Co |
-| --- | ---: | ---: | ---: | ---: |
-| [Gemma4 31B](results/gemma4-31b/)<br><nobr>14h 57m, 37,212k in, 690k out</nobr> | <nobr>78.0%</nobr> | ***<nobr>72.0%</nobr>*** | ***<nobr>18.0%</nobr>***<br>ts: ***<nobr>36.0%</nobr>*** / <nobr>38.0%</nobr> | <nobr>0.0%</nobr> |
-| [Gemma4 26B-A4B](results/gemma4-26b-a4b/)<br><nobr>9h 10m, 469,371k in, 1,009k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>62.0%</nobr> | ***<nobr>18.0%</nobr>***<br>ts: <nobr>30.0%</nobr> / ***<nobr>44.0%</nobr>*** | <nobr>0.0%</nobr> |
-| [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/)<br><nobr>12h 42m, 118,842k in, 6,245k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>64.0%</nobr> | <nobr>12.0%</nobr><br>ts: ***<nobr>36.0%</nobr>*** / ***<nobr>44.0%</nobr>*** | <nobr>10.0%</nobr> |
-| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/)<br><nobr>5h 33m, 136,584k in, 1,253k out</nobr> | <nobr>78.0%</nobr> | <nobr>62.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>24.0%</nobr> / <nobr>34.0%</nobr> | ***<nobr>20.0%</nobr>*** |
-| [Qwen3.6 27B](results/qwen36-27b/)<br><nobr>39h 51m, 43,822k in, 2,398k out</nobr> | <nobr>78.0%</nobr> | <nobr>62.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>22.0%</nobr> / <nobr>14.0%</nobr> | <nobr>10.0%</nobr> |
-| [Qwen3.6 35B-A3B](results/qwen36-35b-a3b/)<br><nobr>24h 20m, 98,688k in, 4,815k out</nobr> | <nobr>76.0%</nobr> | <nobr>62.0%</nobr> | <nobr>10.0%</nobr><br>ts: <nobr>28.0%</nobr> / <nobr>38.0%</nobr> | ***<nobr>20.0%</nobr>*** |
-| [Nemotron3 Nano Omni 30B-A3B BF16](results/nemo-nano-omni-bf16/)<br><nobr>21h 37m, 20,238k in, 2,593k out</nobr> | <nobr>76.0%</nobr> | <nobr>54.0%</nobr> | <nobr>4.0%</nobr><br>ts: <nobr>10.0%</nobr> / <nobr>18.0%</nobr> | <nobr>0.0%</nobr> |
-| [Nemotron3 Super 120B-A12B NVFP4](results/nemo-super-nvfp4/)<br><nobr></nobr> |  |  |  |  |
-| [Qwen3.6 27B](results/qwen36-27b-dflash/)<br>speculative-config=dflash(15)<br><nobr></nobr> |  |  |  |  |
-| [Qwen3.6 27B FP8](results/qwen36-27b-fp8/)<br><nobr></nobr> |  |  |  |  |
-| [Qwen3.6 27B](results/qwen36-27b-nothink/)<br>enable_thinking=False<br><nobr></nobr> |  |  |  |  |
-| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/)<br><nobr></nobr> |  |  |  |  |
-| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8-fp8kv/)<br>kv-cache-dtype=fp8<br><nobr></nobr> |  |  |  |  |
-| [Jackrong Qwopus 3.6 27B](results/qwen36-qwopus-preview/)<br>v1-preview<br><nobr></nobr> |  |  |  |  |
+| name | bfcl | bigcodebench | IfEvalCode | The<br>Agent<br>Co | Overall |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8-fp8kv/)<br>kv-cache-dtype=fp8<br><nobr>13h 55m, 125,917k in, 6,129k out</nobr> | <nobr>76.0%</nobr> | <nobr>60.0%</nobr> | ***<nobr>20.0%</nobr>***<br>ts: ***<nobr>38.0%</nobr>*** / ***<nobr>50.0%</nobr>*** | ***<nobr>20.0%</nobr>*** | ***<nobr>47.7%</nobr>*** |
+| [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/)<br><nobr>13h 41m, 117,175k in, 6,095k out</nobr> | <nobr>78.0%</nobr> | <nobr>64.0%</nobr> | <nobr>18.0%</nobr><br>ts: ***<nobr>38.0%</nobr>*** / <nobr>44.0%</nobr> | <nobr>10.0%</nobr> | <nobr>46.9%</nobr> |
+| [Gemma4 31B](results/gemma4-31b/)<br><nobr>14h 57m, 37,212k in, 690k out</nobr> | <nobr>78.0%</nobr> | ***<nobr>72.0%</nobr>*** | <nobr>18.0%</nobr><br>ts: <nobr>36.0%</nobr> / <nobr>38.0%</nobr> | <nobr>0.0%</nobr> | <nobr>46.5%</nobr> |
+| [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/)<br><nobr>12h 42m, 118,842k in, 6,245k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>64.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>36.0%</nobr> / <nobr>44.0%</nobr> | <nobr>10.0%</nobr> | <nobr>45.8%</nobr> |
+| [Gemma4 26B-A4B](results/gemma4-26b-a4b/)<br><nobr>9h 10m, 469,371k in, 1,009k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>62.0%</nobr> | <nobr>18.0%</nobr><br>ts: <nobr>30.0%</nobr> / <nobr>44.0%</nobr> | <nobr>0.0%</nobr> | <nobr>45.0%</nobr> |
+| [Qwen3.6 27B](results/qwen36-27b-nothink/)<br>enable_thinking=False<br><nobr>9h 23m, 44,522k in, 1,045k out</nobr> | <nobr>78.0%</nobr> | <nobr>64.0%</nobr> | <nobr>16.0%</nobr><br>ts: <nobr>32.0%</nobr> / <nobr>36.0%</nobr> | <nobr>10.0%</nobr> | <nobr>43.8%</nobr> |
+| [Qwen3.6 27B FP8](results/qwen36-27b-fp8/)<br><nobr>26h 51m, 44,449k in, 3,554k out</nobr> | <nobr>78.0%</nobr> | <nobr>66.0%</nobr> | <nobr>14.0%</nobr><br>ts: <nobr>36.0%</nobr> / <nobr>26.0%</nobr> | <nobr>10.0%</nobr> | <nobr>42.7%</nobr> |
+| [Qwen3.6 27B](results/qwen36-27b-dflash/)<br>speculative-config=dflash(15)<br><nobr>30h 52m, 23,543k in, 2,925k out</nobr> | <nobr>78.0%</nobr> | <nobr>68.0%</nobr> | <nobr>16.0%</nobr><br>ts: <nobr>32.0%</nobr> / <nobr>26.0%</nobr> | <nobr>0.0%</nobr> | <nobr>42.3%</nobr> |
+| [Qwen3.6 35B-A3B](results/qwen36-35b-a3b/)<br><nobr>24h 20m, 98,688k in, 4,815k out</nobr> | <nobr>76.0%</nobr> | <nobr>62.0%</nobr> | <nobr>10.0%</nobr><br>ts: <nobr>28.0%</nobr> / <nobr>38.0%</nobr> | ***<nobr>20.0%</nobr>*** | <nobr>41.9%</nobr> |
+| [Qwen3 Coder Next FP8](results/qwen3-coder-next-fp8/)<br><nobr>5h 33m, 136,584k in, 1,253k out</nobr> | <nobr>78.0%</nobr> | <nobr>62.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>24.0%</nobr> / <nobr>34.0%</nobr> | ***<nobr>20.0%</nobr>*** | <nobr>41.2%</nobr> |
+| [Qwen3.6 27B](results/qwen36-27b/)<br><nobr>39h 51m, 43,822k in, 2,398k out</nobr> | <nobr>78.0%</nobr> | <nobr>62.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>22.0%</nobr> / <nobr>14.0%</nobr> | <nobr>10.0%</nobr> | <nobr>36.5%</nobr> |
+| [Nemotron3 Nano Omni 30B-A3B BF16](results/nemo-nano-omni-bf16/)<br><nobr>21h 37m, 20,238k in, 2,593k out</nobr> | <nobr>76.0%</nobr> | <nobr>54.0%</nobr> | <nobr>4.0%</nobr><br>ts: <nobr>10.0%</nobr> / <nobr>18.0%</nobr> | <nobr>0.0%</nobr> | <nobr>31.2%</nobr> |
+| [Nemotron3 Super 120B-A12B NVFP4](results/nemo-super-nvfp4/)<br><nobr>20h 25m, 24,579k in, 1,973k out</nobr> | <nobr>12.0%</nobr> | <nobr>60.0%</nobr> | <nobr>8.0%</nobr><br>ts: <nobr>32.0%</nobr> / <nobr>18.0%</nobr> | <nobr>10.0%</nobr> | <nobr>25.4%</nobr> |
+| [Jackrong Qwopus 3.6 27B](results/qwen36-qwopus-preview/)<br>v1-preview<br><nobr></nobr> |  |  |  |  | <nobr>0.0%</nobr> |
 <!-- /LEADERBOARD -->
 
 ## Running Evals
@@ -51,7 +53,7 @@ Each time you want to run evals, set some env vars with the details of the LLM e
 # Set these env vars for the model
 export EVAL_BASE_URL="http://192.168.0.132:8111/v1"
 export EVAL_MODEL="qwen36"
-export EVAL_RESULTS_FOLDER="qwen36-27b-nothink"
+export EVAL_RESULTS_FOLDER="qwen36-27b-dflash"
 
 mkdir -p ~/inspect-evals
 cd ~/inspect-evals

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import math
 import re
 from dataclasses import dataclass
 from datetime import datetime, timedelta
@@ -19,13 +18,6 @@ RESULTS_DIR = ROOT_DIR / "results"
 README_PATH = ROOT_DIR / "README.md"
 LEADERBOARD_START = "<!-- LEADERBOARD -->"
 LEADERBOARD_END = "<!-- /LEADERBOARD -->"
-SORT_BENCHMARK_MIN_COVERAGE = 0.75
-SORT_BENCHMARKS_TO_SKIP = [
-	"theagentcompany",  # Excluded from sorting because it only has 10 samples and 10% jumps skew the ranking.
-]
-# Flip this on to render the computed sort field as a debug column in the README.
-# Keep this off for the normal leaderboard output.
-SHOW_SORT_DEBUG_COLUMN = False
 LANGUAGES = ["typescript", "csharp", "dart", "python", "shell"]
 IGNORED_RESULT_FILENAMES = {"eval-set.json", "logs.json"}
 BENCHMARK_ALIASES = {
@@ -50,6 +42,7 @@ LANGUAGE_ALIASES = {
 @dataclass
 class BenchmarkResult:
 	score: float
+	scored_samples: int
 	duration: timedelta | None
 	input_tokens: int | None
 	output_tokens: int | None
@@ -72,15 +65,26 @@ class BenchmarkColumn:
 	languages: list[str]
 
 
+@dataclass(frozen=True)
+class ExtractedBenchmarkScore:
+	score: float
+	scored_samples: int
+
+
 def main() -> None:
 	models = collect_model_results()
 	benchmarks = ordered_benchmarks(models)
 	columns = ordered_benchmark_columns(models)
+	scoring_benchmarks = benchmarks
 	highest_scores = benchmark_high_scores(models, benchmarks)
-	sort_benchmarks = sortable_benchmarks(models, benchmarks)
-	models.sort(key=lambda model: average_score(model, sort_benchmarks, highest_scores), reverse=True)
+	highest_overall_score = max((overall_score(model, scoring_benchmarks) for model in models), default=0.0)
+	models.sort(key=lambda model: model.name)
+	models.sort(
+		key=lambda model: (overall_score(model, scoring_benchmarks), total_scored_samples(model, scoring_benchmarks)),
+		reverse=True,
+	)
 
-	leaderboard = render_leaderboard(models, columns, highest_scores, sort_benchmarks)
+	leaderboard = render_leaderboard(models, columns, highest_scores, scoring_benchmarks, highest_overall_score)
 	update_readme(leaderboard)
 
 
@@ -104,7 +108,7 @@ def collect_model_results() -> list[ModelResult]:
 
 
 def load_scores(model_dir: Path) -> tuple[dict[str, BenchmarkResult], timedelta | None, int | None, int | None]:
-	selected_results: dict[str, tuple[str, dict[str, float], timedelta | None, int | None, int | None]] = {}
+	selected_results: dict[str, tuple[str, dict[str, ExtractedBenchmarkScore], timedelta | None, int | None, int | None]] = {}
 
 	for result_path in sorted(model_dir.glob("*.json")):
 		if result_path.name in IGNORED_RESULT_FILENAMES:
@@ -130,9 +134,10 @@ def load_scores(model_dir: Path) -> tuple[dict[str, BenchmarkResult], timedelta 
 	has_tokens = False
 
 	for _, benchmark_scores, duration, input_tokens, output_tokens in selected_results.values():
-		for benchmark_name, accuracy in benchmark_scores.items():
+		for benchmark_name, benchmark_score in benchmark_scores.items():
 			scores_by_benchmark[benchmark_name] = BenchmarkResult(
-				score=accuracy,
+				score=benchmark_score.score,
+				scored_samples=benchmark_score.scored_samples,
 				duration=duration,
 				input_tokens=input_tokens,
 				output_tokens=output_tokens,
@@ -201,11 +206,15 @@ def extract_benchmark_name(result: dict[str, Any], result_path: Path) -> str:
 	return result_path.stem
 
 
-def extract_benchmark_scores(result: dict[str, Any], result_path: Path) -> dict[str, float]:
+def extract_benchmark_scores(result: dict[str, Any], result_path: Path) -> dict[str, ExtractedBenchmarkScore]:
 	benchmark = extract_benchmark_name(result, result_path)
 	scores = result.get("results", {}).get("scores", [])
 	for score in scores:
 		if not isinstance(score, dict):
+			continue
+
+		scored_samples = score.get("scored_samples")
+		if not isinstance(scored_samples, int) or scored_samples <= 0:
 			continue
 
 		metrics = score.get("metrics", {})
@@ -214,24 +223,24 @@ def extract_benchmark_scores(result: dict[str, Any], result_path: Path) -> dict[
 
 		accuracy = metrics.get("accuracy") or metrics.get("mean") or metrics.get("overall_accuracy") or metrics.get("assistant_bench_accuracy")
 
-		benchmark_scores: dict[str, float] = {}
+		benchmark_scores: dict[str, ExtractedBenchmarkScore] = {}
 		if isinstance(accuracy, dict) and isinstance(accuracy.get("value"), (int, float)):
-			benchmark_scores[benchmark] = float(accuracy["value"])
+			benchmark_scores[benchmark] = ExtractedBenchmarkScore(float(accuracy["value"]), scored_samples)
 
 		for metric in metrics.values():
 			if isinstance(metric, dict) and metric.get("name") == "accuracy":
 				value = metric.get("value")
 				if isinstance(value, (int, float)):
-					benchmark_scores.setdefault(benchmark, float(value))
+					benchmark_scores.setdefault(benchmark, ExtractedBenchmarkScore(float(value), scored_samples))
 
 		for language in LANGUAGES:
 			correctness = extract_metric_value(metrics.get(f"{language}_correctness"))
 			if correctness is not None:
-				benchmark_scores[f"{benchmark} {language}"] = correctness
+				benchmark_scores[f"{benchmark} {language}"] = ExtractedBenchmarkScore(correctness, scored_samples)
 
 			instruction = extract_metric_value(metrics.get(f"{language}_instruction"))
 			if instruction is not None:
-				benchmark_scores[f"{benchmark} {language} instruction"] = instruction
+				benchmark_scores[f"{benchmark} {language} instruction"] = ExtractedBenchmarkScore(instruction, scored_samples)
 
 		if benchmark_scores:
 			return benchmark_scores
@@ -308,23 +317,6 @@ def ordered_benchmark_columns(models: list[ModelResult]) -> list[BenchmarkColumn
 	return columns
 
 
-def sortable_benchmarks(models: list[ModelResult], benchmarks: list[str]) -> list[str]:
-	primary_benchmarks = [
-		benchmark
-		for benchmark in benchmarks
-		if not is_language_benchmark(benchmark) and benchmark not in SORT_BENCHMARKS_TO_SKIP
-	]
-	minimum_models = math.ceil(len(models) * SORT_BENCHMARK_MIN_COVERAGE)
-	eligible_benchmarks = [
-		benchmark
-		for benchmark in primary_benchmarks
-		if sum(1 for model in models if benchmark in model.scores) >= minimum_models
-	]
-	if eligible_benchmarks:
-		return eligible_benchmarks
-	return primary_benchmarks
-
-
 def base_benchmark_name(benchmark: str) -> str:
 	for language in LANGUAGES:
 		instruction_suffix = f" {language} instruction"
@@ -349,36 +341,40 @@ def benchmark_high_scores(models: list[ModelResult], benchmarks: list[str]) -> d
 	}
 
 
-def average_score(model: ModelResult, benchmarks: list[str], highest_scores: dict[str, float | None]) -> float:
-	if not benchmarks:
+def total_scored_samples(model: ModelResult, benchmarks: list[str]) -> int:
+	return sum(model.scores[benchmark].scored_samples for benchmark in benchmarks if benchmark in model.scores)
+
+
+def overall_score(model: ModelResult, benchmarks: list[str]) -> float:
+	total_samples = 0
+	total_passed = 0.0
+	for benchmark in benchmarks:
+		result = model.scores.get(benchmark)
+		if result is None:
+			continue
+		total_samples += result.scored_samples
+		total_passed += result.score * result.scored_samples
+	if total_samples == 0:
 		return 0.0
-	normalized_scores = [
-		model.scores[benchmark].score / highest_scores[benchmark]
-		for benchmark in benchmarks
-		if benchmark in model.scores and highest_scores[benchmark] not in (None, 0)
-	]
-	if not normalized_scores:
-		return 0.0
-	return sum(normalized_scores) / len(normalized_scores)
+	return total_passed / total_samples
 
 
 def render_leaderboard(
 	models: list[ModelResult],
 	columns: list[BenchmarkColumn],
 	highest_scores: dict[str, float | None],
-	sort_benchmarks: list[str],
+	scoring_benchmarks: list[str],
+	highest_overall_score: float,
 ) -> str:
-	headers = ["name", *(display_benchmark_name(column.benchmark) for column in columns)]
-	alignments = ["---", *("---:" for _ in columns)]
-	if SHOW_SORT_DEBUG_COLUMN:
-		headers.append("Average Normalized")
-		alignments.append("---:")
+	headers = ["name", *(display_benchmark_name(column.benchmark) for column in columns), "Overall"]
+	alignments = ["---", *("---:" for _ in columns), "---:"]
 	rows = [
 		"| " + " | ".join(headers) + " |",
 		"| " + " | ".join(alignments) + " |",
 	]
 
 	for model in models:
+		model_overall_score = overall_score(model, scoring_benchmarks)
 		link = f"[{escape_markdown(model.name)}](results/{model.folder_name}/)"
 		flags = escape_markdown(format_flags(model.flags))
 		row = [
@@ -390,8 +386,7 @@ def render_leaderboard(
 		]
 		for column in columns:
 			row.append(render_benchmark_cell(model, column, highest_scores))
-		if SHOW_SORT_DEBUG_COLUMN:
-			row.append(format_score(average_score(model, sort_benchmarks, highest_scores)))
+		row.append(format_score_display(model_overall_score, model_overall_score == highest_overall_score))
 		rows.append("| " + " | ".join(row) + " |")
 
 	return "\n".join(rows)
