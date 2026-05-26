@@ -1,0 +1,867 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_set_id": "HaTYFZEE8KuHM26r8A9gBa",
+    "eval_id": "c9gxT9Cv58YorLPRmRbxtQ",
+    "run_id": "kVXgthuQvdm8xUBYLNryh6",
+    "created": "2026-05-25T20:17:50+00:00",
+    "task": "inspect_evals/ifevalcode",
+    "task_id": "8zjZdswnASfekshjCXecQX",
+    "task_version": 2,
+    "task_display_name": "ifevalcode",
+    "task_registry_name": "inspect_evals/ifevalcode",
+    "task_attribs": {},
+    "task_args": {
+      "languages": "typescript",
+      "samples_per_language": null
+    },
+    "task_args_passed": {
+      "languages": "typescript"
+    },
+    "dataset": {
+      "name": "Multilingual-Multimodal-NLP/IfEvalCode-testset",
+      "location": "Multilingual-Multimodal-NLP/IfEvalCode-testset",
+      "samples": 100,
+      "sample_ids": [
+        710,
+        711,
+        712,
+        713,
+        714,
+        715,
+        716,
+        717,
+        718,
+        719,
+        720,
+        721,
+        722,
+        723,
+        724,
+        725,
+        726,
+        727,
+        728,
+        729,
+        730,
+        731,
+        732,
+        733,
+        734,
+        735,
+        736,
+        737,
+        738,
+        739,
+        740,
+        741,
+        742,
+        743,
+        744,
+        745,
+        746,
+        747,
+        748,
+        749,
+        750,
+        751,
+        752,
+        753,
+        754,
+        755,
+        756,
+        757,
+        758,
+        759
+      ],
+      "shuffled": false
+    },
+    "sandbox": {
+      "type": "docker",
+      "config": "/home/ubuntu/.local/lib/python3.14/site-packages/inspect_evals/ifevalcode/compose.yaml"
+    },
+    "model": "openai/gemma4",
+    "model_generate_config": {
+      "max_connections": 6
+    },
+    "model_args": {},
+    "config": {
+      "limit": [
+        0,
+        50
+      ],
+      "epochs": 7,
+      "epochs_reducer": [
+        "median"
+      ],
+      "fail_on_error": false,
+      "continue_on_fail": false,
+      "score_on_error": false,
+      "message_limit": 1000,
+      "time_limit": 1800,
+      "max_tasks": 1,
+      "max_subprocesses": 8,
+      "max_sandboxes": 8,
+      "sandbox_cleanup": true,
+      "log_samples": false,
+      "log_realtime": false,
+      "log_images": false,
+      "log_buffer": 100,
+      "log_shared": 0,
+      "score_display": false
+    },
+    "packages": {
+      "inspect_ai": "0.3.217",
+      "inspect_evals": "0.10.1"
+    },
+    "metadata": {
+      "full_task_version": "2-A",
+      "task_interface_version": "A",
+      "task_comparability_version": 2
+    },
+    "scorers": [
+      {
+        "name": "_ifevalcode_scorer",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_evals/overall_accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_evals/correctness",
+            "options": {}
+          },
+          {
+            "name": "inspect_evals/instruction_adherence",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/grouped",
+            "options": {
+              "metric": "metric_fn",
+              "group_key": "programming_language",
+              "all": false,
+              "name_template": "{group_name}_correctness"
+            }
+          },
+          {
+            "name": "inspect_ai/grouped",
+            "options": {
+              "metric": "metric_fn",
+              "group_key": "programming_language",
+              "all": false,
+              "name_template": "{group_name}_instruction"
+            }
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "inspect_evals/ifevalcode_solver",
+        "params": {},
+        "params_passed": {}
+      }
+    ],
+    "config": {
+      "max_connections": 6
+    }
+  },
+  "results": {
+    "total_samples": 350,
+    "completed_samples": 350,
+    "scores": [
+      {
+        "name": "_ifevalcode_scorer",
+        "scorer": "_ifevalcode_scorer",
+        "reducer": "median",
+        "scored_samples": 50,
+        "unscored_samples": 0,
+        "params": {},
+        "metrics": {
+          "overall_accuracy": {
+            "name": "inspect_evals/overall_accuracy",
+            "value": 0.18,
+            "params": {}
+          },
+          "correctness": {
+            "name": "inspect_evals/correctness",
+            "value": 0.36,
+            "params": {}
+          },
+          "instruction_adherence": {
+            "name": "inspect_evals/instruction_adherence",
+            "value": 0.4,
+            "params": {}
+          },
+          "typescript_correctness": {
+            "name": "typescript_correctness",
+            "value": 0.36,
+            "params": {
+              "metric": "metric_fn",
+              "group_key": "programming_language",
+              "all": false,
+              "name_template": "{group_name}_correctness"
+            }
+          },
+          "typescript_instruction": {
+            "name": "typescript_instruction",
+            "value": 0.4,
+            "params": {
+              "metric": "metric_fn",
+              "group_key": "programming_language",
+              "all": false,
+              "name_template": "{group_name}_instruction"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2026-05-25T20:17:50+00:00",
+    "completed_at": "2026-05-25T22:14:03+00:00",
+    "model_usage": {
+      "openai/gemma4": {
+        "input_tokens": 239850,
+        "output_tokens": 395202,
+        "total_tokens": 635052
+      }
+    },
+    "role_usage": {},
+    "connection_limit_history": []
+  },
+  "invalidated": false,
+  "tags": [],
+  "metadata": {
+    "full_task_version": "2-A",
+    "task_interface_version": "A",
+    "task_comparability_version": 2
+  },
+  "reductions": [
+    {
+      "scorer": "_ifevalcode_scorer",
+      "reducer": "median",
+      "samples": [
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 54, in <module>\n  File \"<string>\", line 37, in check_instruction\nAssertionError: 'console.assert' not used for input validation.\n\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 710
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 711
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 712
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 713
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 714
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 715
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 716
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 717
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 718
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 719
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 720
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 721
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 71, in <module>\n  File \"<string>\", line 46, in check_instruction\nAssertionError: Function signature does not match requirements\n\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 722
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 723
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 724
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 725
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 726
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 727
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 728
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 729
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 730
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 731
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 732
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 103, in <module>\n  File \"<string>\", line 94, in check_instruction\nAssertionError: Missing case block for book type\n\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 733
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 40, in <module>\n  File \"<string>\", line 34, in check_instruction\nAssertionError: Missing \"你好世界\" comment\n\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 734
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 735
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 736
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 737
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 738
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 73, in <module>\n  File \"<string>\", line 30, in check_instruction\nAssertionError: Function signature is incorrect\n\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 739
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 1.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 740
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 741
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 742
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 743
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 744
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 745
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 746
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 747
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 748
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 749
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 750
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 751
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 752
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 753
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 754
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 755
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 756
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 0.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 757
+        },
+        {
+          "value": {
+            "both_passed": 0.0,
+            "correctness": 0.0,
+            "instruction": 1.0
+          },
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 758
+        },
+        {
+          "value": {
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
+          },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
+          "metadata": {
+            "programming_language": "typescript"
+          },
+          "history": [],
+          "sample_id": 759
+        }
+      ]
+    }
+  ]
+}

@@ -440,7 +440,7 @@ def display_language_name(language: str) -> str:
 
 def format_model_totals(duration: timedelta | None, input_tokens: int | None, output_tokens: int | None) -> str:
 	lines: list[str] = []
-	lines.append("<nobr>")
+	lines.append("&nbsp;&nbsp;&nbsp;&nbsp;<nobr>")
 
 	runtime = format_duration(duration)
 	tokens = format_tokens(input_tokens, output_tokens)
