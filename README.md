@@ -23,6 +23,7 @@ Some basic evals run on various models that fit on a single DGX Spark.
 | [Intern S2 Preview](results/intern-s2-preview/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>17h 5m, 105,441k in, 3,930k out</nobr> | <nobr>72.0%</nobr> | <nobr>64.0%</nobr> | <nobr>8.0%</nobr><br>ts: <nobr>20.0%</nobr> / <nobr>28.0%</nobr> | <nobr>10.0%</nobr> | <nobr>37.3%</nobr> |
 | [Qwen3.6 27B](results/qwen36-27b/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>39h 51m, 43,822k in, 2,398k out</nobr> | <nobr>78.0%</nobr> | <nobr>62.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>22.0%</nobr> / <nobr>14.0%</nobr> | <nobr>10.0%</nobr> | <nobr>36.5%</nobr> |
 | [Nemotron3 Nano Omni 30B-A3B BF16](results/nemo-nano-omni-bf16/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>21h 37m, 20,238k in, 2,593k out</nobr> | <nobr>76.0%</nobr> | <nobr>54.0%</nobr> | <nobr>4.0%</nobr><br>ts: <nobr>10.0%</nobr> / <nobr>18.0%</nobr> | <nobr>0.0%</nobr> | <nobr>31.2%</nobr> |
+| [Laguna XS.2](results/laguna-xs2/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>11h 8m, 75,649k in, 2,506k out</nobr> | <nobr>16.0%</nobr> | <nobr>54.0%</nobr> | <nobr>14.0%</nobr><br>ts: <nobr>22.0%</nobr> / <nobr>24.0%</nobr> | <nobr>10.0%</nobr> | <nobr>25.4%</nobr> |
 | [Nemotron3 Super 120B-A12B NVFP4](results/nemo-super-nvfp4/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>20h 25m, 24,579k in, 1,973k out</nobr> | <nobr>12.0%</nobr> | <nobr>60.0%</nobr> | <nobr>8.0%</nobr><br>ts: <nobr>32.0%</nobr> / <nobr>18.0%</nobr> | <nobr>10.0%</nobr> | <nobr>25.4%</nobr> |
 | [Deepseek v4 Flash](results/deepseek-v4-flash/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>37h 50m, 5,271k in, 226k out</nobr> | <nobr>70.0%</nobr> |  | <nobr>0.0%</nobr><br>ts: <nobr>0.0%</nobr> / <nobr>0.0%</nobr> | <nobr>0.0%</nobr> | <nobr>16.7%</nobr> |
 | [Jackrong Qwopus 3.6 27B](results/qwen36-qwopus-preview/)<br>v1-preview<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr> |  |  |  |  | <nobr>0.0%</nobr> |
@@ -55,8 +56,8 @@ Each time you want to run evals, set some env vars with the details of the LLM e
 ```bash
 # Set these env vars for the model
 export EVAL_BASE_URL="http://192.168.0.132:8111/v1"
-export EVAL_MODEL="qwen36"
-export EVAL_RESULTS_FOLDER="qwen36-27b-dflash"
+export EVAL_MODEL="laguna"
+export EVAL_RESULTS_FOLDER="laguna-xs2"
 
 mkdir -p ~/inspect-evals
 cd ~/inspect-evals
