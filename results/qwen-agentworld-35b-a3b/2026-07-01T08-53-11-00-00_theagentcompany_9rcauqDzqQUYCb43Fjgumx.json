@@ -1,0 +1,645 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_set_id": "hmRWHB6mzvLmU5ScADbxHP",
+    "eval_id": "f3rxxSk9VUsHkYgoDXukyM",
+    "run_id": "mrKT7NAm4QQs4DzXPywm6L",
+    "created": "2026-07-01T08:53:11+00:00",
+    "task": "inspect_evals/theagentcompany",
+    "task_id": "9rcauqDzqQUYCb43Fjgumx",
+    "task_version": 0,
+    "task_display_name": "theagentcompany",
+    "task_registry_name": "inspect_evals/theagentcompany",
+    "task_attribs": {},
+    "task_args": {
+      "task_name": null,
+      "scoring_mode": "original",
+      "max_messages": 100
+    },
+    "task_args_passed": {},
+    "dataset": {
+      "location": "/home/ubuntu/.local/lib/python3.14/site-packages/inspect_evals/theagentcompany/tasks",
+      "samples": 10,
+      "sample_ids": [
+        "sde_create_sqlite_database (example)",
+        "ds_answer_numerical_data_question (example)",
+        "sde_copy_table_from_pdf_to_xlsx (example)",
+        "hr_resume_categorization (example)",
+        "ds_sql_exercise (example)",
+        "sde_run_rising_wave_locally (example)",
+        "hr_salary_analysis (example)",
+        "research_answer_questions_on_paper (example)",
+        "ml_grade_exam (example)",
+        "hr_populate_salary_increase_memo (example)"
+      ],
+      "shuffled": false
+    },
+    "model": "openai/qwen-agentworld",
+    "model_generate_config": {
+      "max_connections": 6
+    },
+    "model_args": {},
+    "config": {
+      "limit": [
+        0,
+        50
+      ],
+      "epochs": 7,
+      "epochs_reducer": [
+        "median"
+      ],
+      "fail_on_error": false,
+      "continue_on_fail": false,
+      "score_on_error": false,
+      "message_limit": 1000,
+      "time_limit": 1800,
+      "max_tasks": 1,
+      "max_subprocesses": 8,
+      "max_sandboxes": 8,
+      "sandbox_cleanup": true,
+      "log_samples": false,
+      "log_realtime": false,
+      "log_images": false,
+      "log_buffer": 100,
+      "log_shared": 0,
+      "score_display": false
+    },
+    "packages": {
+      "inspect_ai": "0.3.217",
+      "inspect_evals": "0.10.1"
+    },
+    "scorers": [
+      {
+        "name": "build_multi_scorer",
+        "options": {
+          "scoring_mode": "original"
+        },
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_evals/checkpoints",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "react",
+        "params": {
+          "name": null,
+          "description": null,
+          "prompt": "Complete the task provided.",
+          "tools": [
+            {
+              "type": "tool",
+              "name": "bash",
+              "params": {
+                "timeout": 180
+              }
+            },
+            {
+              "type": "tool",
+              "name": "python",
+              "params": {
+                "timeout": 180
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_go",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_click",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_type_submit",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_type",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_scroll",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_back",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_forward",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_refresh",
+              "params": {
+                "instance": null
+              }
+            }
+          ],
+          "model": null,
+          "attempts": [
+            3,
+            "Please continue working on the task. If you think you have solved the task, submit your final answer by calling the submit() tool. IMPORTANT: YOU SHOULD NEVER ASK FOR HUMAN HELP. If you are stuck and cannot make progress, call the submit() tool to give up.",
+            "to_float"
+          ],
+          "submit": null,
+          "on_continue": null,
+          "retry_refusals": null,
+          "compaction": null,
+          "truncation": "disabled",
+          "approval": null
+        },
+        "params_passed": {
+          "prompt": "Complete the task provided.",
+          "tools": [
+            {
+              "type": "tool",
+              "name": "bash",
+              "params": {
+                "timeout": 180
+              }
+            },
+            {
+              "type": "tool",
+              "name": "python",
+              "params": {
+                "timeout": 180
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_go",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_click",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_type_submit",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_type",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_scroll",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_back",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_forward",
+              "params": {
+                "instance": null
+              }
+            },
+            {
+              "type": "tool",
+              "name": "web_browser_refresh",
+              "params": {
+                "instance": null
+              }
+            }
+          ],
+          "attempts": [
+            3,
+            "Please continue working on the task. If you think you have solved the task, submit your final answer by calling the submit() tool. IMPORTANT: YOU SHOULD NEVER ASK FOR HUMAN HELP. If you are stuck and cannot make progress, call the submit() tool to give up.",
+            "to_float"
+          ]
+        }
+      }
+    ],
+    "config": {
+      "max_connections": 6
+    }
+  },
+  "results": {
+    "total_samples": 70,
+    "completed_samples": 70,
+    "scores": [
+      {
+        "name": "build_multi_scorer",
+        "scorer": "build_multi_scorer",
+        "reducer": "median",
+        "scored_samples": 10,
+        "unscored_samples": 0,
+        "params": {
+          "scoring_mode": "original"
+        },
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.2,
+            "params": {}
+          },
+          "checkpoints": {
+            "name": "inspect_evals/checkpoints",
+            "value": 0.39166666666666666,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2026-07-01T08:53:11+00:00",
+    "completed_at": "2026-07-01T14:12:36+00:00",
+    "model_usage": {
+      "openai/qwen-agentworld": {
+        "input_tokens": 37837855,
+        "output_tokens": 785146,
+        "total_tokens": 38623001
+      }
+    },
+    "role_usage": {},
+    "connection_limit_history": []
+  },
+  "invalidated": false,
+  "tags": [],
+  "metadata": {},
+  "reductions": [
+    {
+      "scorer": "build_multi_scorer",
+      "reducer": "median",
+      "samples": [
+        {
+          "value": 0,
+          "metadata": {
+            "checker": "host:sde_create_sqlite_database",
+            "checkpoints": [
+              {
+                "id": 1,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "value": 0
+              },
+              {
+                "id": 3,
+                "value": 1
+              },
+              {
+                "id": 4,
+                "value": 1
+              },
+              {
+                "id": 5,
+                "value": 1
+              },
+              {
+                "id": 6,
+                "value": 1
+              },
+              {
+                "id": 7,
+                "value": 1
+              },
+              {
+                "id": 8,
+                "value": 1
+              }
+            ]
+          },
+          "history": [],
+          "sample_id": "sde_create_sqlite_database (example)"
+        },
+        {
+          "value": 0,
+          "explanation": "Checkpoints: [{'id': 1, 'value': 0, 'llm_response': '<skipped: empty inline content>'}, {'id': 2, 'value': 0, 'llm_response': '<skipped: empty inline content>'}, {'id': 3, 'value': 0, 'llm_response': '<skipped: empty inline content>'}]",
+          "metadata": {
+            "checker": "host:ds_answer_numerical_data_question",
+            "checkpoints": [
+              {
+                "id": 1,
+                "value": 0,
+                "llm_response": "<skipped: empty inline content>"
+              },
+              {
+                "id": 2,
+                "value": 0,
+                "llm_response": "<skipped: empty inline content>"
+              },
+              {
+                "id": 3,
+                "value": 0,
+                "llm_response": "<skipped: empty inline content>"
+              }
+            ],
+            "scoring_mode": "original"
+          },
+          "history": [],
+          "sample_id": "ds_answer_numerical_data_question (example)"
+        },
+        {
+          "value": 0,
+          "explanation": "Checkpoints: [{'id': 1, 'value': 0}, {'id': 2, 'value': 0}, {'id': 3, 'value': 0}, {'id': 4, 'value': 0}, {'id': 5, 'value': 0}]",
+          "metadata": {
+            "checker": "host:sde_copy_table_from_pdf_to_xlsx",
+            "checkpoints": [
+              {
+                "id": 1,
+                "value": 0
+              },
+              {
+                "id": 2,
+                "value": 0
+              },
+              {
+                "id": 3,
+                "value": 0
+              },
+              {
+                "id": 4,
+                "value": 0
+              },
+              {
+                "id": 5,
+                "value": 0
+              }
+            ]
+          },
+          "history": [],
+          "sample_id": "sde_copy_table_from_pdf_to_xlsx (example)"
+        },
+        {
+          "value": 0,
+          "explanation": "Checkpoints: [{'id': 1, 'value': 0}, {'id': 2, 'value': 0}, {'id': 3, 'value': 0}, {'id': 4, 'value': 0}]",
+          "metadata": {
+            "checker": "host:hr_resume_categorization",
+            "checkpoints": [
+              {
+                "id": 1,
+                "value": 0
+              },
+              {
+                "id": 2,
+                "value": 0
+              },
+              {
+                "id": 3,
+                "value": 0
+              },
+              {
+                "id": 4,
+                "value": 0
+              }
+            ]
+          },
+          "history": [],
+          "sample_id": "hr_resume_categorization (example)"
+        },
+        {
+          "value": 1.0,
+          "explanation": "Checkpoints: [{'id': 1, 'value': 1, 'max': 1}, {'id': 2, 'value': 2, 'max': 2}, {'id': 3, 'value': 3, 'max': 3}]",
+          "metadata": {
+            "checker": "host:ds_sql_exercise",
+            "checkpoints": [
+              {
+                "id": 1,
+                "value": 1,
+                "max": 1
+              },
+              {
+                "id": 2,
+                "value": 2,
+                "max": 2
+              },
+              {
+                "id": 3,
+                "value": 3,
+                "max": 3
+              }
+            ],
+            "scoring_mode": "original"
+          },
+          "history": [],
+          "sample_id": "ds_sql_exercise (example)"
+        },
+        {
+          "value": 1.0,
+          "explanation": "Checkpoints: [{'id': 1, 'value': 1}, {'id': 2, 'value': 1}]",
+          "metadata": {
+            "checker": "host:sde_run_rising_wave_locally",
+            "checkpoints": [
+              {
+                "id": 1,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "value": 1
+              }
+            ]
+          },
+          "history": [],
+          "sample_id": "sde_run_rising_wave_locally (example)"
+        },
+        {
+          "value": 0,
+          "metadata": {
+            "checker": "host:hr_salary_analysis",
+            "checkpoints": [
+              {
+                "id": 0,
+                "value": 0.0
+              },
+              {
+                "id": 1,
+                "value": 0.0
+              }
+            ],
+            "scoring_mode": "original"
+          },
+          "history": [],
+          "sample_id": "hr_salary_analysis (example)"
+        },
+        {
+          "value": 0,
+          "explanation": "Checkpoints: [{'id': 0, 'value': 1}, {'id': 1, 'value': 0}, {'id': 2, 'value': 0}, {'id': 3, 'value': 0}, {'id': 4, 'value': 0}, {'id': 5, 'value': 0}, {'id': 6, 'value': 0}, {'id': 7, 'value': 0}, {'id': 8, 'value': 0}, {'id': 9, 'value': 0}, {'id': 10, 'value': 0}, {'id': 11, 'value': 0}]",
+          "metadata": {
+            "checker": "host:research_answer_questions_on_paper",
+            "checkpoints": [
+              {
+                "id": 0,
+                "value": 1
+              },
+              {
+                "id": 1,
+                "value": 0
+              },
+              {
+                "id": 2,
+                "value": 0
+              },
+              {
+                "id": 3,
+                "value": 0
+              },
+              {
+                "id": 4,
+                "value": 0
+              },
+              {
+                "id": 5,
+                "value": 0
+              },
+              {
+                "id": 6,
+                "value": 0
+              },
+              {
+                "id": 7,
+                "value": 0
+              },
+              {
+                "id": 8,
+                "value": 0
+              },
+              {
+                "id": 9,
+                "value": 0
+              },
+              {
+                "id": 10,
+                "value": 0
+              },
+              {
+                "id": 11,
+                "value": 0
+              }
+            ],
+            "scoring_mode": "original"
+          },
+          "history": [],
+          "sample_id": "research_answer_questions_on_paper (example)"
+        },
+        {
+          "value": 0,
+          "metadata": {
+            "checker": "host:ml_grade_exam",
+            "checkpoints": [
+              {
+                "id": 1,
+                "value": 1
+              },
+              {
+                "id": 2,
+                "value": 0
+              },
+              {
+                "id": 3,
+                "value": 0
+              },
+              {
+                "id": 4,
+                "value": 0
+              },
+              {
+                "id": 5,
+                "value": 0
+              },
+              {
+                "id": 6,
+                "value": 0
+              },
+              {
+                "id": 7,
+                "value": 0
+              },
+              {
+                "id": 8,
+                "value": 0
+              }
+            ],
+            "scoring_mode": "original"
+          },
+          "history": [],
+          "sample_id": "ml_grade_exam (example)"
+        },
+        {
+          "value": 0,
+          "explanation": "Checkpoints: [{'id': 1, 'value': 1, 'max': 1}, {'id': 2, 'value': 1, 'max': 2}, {'id': 4, 'value': 4, 'max': 4}]",
+          "metadata": {
+            "checker": "host:hr_populate_salary_increase_memo",
+            "checkpoints": [
+              {
+                "id": 1,
+                "value": 1,
+                "max": 1
+              },
+              {
+                "id": 2,
+                "value": 1,
+                "max": 2
+              },
+              {
+                "id": 4,
+                "value": 4,
+                "max": 4
+              }
+            ]
+          },
+          "history": [],
+          "sample_id": "hr_populate_salary_increase_memo (example)"
+        }
+      ]
+    }
+  ]
+}

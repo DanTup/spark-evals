@@ -1,0 +1,472 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_set_id": "hmRWHB6mzvLmU5ScADbxHP",
+    "eval_id": "9JdzZxynV6PpTj5WpeubLV",
+    "run_id": "nSSqnu2wujaiZJKHsyySN4",
+    "created": "2026-07-03T11:56:53+00:00",
+    "task": "inspect_evals/bigcodebench",
+    "task_id": "SXT9ytonjPgsmG53SQjTGY",
+    "task_version": 3,
+    "task_display_name": "bigcodebench",
+    "task_registry_name": "inspect_evals/bigcodebench",
+    "task_attribs": {},
+    "task_args": {
+      "solver": null,
+      "instruction_prompt": "Read the following function signature and docstring, and fully implement the function described. Make sure to include the import statements and use the same variable names as stated in the header.\n",
+      "scorer": null,
+      "sandbox": "docker",
+      "version": "v0.1.2",
+      "subset": null,
+      "docker_handling": "default"
+    },
+    "task_args_passed": {},
+    "dataset": {
+      "samples": 1140,
+      "sample_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "shuffled": false
+    },
+    "sandbox": {
+      "type": "docker",
+      "config": "/home/ubuntu/.local/lib/python3.14/site-packages/inspect_evals/bigcodebench/compose.yaml"
+    },
+    "model": "openai/qwen-agentworld",
+    "model_generate_config": {
+      "max_connections": 6
+    },
+    "model_args": {},
+    "config": {
+      "limit": [
+        0,
+        50
+      ],
+      "epochs": 7,
+      "epochs_reducer": [
+        "median"
+      ],
+      "fail_on_error": false,
+      "continue_on_fail": false,
+      "score_on_error": false,
+      "message_limit": 1000,
+      "time_limit": 1800,
+      "max_tasks": 1,
+      "max_subprocesses": 8,
+      "max_sandboxes": 8,
+      "sandbox_cleanup": true,
+      "log_samples": false,
+      "log_realtime": false,
+      "log_images": false,
+      "log_buffer": 100,
+      "log_shared": 0,
+      "score_display": false
+    },
+    "packages": {
+      "inspect_ai": "0.3.217",
+      "inspect_evals": "0.10.1"
+    },
+    "metadata": {
+      "full_task_version": "3-A",
+      "task_interface_version": "A",
+      "task_comparability_version": 3
+    },
+    "scorers": [
+      {
+        "name": "verify",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/mean",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/std",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "generate",
+        "params": {
+          "tool_calls": "loop",
+          "kwargs": {}
+        },
+        "params_passed": {}
+      }
+    ],
+    "config": {
+      "max_connections": 6
+    }
+  },
+  "results": {
+    "total_samples": 350,
+    "completed_samples": 350,
+    "scores": [
+      {
+        "name": "verify",
+        "scorer": "verify",
+        "reducer": "median",
+        "scored_samples": 50,
+        "unscored_samples": 0,
+        "params": {},
+        "metrics": {
+          "mean": {
+            "name": "mean",
+            "value": 0.58,
+            "params": {}
+          },
+          "std": {
+            "name": "std",
+            "value": 0.4985693819032899,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2026-07-03T11:56:53+00:00",
+    "completed_at": "2026-07-03T23:40:09+00:00",
+    "model_usage": {
+      "openai/qwen-agentworld": {
+        "input_tokens": 102476,
+        "output_tokens": 1354882,
+        "total_tokens": 1457358
+      }
+    },
+    "role_usage": {},
+    "connection_limit_history": []
+  },
+  "invalidated": false,
+  "tags": [],
+  "metadata": {
+    "full_task_version": "3-A",
+    "task_interface_version": "A",
+    "task_comparability_version": 3
+  },
+  "reductions": [
+    {
+      "scorer": "verify",
+      "reducer": "median",
+      "samples": [
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 0
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 1
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 2
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 3
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 4
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 5
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 6
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 7
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 8
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 9
+        },
+        {
+          "value": 0,
+          "answer": "",
+          "history": [],
+          "sample_id": 10
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 11
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 12
+        },
+        {
+          "value": 0,
+          "answer": "",
+          "history": [],
+          "sample_id": 13
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 14
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 15
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 16
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 17
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 18
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 19
+        },
+        {
+          "value": 1.0,
+          "answer": "import ast\nimport pandas as pd\nimport seaborn as sns\n\n\ndef task_func(csv_file):\n    \"\"\"\n    Read a CSV file, convert the string representations of dictionaries in a specific column ('dict_column') to Python dictionaries, and visualize the data with Seaborn's pairplot.\n\n    Parameters:\n    - csv_file (str): The path to the CSV file.\n\n    Returns:\n    tuple: A tuple containing:\n        - df (DataFrame): The DataFrame after reading and processing the CSV file.\n        - ax (PairGrid): Seaborn's PairGrid object after plotting.\n\n    Requirements:\n    - ast\n    - pandas\n    - seaborn\n\n    Example:\n    >>> df, ax = task_func('data/task_func/csv_1.csv')\n    >>> type(df)\n    <class 'pandas.core.frame.DataFrame'>\n    >>> type(ax)\n    <class 'seaborn.axisgrid.PairGrid'>\n    \"\"\"\n    df = pd.read_csv(csv_file)\n    df['dict_column'] = df['dict_column'].apply(ast.literal_eval)\n    ax = sns.pairplot(df)\n    return df, ax\n\n",
+          "explanation": "The following verification code was executed:\n\n```python\n\nimport ast\nimport pandas as pd\nimport seaborn as sns\n\n\ndef task_func(csv_file):\n    \"\"\"\n    Read a CSV file, convert the string representations of dictionaries in a specific column ('dict_column') to Python dictionaries, and visualize the data with Seaborn's pairplot.\n\n    Parameters:\n    - csv_file (str): The path to the CSV file.\n\n    Returns:\n    tuple: A tuple containing:\n        - df (DataFrame): The DataFrame after reading and processing the CSV file.\n        - ax (PairGrid): Seaborn's PairGrid object after plotting.\n\n    Requirements:\n    - ast\n    - pandas\n    - seaborn\n\n    Example:\n    >>> df, ax = task_func('data/task_func/csv_1.csv')\n    >>> type(df)\n    <class 'pandas.core.frame.DataFrame'>\n    >>> type(ax)\n    <class 'seaborn.axisgrid.PairGrid'>\n    \"\"\"\n    df = pd.read_csv(csv_file)\n    df['dict_column'] = df['dict_column'].apply(ast.literal_eval)\n    ax = sns.pairplot(df)\n    return df, ax\n\n\nimport unittest\nimport matplotlib\nimport os\nclass TestCases(unittest.TestCase):\n    \"\"\"Test cases for the task_func function.\"\"\"\n    def setUp(self):\n        self.test_dir = \"data/task_func\"\n        os.makedirs(self.test_dir, exist_ok=True)\n        df = pd.DataFrame(\n            {\n                \"dict_column\": [\n                    \"{'A' : 1, 'B' : 2, 'C' : 3}\",\n                    \"{'D' : 4, 'E' : 5, 'F' : 6}\",\n                ],\n                \"Value1\": [1, 2],\n                \"Value2\": [3, 4],\n            }\n        )\n        self.f_1 = os.path.join(self.test_dir, \"csv_1.csv\")\n        df.to_csv(self.f_1, index=False)\n        df = pd.DataFrame(\n            {\n                \"dict_column\": [\n                    \"{'G' : 7, 'H' : 8}\",\n                    \"{'I' : 9, 'J' : 10}\",\n                    \"{'G' : 7, 'H' : 8}\",\n                    \"{'I' : 9, 'J' : 10}\",\n                ],\n                \"Value1\": [2, 1, 2, 2],\n                \"Value2\": [1, 1, 3, 1],\n            }\n        )\n        self.f_2 = os.path.join(self.test_dir, \"csv_2.csv\")\n        df.to_csv(self.f_2, index=False)\n        df = pd.DataFrame(\n            {\n                \"dict_column\": [\n                    \"{'K' : 11, 'L' : 12, 'M' : 13, 'N' : 14}\",\n                ],\n                \"Value1\": [1],\n                \"Value2\": [2],\n            }\n        )\n        self.f_3 = os.path.join(self.test_dir, \"csv_3.csv\")\n        df.to_csv(self.f_3, index=False)\n        df = pd.DataFrame(\n            {\n                \"dict_column\": [\n                    \"{'O' : 15}\",\n                    \"{'P' : 16}\",\n                    \"{'Q' : 17}\",\n                    \"{'R' : 18}\",\n                    \"{'Q' : 17}\",\n                    \"{'P' : 16}\",\n                    \"{'P' : 16}\",\n                    \"{'P' : 16}\",\n                ],\n                \"Value1\": [1, 2, 2, 1, 1, 1, 2, 2],\n                \"Value2\": [1, 1, 1, 1, 2, 2, 2, 2],\n            }\n        )\n        self.f_4 = os.path.join(self.test_dir, \"csv_4.csv\")\n        df.to_csv(self.f_4, index=False)\n        df = pd.DataFrame(\n            {\n                \"dict_column\": [\n                    \"{'S' : 19, 'T' : 20, 'U' : 21, 'V' : 22}\",\n                    \"{'W' : 23, 'X' : 24, 'Y' : 25, 'Z' : 26}\",\n                ],\n                \"Value1\": [1, 2],\n                \"Value2\": [1, 2],\n            }\n        )\n        self.f_5 = os.path.join(self.test_dir, \"csv_5.csv\")\n        df.to_csv(self.f_5, index=False)\n    def tearDown(self) -> None:\n        import shutil\n        shutil.rmtree(self.test_dir)\n    def test_case_1(self):\n        df, ax = task_func(self.f_1)\n        # Assertions for DataFrame\n        self.assertIsInstance(df, pd.DataFrame)\n        self.assertEqual(len(df), 2)\n        self.assertTrue(\"dict_column\" in df.columns)\n        self.assertTrue(isinstance(df.iloc[0][\"dict_column\"], dict))\n        # Assertions for Seaborn PairGrid (plot)\n        self.assertIsInstance(ax, sns.axisgrid.PairGrid)\n        self.assertTrue(hasattr(ax, \"fig\"))\n        self.assertIsInstance(ax.fig, matplotlib.figure.Figure)\n    def test_case_2(self):\n        df, ax = task_func(self.f_2)\n        # Assertions for DataFrame\n        self.assertIsInstance(df, pd.DataFrame)\n        self.assertEqual(len(df), 4)\n        self.assertTrue(\"dict_column\" in df.columns)\n        self.assertTrue(isinstance(df.iloc[0][\"dict_column\"], dict))\n        # Assertions for Seaborn PairGrid (plot)\n        self.assertIsInstance(ax, sns.axisgrid.PairGrid)\n        self.assertTrue(hasattr(ax, \"fig\"))\n        self.assertIsInstance(ax.fig, matplotlib.figure.Figure)\n    def test_case_3(self):\n        df, ax = task_func(self.f_3)\n        # Assertions for DataFrame\n        self.assertIsInstance(df, pd.DataFrame)\n        self.assertEqual(len(df), 1)\n        self.assertTrue(\"dict_column\" in df.columns)\n        self.assertTrue(isinstance(df.iloc[0][\"dict_column\"], dict))\n        # Assertions for Seaborn PairGrid (plot)\n        self.assertIsInstance(ax, sns.axisgrid.PairGrid)\n        self.assertTrue(hasattr(ax, \"fig\"))\n        self.assertIsInstance(ax.fig, matplotlib.figure.Figure)\n    def test_case_4(self):\n        df, ax = task_func(self.f_4)\n        # Assertions for DataFrame\n        self.assertIsInstance(df, pd.DataFrame)\n        self.assertEqual(len(df), 8)\n        self.assertTrue(\"dict_column\" in df.columns)\n        self.assertTrue(isinstance(df.iloc[0][\"dict_column\"], dict))\n        # Assertions for Seaborn PairGrid (plot)\n        self.assertIsInstance(ax, sns.axisgrid.PairGrid)\n        self.assertTrue(hasattr(ax, \"fig\"))\n        self.assertIsInstance(ax.fig, matplotlib.figure.Figure)\n    def test_case_5(self):\n        df, ax = task_func(self.f_5)\n        # Assertions for DataFrame\n        self.assertIsInstance(df, pd.DataFrame)\n        self.assertEqual(len(df), 2)\n        self.assertTrue(\"dict_column\" in df.columns)\n        self.assertTrue(isinstance(df.iloc[0][\"dict_column\"], dict))\n        # Assertions for Seaborn PairGrid (plot)\n        self.assertIsInstance(ax, sns.axisgrid.PairGrid)\n        self.assertTrue(hasattr(ax, \"fig\"))\n        self.assertIsInstance(ax.fig, matplotlib.figure.Figure)\n\nif __name__ == '__main__':\n    unittest.main()\n```\nThe submission was correct.",
+          "history": [],
+          "sample_id": 20
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 21
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 22
+        },
+        {
+          "value": 0,
+          "answer": "",
+          "explanation": "The following verification code was executed:\n\n```python\n\n\nimport unittest\nclass TestCases(unittest.TestCase):\n    def test_case_1(self):\n        # Test with two lists of equal length where one element exactly matches the threshold.\n        l1 = [0, 0.5, 2, 3, 4]\n        l2 = [10, 11, 12, 13, 14]\n        self.assertEqual(task_func(l1, l2), 0.5)\n    def test_case_2(self):\n        # Test with the first list longer than the second, where the closest value is below the threshold.\n        l1 = [0, 0.4, 0.6, 3, 4, 5]\n        l2 = [10, 11, 12]\n        self.assertEqual(task_func(l1, l2), 0.4)\n        \n    def test_case_3(self):\n        # Test with the second list longer than the first, where the closest value is just above the threshold.\n        l1 = [0, 0.51]\n        l2 = [10, 11, 12, 13]\n        self.assertEqual(task_func(l1, l2), 0.51)\n        \n    def test_case_4(self):\n        # Test where one list is empty and the function must choose the closest value from a single non-empty list.\n        l1 = []\n        l2 = [10, 11, 12, 13]\n        self.assertEqual(task_func(l1, l2), 10)\n        \n    def test_case_5(self):\n        # Test with negative and positive numbers where the closest value to the threshold is zero.\n        l1 = [-10, -5, 0, 5, 10]\n        l2 = [-1, 0, 1]\n        self.assertEqual(task_func(l1, l2), 0)\n    def test_empty_lists(self):\n        # Test with both lists empty to check function's behavior in absence of any elements.\n        with self.assertRaises(ValueError):\n            task_func([], [])\n\nif __name__ == '__main__':\n    unittest.main()\n```\nThe submission was incorrect with the following error: \n\nEEEEEE\n======================================================================\nERROR: test_case_1 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 8, in test_case_1\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_2 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 13, in test_case_2\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_3 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 19, in test_case_3\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_4 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 25, in test_case_4\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_5 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 31, in test_case_5\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_empty_lists (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 35, in test_empty_lists\nNameError: name 'task_func' is not defined\n\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nFAILED (errors=6)\n",
+          "history": [],
+          "sample_id": 23
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 24
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 25
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 26
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 27
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 28
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 29
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 30
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 31
+        },
+        {
+          "value": 0,
+          "answer": "import requests\nfrom bs4 import BeautifulSoup\n\ndef task_func(url, tag):\n    \"\"\"\n    Scrape a web page for the first occurrence of a specified HTML tag and return its text content.\n\n    Parameters:\n    url (str): The URL of the website to scrape.\n    tag (str): The HTML tag to find and retrieve text from.\n\n    Returns:\n    str: The text content of the specified HTML tag if found, otherwise returns None.\n\n    Requirements:\n    - requests\n    - bs4.BeautifulSoup\n\n    Example:\n    >>> task_func(\"https://www.google.com/\", \"title\")\n    'Google'\n    \"\"\"\n    response = requests.get(url)\n    soup = BeautifulSoup(response.text, 'html.parser')\n    element = soup.find(tag)\n    if element:\n        return element.get_text(strip=True)\n    return None\n\n",
+          "history": [],
+          "sample_id": 32
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 33
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 34
+        },
+        {
+          "value": 0,
+          "answer": "",
+          "explanation": "The following verification code was executed:\n\n```python\n\n\nimport unittest\nimport pandas as pd\nclass TestCases(unittest.TestCase):\n    \"\"\"Test cases for the task_func function.\"\"\"\n    def test_case_1(self):\n        df = pd.DataFrame({\"A\": [1, 4, 7, 6, 7, 3, 4, 4]})\n        df1, ax = task_func(df)\n        self.assertIsInstance(ax, plt.Axes)\n    def test_case_2(self):\n        df = pd.DataFrame({\"A\": [1, 2, 3, 4, 5], \"B\": [7, 4, 3, 3, 1]})\n        df1, ax = task_func(df)\n        self.assertIsInstance(ax, plt.Axes)\n        self.assertEqual(len(ax.lines), 2)\n    def test_case_3(self):\n        df = pd.DataFrame({\"A\": [5, 6, 2, 9, 7, 3, 2, 2, 8, 1]})\n        target_values = [1, 2, 3, 4, 5]\n        df1, ax = task_func(df, target_values=target_values)\n        mask = df1.isin(target_values) | (df1 == 0)\n        self.assertTrue(mask.all().all())\n        self.assertIsInstance(ax, plt.Axes)\n    def test_case_4(self):\n        df = pd.DataFrame({\"A\": [10, 20, 30, 40, 50], \"B\": [50, 40, 10, 10, 30]})\n        target_values = [10, 20, 30]\n        df1, ax = task_func(df, target_values=target_values)\n        mask = df1.isin(target_values) | (df1 == 0)\n        self.assertTrue(mask.all().all())\n        self.assertIsInstance(ax, plt.Axes)\n        self.assertEqual(len(ax.lines), 2)\n    def test_case_5(self):\n        df = pd.DataFrame({\"A\": [5, 6, 2, 9, 7, 3, 2, 2, 8, 1]})\n        df1, ax = task_func(df, target_values=[])\n        self.assertTrue(df1.eq(0).all().all())\n        self.assertIsInstance(ax, plt.Axes)\n    def test_case_7(self):\n        df = pd.DataFrame({\"A\": [5, 6, 2, 9, 7, 3, 2, 2, 8, 1]})\n        df1, ax = task_func(df, target_values=[5, 6, 2, 9, 7, 3, 8, 1])\n        self.assertTrue(df1.equals(df))\n        self.assertIsInstance(ax, plt.Axes)\n\nif __name__ == '__main__':\n    unittest.main()\n```\nThe submission was incorrect with the following error: \n\nEEEEEE\n======================================================================\nERROR: test_case_1 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 8, in test_case_1\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_2 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 12, in test_case_2\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_3 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 18, in test_case_3\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_4 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 25, in test_case_4\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_5 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 32, in test_case_5\nNameError: name 'task_func' is not defined\n\n======================================================================\nERROR: test_case_7 (__main__.TestCases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 37, in test_case_7\nNameError: name 'task_func' is not defined\n\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nFAILED (errors=6)\n",
+          "history": [],
+          "sample_id": 35
+        },
+        {
+          "value": 0,
+          "answer": "",
+          "history": [],
+          "sample_id": 36
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 37
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 38
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 39
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 40
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 41
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 42
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 43
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 44
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 45
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 46
+        },
+        {
+          "value": 1.0,
+          "history": [],
+          "sample_id": 47
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 48
+        },
+        {
+          "value": 0,
+          "history": [],
+          "sample_id": 49
+        }
+      ]
+    }
+  ]
+}
