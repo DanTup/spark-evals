@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "FDxQG7pzX3J35wUwUx9DCT",
-    "eval_id": "Yv3y936ivHpAPctoL3DWKG",
-    "run_id": "a3reubpcqJKQXcayUnQhg3",
-    "created": "2026-05-19T13:27:29+00:00",
+    "eval_set_id": "NSLwZ8u8w3Hgr6KrXKCuqa",
+    "eval_id": "57fmcK9uM2dfxAN3SLEQFm",
+    "run_id": "Fbqsp6GnQHe3dSJ5WXw4TG",
+    "created": "2026-07-17T20:09:44+00:00",
     "task": "inspect_evals/ifevalcode",
-    "task_id": "a23rw9TMboXvnjkMh5CHkc",
+    "task_id": "YxAeXmJHtaEF8uSDQBqkNo",
     "task_version": 2,
     "task_display_name": "ifevalcode",
     "task_registry_name": "inspect_evals/ifevalcode",
@@ -187,22 +187,22 @@
         "metrics": {
           "overall_accuracy": {
             "name": "inspect_evals/overall_accuracy",
-            "value": 0.14,
+            "value": 0.18,
             "params": {}
           },
           "correctness": {
             "name": "inspect_evals/correctness",
-            "value": 0.36,
+            "value": 0.42,
             "params": {}
           },
           "instruction_adherence": {
             "name": "inspect_evals/instruction_adherence",
-            "value": 0.26,
+            "value": 0.3,
             "params": {}
           },
           "typescript_correctness": {
             "name": "typescript_correctness",
-            "value": 0.36,
+            "value": 0.42,
             "params": {
               "metric": "metric_fn",
               "group_key": "programming_language",
@@ -212,7 +212,7 @@
           },
           "typescript_instruction": {
             "name": "typescript_instruction",
-            "value": 0.26,
+            "value": 0.3,
             "params": {
               "metric": "metric_fn",
               "group_key": "programming_language",
@@ -225,13 +225,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-05-19T13:27:29+00:00",
-    "completed_at": "2026-05-20T05:11:08+00:00",
+    "started_at": "2026-07-17T20:09:44+00:00",
+    "completed_at": "2026-07-18T10:27:42+00:00",
     "model_usage": {
       "openai/qwen36": {
-        "input_tokens": 155396,
-        "output_tokens": 1252601,
-        "total_tokens": 1407997
+        "input_tokens": 168275,
+        "output_tokens": 1340676,
+        "total_tokens": 1508951
       }
     },
     "role_usage": {},
@@ -268,6 +268,7 @@
             "correctness": 0.0,
             "instruction": 0.0
           },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✗ Failed: No code block found in model response\n\n### Instruction Adherence Check\n✗ Failed:   File \"<string>\", line 38\n    param_name = re.split(r[:=]', param)[0].strip()\n                               ^\nSyntaxError: unterminated string literal (detected at line 38)\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -280,7 +281,6 @@
             "correctness": 0.0,
             "instruction": 0.0
           },
-          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✗ Failed: No code block found in model response\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 58, in <module>\n  File \"<string>\", line 25, in check_instruction\nAssertionError: No TypeScript code block found in response.\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -293,6 +293,7 @@
             "correctness": 1.0,
             "instruction": 0.0
           },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 57, in <module>\n  File \"<string>\", line 42, in check_instruction\nAssertionError: Invalid indentation pattern\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -327,7 +328,7 @@
           "value": {
             "both_passed": 0.0,
             "correctness": 0.0,
-            "instruction": 1.0
+            "instruction": 0.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -376,7 +377,7 @@
           "value": {
             "both_passed": 0.0,
             "correctness": 0.0,
-            "instruction": 0.0
+            "instruction": 1.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -402,6 +403,7 @@
             "correctness": 1.0,
             "instruction": 0.0
           },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 71, in <module>\n  File \"<string>\", line 46, in check_instruction\nAssertionError: Function signature does not match requirements\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -414,7 +416,6 @@
             "correctness": 0.0,
             "instruction": 0.0
           },
-          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✗ Failed: No code block found in model response\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 62, in <module>\n  File \"<string>\", line 25, in check_instruction\nAssertionError: No TypeScript code block found\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -464,7 +465,6 @@
             "correctness": 1.0,
             "instruction": 1.0
           },
-          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -485,8 +485,8 @@
         },
         {
           "value": {
-            "both_passed": 0.0,
-            "correctness": 0.0,
+            "both_passed": 1.0,
+            "correctness": 1.0,
             "instruction": 1.0
           },
           "metadata": {
@@ -549,6 +549,7 @@
             "correctness": 1.0,
             "instruction": 0.0
           },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 40, in <module>\n  File \"<string>\", line 34, in check_instruction\nAssertionError: Missing \"你好世界\" comment\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -584,7 +585,7 @@
           "value": {
             "both_passed": 0.0,
             "correctness": 0.0,
-            "instruction": 0.0
+            "instruction": 1.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -618,9 +619,9 @@
         },
         {
           "value": {
-            "both_passed": 1.0,
+            "both_passed": 0.0,
             "correctness": 1.0,
-            "instruction": 1.0
+            "instruction": 0.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -668,8 +669,8 @@
         },
         {
           "value": {
-            "both_passed": 0.0,
-            "correctness": 0.0,
+            "both_passed": 1.0,
+            "correctness": 1.0,
             "instruction": 1.0
           },
           "metadata": {
@@ -706,7 +707,7 @@
           "value": {
             "both_passed": 0.0,
             "correctness": 0.0,
-            "instruction": 0.0
+            "instruction": 1.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -720,7 +721,6 @@
             "correctness": 0.0,
             "instruction": 0.0
           },
-          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✗ Failed: No code block found in model response\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 64, in <module>\n  File \"<string>\", line 25, in check_instruction\nAssertionError: No TypeScript code block found.\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -793,7 +793,6 @@
             "correctness": 0.0,
             "instruction": 0.0
           },
-          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✗ Failed: No code block found in model response\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 49, in <module>\n  File \"<string>\", line 25, in check_instruction\nAssertionError: No TypeScript code block found\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -851,9 +850,9 @@
         },
         {
           "value": {
-            "both_passed": 0.0,
-            "correctness": 0.0,
-            "instruction": 0.0
+            "both_passed": 1.0,
+            "correctness": 1.0,
+            "instruction": 1.0
           },
           "metadata": {
             "programming_language": "typescript"

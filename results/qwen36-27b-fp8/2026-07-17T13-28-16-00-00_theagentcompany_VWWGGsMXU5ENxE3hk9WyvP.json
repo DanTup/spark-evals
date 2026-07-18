@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "FDxQG7pzX3J35wUwUx9DCT",
-    "eval_id": "mcNTEriyRgtsrbshSSth9c",
-    "run_id": "a3reubpcqJKQXcayUnQhg3",
-    "created": "2026-05-19T07:06:09+00:00",
+    "eval_set_id": "NSLwZ8u8w3Hgr6KrXKCuqa",
+    "eval_id": "TqTqp8QUsdiReLGezsSgG8",
+    "run_id": "Fbqsp6GnQHe3dSJ5WXw4TG",
+    "created": "2026-07-17T13:28:16+00:00",
     "task": "inspect_evals/theagentcompany",
-    "task_id": "MbKRpmjLEwgDYbycFC4AiX",
+    "task_id": "VWWGGsMXU5ENxE3hk9WyvP",
     "task_version": 0,
     "task_display_name": "theagentcompany",
     "task_registry_name": "inspect_evals/theagentcompany",
@@ -298,13 +298,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-05-19T07:06:09+00:00",
-    "completed_at": "2026-05-19T12:23:28+00:00",
+    "started_at": "2026-07-17T13:28:17+00:00",
+    "completed_at": "2026-07-17T19:03:04+00:00",
     "model_usage": {
       "openai/qwen36": {
-        "input_tokens": 43954458,
-        "output_tokens": 531550,
-        "total_tokens": 44486008
+        "input_tokens": 46094892,
+        "output_tokens": 550732,
+        "total_tokens": 46645624
       }
     },
     "role_usage": {},
@@ -329,7 +329,7 @@
               },
               {
                 "id": 2,
-                "value": 0
+                "value": 1
               },
               {
                 "id": 3,
@@ -337,23 +337,23 @@
               },
               {
                 "id": 4,
-                "value": 0
+                "value": 1
               },
               {
                 "id": 5,
-                "value": 0
+                "value": 1
               },
               {
                 "id": 6,
-                "value": 0
+                "value": 1
               },
               {
                 "id": 7,
-                "value": 0
+                "value": 1
               },
               {
                 "id": 8,
-                "value": 0
+                "value": 1
               }
             ]
           },
@@ -362,7 +362,6 @@
         },
         {
           "value": 0,
-          "explanation": "Checkpoints: [{'id': 1, 'value': 0, 'llm_response': ''}, {'id': 2, 'value': 0, 'llm_response': ''}, {'id': 3, 'value': 0, 'llm_response': ''}]",
           "metadata": {
             "checker": "host:ds_answer_numerical_data_question",
             "checkpoints": [
@@ -420,7 +419,6 @@
         },
         {
           "value": 0,
-          "explanation": "Checkpoints: [{'id': 1, 'value': 0}, {'id': 2, 'value': 0}, {'id': 3, 'value': 0}, {'id': 4, 'value': 0}]",
           "metadata": {
             "checker": "host:hr_resume_categorization",
             "checkpoints": [
@@ -473,7 +471,6 @@
         },
         {
           "value": 1.0,
-          "explanation": "Checkpoints: [{'id': 1, 'value': 1}, {'id': 2, 'value': 1}]",
           "metadata": {
             "checker": "host:sde_run_rising_wave_locally",
             "checkpoints": [
@@ -517,7 +514,7 @@
             "checkpoints": [
               {
                 "id": 0,
-                "value": 0
+                "value": 1
               },
               {
                 "id": 1,
@@ -571,6 +568,7 @@
         },
         {
           "value": 0,
+          "explanation": "Checkpoints: [{'id': 1, 'value': 1}, {'id': 2, 'value': 0}, {'id': 3, 'value': 0}, {'id': 4, 'value': 0}, {'id': 5, 'value': 0}, {'id': 6, 'value': 0}, {'id': 7, 'value': 0}, {'id': 8, 'value': 0}]",
           "metadata": {
             "checker": "host:ml_grade_exam",
             "checkpoints": [
@@ -616,23 +614,7 @@
           "value": 0,
           "metadata": {
             "checker": "host:hr_populate_salary_increase_memo",
-            "checkpoints": [
-              {
-                "id": 1,
-                "value": 1,
-                "max": 1
-              },
-              {
-                "id": 2,
-                "value": 1,
-                "max": 2
-              },
-              {
-                "id": 4,
-                "value": 4,
-                "max": 4
-              }
-            ]
+            "checkpoints": []
           },
           "history": [],
           "sample_id": "hr_populate_salary_increase_memo (example)"

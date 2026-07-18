@@ -1,11 +1,13 @@
 ---
-name: Qwen3.6 27B FP8
-params: 27
+name: Ornith 35B FP8
+params:
+  total: 35
+  active: 3
 ---
 
 ```bash
 docker run \
-  --name qwen36 \
+  --name grm26 \
   -d \
   --gpus all \
   --restart unless-stopped \
@@ -14,11 +16,11 @@ docker run \
   -v ~/ext/cache/huggingface:/root/.cache/huggingface \
   -v ~/ext/cache/vllm:/root/.cache/vllm \
   -e VLLM_NO_USAGE_STATS=1 \
-  vllm/vllm-openai:latest \
-    Qwen/Qwen3.6-27B-FP8 \
+  vllm/vllm-openai:nightly \
+    OrionLLM/GRM-2.6-Plus \
     --host 0.0.0.0 \
     --gpu-memory-utilization 0.85 \
-    --served-model-name qwen36 \
+    --served-model-name grm26 \
     --max-model-len 256K \
     --language-model-only \
     --reasoning-parser qwen3 \
