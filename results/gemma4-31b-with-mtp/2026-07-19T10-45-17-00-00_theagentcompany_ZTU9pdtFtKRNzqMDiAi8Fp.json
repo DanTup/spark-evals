@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "HaTYFZEE8KuHM26r8A9gBa",
-    "eval_id": "HM5TZhQYHPwmabRVuK2MYH",
-    "run_id": "kVXgthuQvdm8xUBYLNryh6",
-    "created": "2026-05-25T14:39:36+00:00",
+    "eval_set_id": "cUmQ3iR2JW6ZqvJrai8qym",
+    "eval_id": "DoLPQe6nThKVp8TucBbwqD",
+    "run_id": "gnPNHvegT7F49VTiH2Tcuh",
+    "created": "2026-07-19T10:45:17+00:00",
     "task": "inspect_evals/theagentcompany",
-    "task_id": "QVPWQQFs3kku57uacYsw7J",
+    "task_id": "ZTU9pdtFtKRNzqMDiAi8Fp",
     "task_version": 0,
     "task_display_name": "theagentcompany",
     "task_registry_name": "inspect_evals/theagentcompany",
@@ -66,8 +66,8 @@
       "score_display": false
     },
     "packages": {
-      "inspect_ai": "0.3.217",
-      "inspect_evals": "0.10.1"
+      "inspect_ai": "0.3.220",
+      "inspect_evals": "0.11.0"
     },
     "scorers": [
       {
@@ -271,7 +271,7 @@
   },
   "results": {
     "total_samples": 70,
-    "completed_samples": 69,
+    "completed_samples": 70,
     "scores": [
       {
         "name": "build_multi_scorer",
@@ -290,7 +290,7 @@
           },
           "checkpoints": {
             "name": "inspect_evals/checkpoints",
-            "value": 0.39583333333333337,
+            "value": 0.38333333333333336,
             "params": {}
           }
         }
@@ -298,13 +298,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-05-25T14:39:36+00:00",
-    "completed_at": "2026-05-25T20:07:10+00:00",
+    "started_at": "2026-07-19T10:45:17+00:00",
+    "completed_at": "2026-07-19T15:48:40+00:00",
     "model_usage": {
       "openai/gemma4": {
-        "input_tokens": 35343805,
-        "output_tokens": 110563,
-        "total_tokens": 35454368
+        "input_tokens": 34512185,
+        "output_tokens": 149903,
+        "total_tokens": 34662088
       }
     },
     "role_usage": {},
@@ -329,7 +329,7 @@
               },
               {
                 "id": 2,
-                "value": 1
+                "value": 0
               },
               {
                 "id": 3,
@@ -368,7 +368,7 @@
               {
                 "id": 1,
                 "value": 0,
-                "llm_response": "<skipped: empty inline content>"
+                "llm_response": "no"
               },
               {
                 "id": 2,
@@ -444,7 +444,6 @@
         },
         {
           "value": 0,
-          "explanation": "Checkpoints: [{'id': 1, 'value': 1, 'max': 1}, {'id': 2, 'value': 2, 'max': 2}, {'id': 3, 'value': 0, 'max': 3}]",
           "metadata": {
             "checker": "host:ds_sql_exercise",
             "checkpoints": [
@@ -489,6 +488,7 @@
         },
         {
           "value": 0,
+          "explanation": "Original scoring failed: Failed to retrieve file content. Error: File is not a zip file",
           "metadata": {
             "checker": "host:hr_salary_analysis",
             "checkpoints": [],
@@ -499,6 +499,7 @@
         },
         {
           "value": 0,
+          "explanation": "Checkpoints: [{'id': 0, 'value': 1}, {'id': 1, 'value': 0}, {'id': 2, 'value': 0}, {'id': 3, 'value': 0}, {'id': 4, 'value': 0}, {'id': 5, 'value': 0}, {'id': 6, 'value': 0}, {'id': 7, 'value': 0}, {'id': 8, 'value': 0}, {'id': 9, 'value': 0}, {'id': 10, 'value': 0}, {'id': 11, 'value': 0}]",
           "metadata": {
             "checker": "host:research_answer_questions_on_paper",
             "checkpoints": [
@@ -557,7 +558,7 @@
           "sample_id": "research_answer_questions_on_paper (example)"
         },
         {
-          "value": 0.0,
+          "value": 0,
           "metadata": {
             "checker": "host:ml_grade_exam",
             "checkpoints": [

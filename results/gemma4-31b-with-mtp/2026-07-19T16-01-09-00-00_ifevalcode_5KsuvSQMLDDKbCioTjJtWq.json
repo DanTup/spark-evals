@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "HaTYFZEE8KuHM26r8A9gBa",
-    "eval_id": "c9gxT9Cv58YorLPRmRbxtQ",
-    "run_id": "kVXgthuQvdm8xUBYLNryh6",
-    "created": "2026-05-25T20:17:50+00:00",
+    "eval_set_id": "cUmQ3iR2JW6ZqvJrai8qym",
+    "eval_id": "LikMHEVfNPxdnMQtxiWeti",
+    "run_id": "gnPNHvegT7F49VTiH2Tcuh",
+    "created": "2026-07-19T16:01:09+00:00",
     "task": "inspect_evals/ifevalcode",
-    "task_id": "8zjZdswnASfekshjCXecQX",
+    "task_id": "5KsuvSQMLDDKbCioTjJtWq",
     "task_version": 2,
     "task_display_name": "ifevalcode",
     "task_registry_name": "inspect_evals/ifevalcode",
@@ -112,8 +112,8 @@
       "score_display": false
     },
     "packages": {
-      "inspect_ai": "0.3.217",
-      "inspect_evals": "0.10.1"
+      "inspect_ai": "0.3.220",
+      "inspect_evals": "0.11.0"
     },
     "metadata": {
       "full_task_version": "2-A",
@@ -187,22 +187,22 @@
         "metrics": {
           "overall_accuracy": {
             "name": "inspect_evals/overall_accuracy",
-            "value": 0.18,
+            "value": 0.2,
             "params": {}
           },
           "correctness": {
             "name": "inspect_evals/correctness",
-            "value": 0.36,
+            "value": 0.38,
             "params": {}
           },
           "instruction_adherence": {
             "name": "inspect_evals/instruction_adherence",
-            "value": 0.4,
+            "value": 0.38,
             "params": {}
           },
           "typescript_correctness": {
             "name": "typescript_correctness",
-            "value": 0.36,
+            "value": 0.38,
             "params": {
               "metric": "metric_fn",
               "group_key": "programming_language",
@@ -212,7 +212,7 @@
           },
           "typescript_instruction": {
             "name": "typescript_instruction",
-            "value": 0.4,
+            "value": 0.38,
             "params": {
               "metric": "metric_fn",
               "group_key": "programming_language",
@@ -225,13 +225,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-05-25T20:17:50+00:00",
-    "completed_at": "2026-05-25T22:14:03+00:00",
+    "started_at": "2026-07-19T16:01:09+00:00",
+    "completed_at": "2026-07-19T17:42:50+00:00",
     "model_usage": {
       "openai/gemma4": {
-        "input_tokens": 239850,
-        "output_tokens": 395202,
-        "total_tokens": 635052
+        "input_tokens": 240296,
+        "output_tokens": 399380,
+        "total_tokens": 639676
       }
     },
     "role_usage": {},
@@ -265,7 +265,7 @@
         {
           "value": {
             "both_passed": 0.0,
-            "correctness": 0.0,
+            "correctness": 1.0,
             "instruction": 0.0
           },
           "metadata": {
@@ -352,6 +352,7 @@
             "correctness": 1.0,
             "instruction": 0.0
           },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 62, in <module>\n  File \"<string>\", line 34, in check_instruction\nAssertionError: Constructor is missing\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -484,8 +485,8 @@
         },
         {
           "value": {
-            "both_passed": 0.0,
-            "correctness": 0.0,
+            "both_passed": 1.0,
+            "correctness": 1.0,
             "instruction": 1.0
           },
           "metadata": {
@@ -497,7 +498,7 @@
         {
           "value": {
             "both_passed": 0.0,
-            "correctness": 1.0,
+            "correctness": 0.0,
             "instruction": 0.0
           },
           "metadata": {
@@ -624,6 +625,7 @@
             "correctness": 1.0,
             "instruction": 0.0
           },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 70, in <module>\n  File \"<string>\", line 62, in check_instruction\nAssertionError: Comment 'Hello World' not found.\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -780,7 +782,7 @@
           "value": {
             "both_passed": 0.0,
             "correctness": 0.0,
-            "instruction": 1.0
+            "instruction": 0.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -854,7 +856,6 @@
             "correctness": 1.0,
             "instruction": 1.0
           },
-          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
           "metadata": {
             "programming_language": "typescript"
           },

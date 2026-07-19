@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "HaTYFZEE8KuHM26r8A9gBa",
-    "eval_id": "eU4KMfvjxWNWusUJTGmFu6",
-    "run_id": "kVXgthuQvdm8xUBYLNryh6",
-    "created": "2026-05-25T22:14:04+00:00",
+    "eval_set_id": "cUmQ3iR2JW6ZqvJrai8qym",
+    "eval_id": "nzGDQ6RAXg6QdM3cxJGRNL",
+    "run_id": "gnPNHvegT7F49VTiH2Tcuh",
+    "created": "2026-07-19T17:44:35+00:00",
     "task": "inspect_evals/bigcodebench",
-    "task_id": "CXFZ4W9Xuy8BS5bktXwA49",
+    "task_id": "aCE6YFNhByUQW74hdLGPY6",
     "task_version": 3,
     "task_display_name": "bigcodebench",
     "task_registry_name": "inspect_evals/bigcodebench",
@@ -113,8 +113,8 @@
       "score_display": false
     },
     "packages": {
-      "inspect_ai": "0.3.217",
-      "inspect_evals": "0.10.1"
+      "inspect_ai": "0.3.220",
+      "inspect_evals": "0.11.0"
     },
     "metadata": {
       "full_task_version": "3-A",
@@ -169,12 +169,12 @@
         "metrics": {
           "mean": {
             "name": "mean",
-            "value": 0.7,
+            "value": 0.72,
             "params": {}
           },
           "std": {
             "name": "std",
-            "value": 0.46291004988627577,
+            "value": 0.4535573676110727,
             "params": {}
           }
         }
@@ -182,13 +182,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-05-25T22:14:04+00:00",
-    "completed_at": "2026-05-25T22:54:59+00:00",
+    "started_at": "2026-07-19T17:44:35+00:00",
+    "completed_at": "2026-07-19T18:23:30+00:00",
     "model_usage": {
       "openai/gemma4": {
         "input_tokens": 129990,
-        "output_tokens": 179631,
-        "total_tokens": 309621
+        "output_tokens": 177340,
+        "total_tokens": 307330
       }
     },
     "role_usage": {},
@@ -257,7 +257,7 @@
           "sample_id": 9
         },
         {
-          "value": 0,
+          "value": 1.0,
           "history": [],
           "sample_id": 10
         },

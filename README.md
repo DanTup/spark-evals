@@ -10,9 +10,9 @@ Some basic evals run on various models that fit on a single DGX Spark.
 | name | bfcl | bigcodebench | IfEvalCode | The<br>Agent<br>Co | Overall |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8-fp8kv/)<br>kv-cache-dtype=fp8<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>13h 55m, 125,917k in, 6,129k out</nobr> | <nobr>76.0%</nobr> | <nobr>60.0%</nobr> | ***<nobr>20.0%</nobr>***<br>ts: <nobr>38.0%</nobr> / ***<nobr>50.0%</nobr>*** | ***<nobr>20.0%</nobr>*** | ***<nobr>47.7%</nobr>*** |
+| [Gemma4 31B](results/gemma4-31b-with-mtp/)<br>speculative-config=gemma-4-31B-it-assistant(4)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>7h 33m, 35,016k in, 763k out</nobr> | <nobr>76.0%</nobr> | ***<nobr>72.0%</nobr>*** | ***<nobr>20.0%</nobr>***<br>ts: <nobr>38.0%</nobr> / <nobr>38.0%</nobr> | <nobr>0.0%</nobr> | <nobr>46.9%</nobr> |
 | [Qwen3.6 35B-A3B FP8](results/qwen36-35b-a3b-fp8/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>13h 41m, 117,175k in, 6,095k out</nobr> | <nobr>78.0%</nobr> | <nobr>64.0%</nobr> | <nobr>18.0%</nobr><br>ts: <nobr>38.0%</nobr> / <nobr>44.0%</nobr> | <nobr>10.0%</nobr> | <nobr>46.9%</nobr> |
 | [Gemma4 31B](results/gemma4-31b/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>14h 57m, 37,212k in, 690k out</nobr> | <nobr>78.0%</nobr> | ***<nobr>72.0%</nobr>*** | <nobr>18.0%</nobr><br>ts: <nobr>36.0%</nobr> / <nobr>38.0%</nobr> | <nobr>0.0%</nobr> | <nobr>46.5%</nobr> |
-| [Gemma4 31B](results/gemma4-31b-with-mtp/)<br>speculative-config=gemma-4-31B-it-assistant(4)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>8h 15m, 35,847k in, 722k out</nobr> | <nobr>78.0%</nobr> | <nobr>70.0%</nobr> | <nobr>18.0%</nobr><br>ts: <nobr>36.0%</nobr> / <nobr>40.0%</nobr> | <nobr>0.0%</nobr> | <nobr>46.5%</nobr> |
 | [Qwen3.6 35B-A3B NVFP4](results/qwen36-35b-a3b-nvfp4/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>12h 42m, 118,842k in, 6,245k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>64.0%</nobr> | <nobr>12.0%</nobr><br>ts: <nobr>36.0%</nobr> / <nobr>44.0%</nobr> | <nobr>10.0%</nobr> | <nobr>45.8%</nobr> |
 | [Qwen3.6 27B FP8](results/qwen36-27b-fp8/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>25h 32m, 46,602k in, 3,662k out</nobr> | <nobr>78.0%</nobr> | <nobr>66.0%</nobr> | <nobr>18.0%</nobr><br>ts: ***<nobr>42.0%</nobr>*** / <nobr>30.0%</nobr> | <nobr>10.0%</nobr> | <nobr>45.4%</nobr> |
 | [Gemma4 26B-A4B](results/gemma4-26b-a4b/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>9h 10m, 469,371k in, 1,009k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>62.0%</nobr> | <nobr>18.0%</nobr><br>ts: <nobr>30.0%</nobr> / <nobr>44.0%</nobr> | <nobr>0.0%</nobr> | <nobr>45.0%</nobr> |
@@ -45,7 +45,7 @@ Because some of these evals require installing packages and also spawn Docker co
 export PATH=$PATH:~/.local/bin
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends ca-certificates curl jq python3 python3-pip python-is-python3
-python3 -m pip install --break-system-packages openai inspect-evals inspect-evals[theagentcompany] inspect-evals[ifevalcode]
+python3 -m pip install --break-system-packages openai anyio==4.13.0 textual==8.2.5 inspect-ai==0.3.220 inspect-evals==0.11.0 inspect-evals[theagentcompany] inspect-evals[ifevalcode]
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 chmod +x get-docker.sh
@@ -62,8 +62,8 @@ Each time you want to run evals, set some env vars with the details of the LLM e
 ```bash
 # Set these env vars for the model
 export EVAL_BASE_URL="http://192.168.0.132:8111/v1"
-export EVAL_MODEL="qwen36"
-export EVAL_RESULTS_FOLDER="qwen36-27b-fp8"
+export EVAL_MODEL="gemma4"
+export EVAL_RESULTS_FOLDER="gemma4-31b-with-mtp"
 
 mkdir -p ~/inspect-evals
 cd ~/inspect-evals

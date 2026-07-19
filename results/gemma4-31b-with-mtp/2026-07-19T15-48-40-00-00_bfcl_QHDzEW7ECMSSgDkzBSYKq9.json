@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "HaTYFZEE8KuHM26r8A9gBa",
-    "eval_id": "UrSSknrPthph9LupvQx6ZF",
-    "run_id": "kVXgthuQvdm8xUBYLNryh6",
-    "created": "2026-05-25T20:07:10+00:00",
+    "eval_set_id": "cUmQ3iR2JW6ZqvJrai8qym",
+    "eval_id": "KvfcqDdRe6HmgbKcJzbGpv",
+    "run_id": "gnPNHvegT7F49VTiH2Tcuh",
+    "created": "2026-07-19T15:48:40+00:00",
     "task": "inspect_evals/bfcl",
-    "task_id": "MyqoFEQqjyagDcrzcGkCwx",
+    "task_id": "QHDzEW7ECMSSgDkzBSYKq9",
     "task_version": 5,
     "task_display_name": "bfcl",
     "task_registry_name": "inspect_evals/bfcl",
@@ -113,8 +113,8 @@
       "score_display": false
     },
     "packages": {
-      "inspect_ai": "0.3.217",
-      "inspect_evals": "0.10.1"
+      "inspect_ai": "0.3.220",
+      "inspect_evals": "0.11.0"
     },
     "metadata": {
       "full_task_version": "5-B",
@@ -190,17 +190,17 @@
         "metrics": {
           "accuracy": {
             "name": "accuracy",
-            "value": 0.78,
+            "value": 0.76,
             "params": {}
           },
           "stderr": {
             "name": "stderr",
-            "value": 0.05917804336345136,
+            "value": 0.06101187572589322,
             "params": {}
           },
           "exec_parallel_multiple_acc": {
             "name": "exec_parallel_multiple_acc",
-            "value": 0.75,
+            "value": 0.725,
             "params": {
               "metric": {
                 "type": "metric",
@@ -226,7 +226,7 @@
           },
           "all": {
             "name": "all",
-            "value": 0.78,
+            "value": 0.76,
             "params": {
               "metric": {
                 "type": "metric",
@@ -239,7 +239,7 @@
           },
           "exec_parallel_multiple_sterr": {
             "name": "exec_parallel_multiple_sterr",
-            "value": 0.06933752452815363,
+            "value": 0.07149950690165274,
             "params": {
               "metric": {
                 "type": "metric",
@@ -265,7 +265,7 @@
           },
           "all2": {
             "name": "all2",
-            "value": 0.05917804336345136,
+            "value": 0.06101187572589322,
             "params": {
               "metric": {
                 "type": "metric",
@@ -281,13 +281,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-05-25T20:07:10+00:00",
-    "completed_at": "2026-05-25T20:17:41+00:00",
+    "started_at": "2026-07-19T15:48:40+00:00",
+    "completed_at": "2026-07-19T15:58:34+00:00",
     "model_usage": {
       "openai/gemma4": {
         "input_tokens": 134344,
-        "output_tokens": 36748,
-        "total_tokens": 171092
+        "output_tokens": 36549,
+        "total_tokens": 170893
       }
     },
     "role_usage": {},
@@ -481,9 +481,9 @@
           "sample_id": "exec_parallel_multiple_30"
         },
         {
-          "value": 1.0,
-          "answer": "[mat_mul(matA=[[1, 2], [3, 4]], matB=[[5, 6], [7, 8]]), calculate_mean(numbers=[1, 2, 3, 4])]",
-          "explanation": "Correct",
+          "value": 0.0,
+          "answer": "[mat_mul(matA=[['1', '2'], ['3', '4']], matB=[['5', '6'], ['7', '8']]), calculate_mean(numbers=[1, 2, 3, 4])]",
+          "explanation": "No match found for: mat_mul",
           "history": [],
           "sample_id": "exec_parallel_multiple_31"
         },
