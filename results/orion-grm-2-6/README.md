@@ -1,8 +1,6 @@
 ---
-name: Ornith 35B FP8
-params:
-  total: 35
-  active: 3
+name: Orion GRM 2.6 Plus
+params: 27
 ---
 
 ```bash

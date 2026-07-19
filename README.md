@@ -31,7 +31,7 @@ Some basic evals run on various models that fit on a single DGX Spark.
 | [Ornith 35B FP8](results/ornith-35b-fp8/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>52h 21m, 84,578k in, 1,985k out</nobr> | ***<nobr>80.0%</nobr>*** | <nobr>0.0%</nobr> | <nobr>8.0%</nobr><br>ts: <nobr>18.0%</nobr> / <nobr>12.0%</nobr> | <nobr>10.0%</nobr> | <nobr>23.1%</nobr> |
 | [Gemma4 Diffusion](results/gemma4-diffusion/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>4h 30m, 258,452k in, 1,077k out</nobr> | <nobr>78.0%</nobr> | <nobr>0.0%</nobr> | <nobr>2.0%</nobr><br>ts: <nobr>2.0%</nobr> / <nobr>4.0%</nobr> | <nobr>10.0%</nobr> | <nobr>16.9%</nobr> |
 | [Deepseek v4 Flash](results/deepseek-v4-flash/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>37h 50m, 5,271k in, 226k out</nobr> | <nobr>70.0%</nobr> |  | <nobr>0.0%</nobr><br>ts: <nobr>0.0%</nobr> / <nobr>0.0%</nobr> | <nobr>0.0%</nobr> | <nobr>16.7%</nobr> |
-| [Ornith 35B FP8](results/orion-grm-2-6/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>95h 0m, 2,003k in, 19k out</nobr> | <nobr>20.0%</nobr> | <nobr>0.0%</nobr> | <nobr>0.0%</nobr><br>ts: <nobr>0.0%</nobr> / <nobr>0.0%</nobr> | <nobr>0.0%</nobr> | <nobr>3.8%</nobr> |
+| [Orion GRM 2.6 Plus](results/orion-grm-2-6/)<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr>95h 0m, 2,003k in, 19k out</nobr> | <nobr>20.0%</nobr> | <nobr>0.0%</nobr> | <nobr>0.0%</nobr><br>ts: <nobr>0.0%</nobr> / <nobr>0.0%</nobr> | <nobr>0.0%</nobr> | <nobr>3.8%</nobr> |
 | [Jackrong Qwopus 3.6 27B](results/qwen36-qwopus-preview/)<br>v1-preview<br>&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr> |  |  |  |  | <nobr>0.0%</nobr> |
 <!-- /LEADERBOARD -->
 
