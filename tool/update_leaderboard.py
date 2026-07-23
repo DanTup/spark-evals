@@ -29,7 +29,6 @@ BENCHMARK_ALIASES = {
 	"swe_lancer": "SWE Lancer",
 	"assistant_bench_closed_book_one_shot": "Assis'<br>Bench<br>CBOS",
 	"assistant_bench_closed_book_zero_shot": "Assis'<br>Bench<br>CBZS",
-	"theagentcompany": "The<br>Agent<br>Co",
 }
 LANGUAGE_ALIASES = {
 	"typescript": "ts",
