@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "Sx4G3KQYVE5VBEG4YQL3vV",
-    "eval_id": "gCMhwjrHWeGohNDeGyXe2W",
-    "run_id": "PJXpos6CoxYPnjjJqbSZhK",
-    "created": "2026-07-22T15:20:20+00:00",
+    "eval_set_id": "nhcBd8hi3VQQqQfDN8sBbf",
+    "eval_id": "fZ7pDWdZ7FfUyAx8vs32nB",
+    "run_id": "WtgBTM6r9XbxT7J8SAWz7z",
+    "created": "2026-07-24T16:03:46+00:00",
     "task": "inspect_evals/ifevalcode",
-    "task_id": "ZfQHAA8ujyES9NeXPkYQ7f",
+    "task_id": "KMdnjDbLpkWbj6nytBsgvM",
     "task_version": 2,
     "task_display_name": "ifevalcode",
     "task_registry_name": "inspect_evals/ifevalcode",
@@ -187,22 +187,22 @@
         "metrics": {
           "overall_accuracy": {
             "name": "inspect_evals/overall_accuracy",
-            "value": 0.1,
+            "value": 0.14,
             "params": {}
           },
           "correctness": {
             "name": "inspect_evals/correctness",
-            "value": 0.24,
+            "value": 0.26,
             "params": {}
           },
           "instruction_adherence": {
             "name": "inspect_evals/instruction_adherence",
-            "value": 0.28,
+            "value": 0.32,
             "params": {}
           },
           "typescript_correctness": {
             "name": "typescript_correctness",
-            "value": 0.24,
+            "value": 0.26,
             "params": {
               "metric": "metric_fn",
               "group_key": "programming_language",
@@ -212,7 +212,7 @@
           },
           "typescript_instruction": {
             "name": "typescript_instruction",
-            "value": 0.28,
+            "value": 0.32,
             "params": {
               "metric": "metric_fn",
               "group_key": "programming_language",
@@ -225,13 +225,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-07-22T15:20:20+00:00",
-    "completed_at": "2026-07-22T23:24:57+00:00",
+    "started_at": "2026-07-24T16:03:46+00:00",
+    "completed_at": "2026-07-24T21:47:40+00:00",
     "model_usage": {
       "openai/laguna": {
-        "input_tokens": 206436,
-        "output_tokens": 705098,
-        "total_tokens": 911534
+        "input_tokens": 216177,
+        "output_tokens": 604541,
+        "total_tokens": 820718
       }
     },
     "role_usage": {},
@@ -324,7 +324,7 @@
         {
           "value": {
             "both_passed": 0.0,
-            "correctness": 0.0,
+            "correctness": 1.0,
             "instruction": 0.0
           },
           "metadata": {
@@ -409,7 +409,7 @@
           "value": {
             "both_passed": 0.0,
             "correctness": 0.0,
-            "instruction": 1.0
+            "instruction": 0.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -447,6 +447,7 @@
             "correctness": 1.0,
             "instruction": 1.0
           },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✓ Passed all instruction checks\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -480,8 +481,8 @@
         {
           "value": {
             "both_passed": 0.0,
-            "correctness": 0.0,
-            "instruction": 0.0
+            "correctness": 1.0,
+            "instruction": 1.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -531,6 +532,7 @@
             "correctness": 1.0,
             "instruction": 0.0
           },
+          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✓ Passed all correctness tests\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 103, in <module>\n  File \"<string>\", line 94, in check_instruction\nAssertionError: Missing case block for book type\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -600,7 +602,7 @@
         {
           "value": {
             "both_passed": 0.0,
-            "correctness": 1.0,
+            "correctness": 0.0,
             "instruction": 0.0
           },
           "metadata": {
@@ -647,9 +649,9 @@
         },
         {
           "value": {
-            "both_passed": 0.0,
+            "both_passed": 1.0,
             "correctness": 1.0,
-            "instruction": 0.0
+            "instruction": 1.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -659,7 +661,7 @@
         },
         {
           "value": {
-            "both_passed": 0.0,
+            "both_passed": 1.0,
             "correctness": 1.0,
             "instruction": 1.0
           },
@@ -697,7 +699,7 @@
           "value": {
             "both_passed": 0.0,
             "correctness": 0.0,
-            "instruction": 0.0
+            "instruction": 1.0
           },
           "metadata": {
             "programming_language": "typescript"
@@ -719,8 +721,8 @@
         },
         {
           "value": {
-            "both_passed": 1.0,
-            "correctness": 1.0,
+            "both_passed": 0.0,
+            "correctness": 0.0,
             "instruction": 1.0
           },
           "metadata": {
@@ -783,7 +785,6 @@
             "correctness": 0.0,
             "instruction": 0.0
           },
-          "explanation": "## IFEvalCode Evaluation Results\n\n### Correctness Check\n✗ Failed: No code block found in model response\n\n### Instruction Adherence Check\n✗ Failed: Traceback (most recent call last):\n  File \"<string>\", line 49, in <module>\n  File \"<string>\", line 25, in check_instruction\nAssertionError: No TypeScript code block found\n\n",
           "metadata": {
             "programming_language": "typescript"
           },
@@ -840,8 +841,8 @@
         },
         {
           "value": {
-            "both_passed": 0.0,
-            "correctness": 0.0,
+            "both_passed": 1.0,
+            "correctness": 1.0,
             "instruction": 1.0
           },
           "metadata": {

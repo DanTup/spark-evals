@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "Sx4G3KQYVE5VBEG4YQL3vV",
-    "eval_id": "VEEJxjYe6kxj5UDG2rUjru",
-    "run_id": "PJXpos6CoxYPnjjJqbSZhK",
-    "created": "2026-07-22T14:52:31+00:00",
+    "eval_set_id": "nhcBd8hi3VQQqQfDN8sBbf",
+    "eval_id": "PWGYSx2QhkSEGraphCWCYu",
+    "run_id": "WtgBTM6r9XbxT7J8SAWz7z",
+    "created": "2026-07-24T15:34:30+00:00",
     "task": "inspect_evals/bfcl",
-    "task_id": "Kg2dCNhy6suuQRGudyx2AU",
+    "task_id": "cckz6G4mczSzxE6QEDKWeq",
     "task_version": 5,
     "task_display_name": "bfcl",
     "task_registry_name": "inspect_evals/bfcl",
@@ -281,13 +281,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-07-22T14:52:31+00:00",
-    "completed_at": "2026-07-22T15:20:11+00:00",
+    "started_at": "2026-07-24T15:34:30+00:00",
+    "completed_at": "2026-07-24T16:03:37+00:00",
     "model_usage": {
       "openai/laguna": {
         "input_tokens": 167279,
-        "output_tokens": 106673,
-        "total_tokens": 273952
+        "output_tokens": 94865,
+        "total_tokens": 262144
       }
     },
     "role_usage": {},
@@ -311,7 +311,7 @@
           "sample_id": "exec_parallel_multiple_0"
         },
         {
-          "value": 1.0,
+          "value": 0.0,
           "history": [],
           "sample_id": "exec_parallel_multiple_1"
         },
@@ -333,7 +333,7 @@
           "sample_id": "exec_parallel_multiple_12"
         },
         {
-          "value": 1.0,
+          "value": 0.0,
           "history": [],
           "sample_id": "exec_parallel_multiple_13"
         },
@@ -351,8 +351,6 @@
         },
         {
           "value": 0.0,
-          "answer": "math_gcd(a=21406, b=1200)",
-          "explanation": "Wrong number of function calls: expected 2, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_16"
         },
@@ -368,11 +366,13 @@
         },
         {
           "value": 0.0,
+          "answer": "get_product_name_by_amazon_ASIN(ASIN='B08PPDJWC8')",
+          "explanation": "Wrong number of function calls: expected 4, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_19"
         },
         {
-          "value": 0.0,
+          "value": 1.0,
           "history": [],
           "sample_id": "exec_parallel_multiple_2"
         },
@@ -392,12 +392,14 @@
           "sample_id": "exec_parallel_multiple_22"
         },
         {
-          "value": 0.0,
+          "value": 1.0,
           "history": [],
           "sample_id": "exec_parallel_multiple_23"
         },
         {
           "value": 0.0,
+          "answer": "get_product_name_by_amazon_ASIN(ASIN='B075H2B962')",
+          "explanation": "Wrong number of function calls: expected 4, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_24"
         },
@@ -420,6 +422,8 @@
         },
         {
           "value": 0.0,
+          "answer": "get_time_zone_by_coord(long='120.97388', lat='23.973875')",
+          "explanation": "Wrong number of function calls: expected 3, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_28"
         },
@@ -434,7 +438,7 @@
           "sample_id": "exec_parallel_multiple_3"
         },
         {
-          "value": 1.0,
+          "value": 0.0,
           "history": [],
           "sample_id": "exec_parallel_multiple_30"
         },
@@ -452,45 +456,49 @@
         },
         {
           "value": 0.0,
+          "answer": "calculate_density(mass=0.3, volume=5e-05)",
+          "explanation": "Wrong number of function calls: expected 3, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_33"
         },
         {
           "value": 0.0,
+          "answer": "mortgage_calculator(loan_amount=350000, interest_rate=0.035, loan_period=30)",
+          "explanation": "Wrong number of function calls: expected 4, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_34"
         },
         {
           "value": 0.0,
+          "answer": "quadratic_roots(a=2, b=-3, c=5)",
+          "explanation": "Wrong number of function calls: expected 2, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_35"
         },
         {
           "value": 0.0,
-          "answer": "calculate_future_value(present_value=5000, interest_rate=0.05, periods=10)",
-          "explanation": "Wrong number of function calls: expected 4, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_36"
         },
         {
-          "value": 1.0,
+          "value": 0.0,
           "history": [],
           "sample_id": "exec_parallel_multiple_37"
         },
         {
           "value": 0.0,
+          "answer": "find_term_on_urban_dictionary(term='Hello World')",
+          "explanation": "Wrong number of function calls: expected 4, got 1",
           "history": [],
           "sample_id": "exec_parallel_multiple_38"
         },
         {
-          "value": 0.0,
+          "value": 1.0,
           "history": [],
           "sample_id": "exec_parallel_multiple_39"
         },
         {
           "value": 0.0,
-          "answer": "No tool calls",
-          "explanation": "Wrong number of function calls: expected 2, got 0",
           "history": [],
           "sample_id": "exec_parallel_multiple_4"
         },
@@ -512,7 +520,7 @@
           "sample_id": "exec_parallel_multiple_7"
         },
         {
-          "value": 0.0,
+          "value": 1.0,
           "history": [],
           "sample_id": "exec_parallel_multiple_8"
         },
@@ -529,6 +537,7 @@
         },
         {
           "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
           "history": [],
           "sample_id": "irrelevance_1"
         },
@@ -546,7 +555,6 @@
         },
         {
           "value": 0.0,
-          "explanation": "Incorrectly produced a function call for irrelevant query",
           "history": [],
           "sample_id": "irrelevance_101"
         },
@@ -564,6 +572,7 @@
         },
         {
           "value": 1.0,
+          "explanation": "No function call - Correctly identified irrelevant query",
           "history": [],
           "sample_id": "irrelevance_104"
         },

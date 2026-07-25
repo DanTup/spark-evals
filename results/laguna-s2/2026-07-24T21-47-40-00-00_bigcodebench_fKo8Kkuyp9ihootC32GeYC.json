@@ -2,12 +2,12 @@
   "version": 2,
   "status": "success",
   "eval": {
-    "eval_set_id": "Sx4G3KQYVE5VBEG4YQL3vV",
-    "eval_id": "bN9Qti6Vx9X8UnqsXq9ZgL",
-    "run_id": "PJXpos6CoxYPnjjJqbSZhK",
-    "created": "2026-07-22T23:24:57+00:00",
+    "eval_set_id": "nhcBd8hi3VQQqQfDN8sBbf",
+    "eval_id": "di7tEfces5PeoQFG9PpiQd",
+    "run_id": "WtgBTM6r9XbxT7J8SAWz7z",
+    "created": "2026-07-24T21:47:40+00:00",
     "task": "inspect_evals/bigcodebench",
-    "task_id": "KfBf3Nr239dcnAS9F55FWe",
+    "task_id": "fKo8Kkuyp9ihootC32GeYC",
     "task_version": 3,
     "task_display_name": "bigcodebench",
     "task_registry_name": "inspect_evals/bigcodebench",
@@ -169,12 +169,12 @@
         "metrics": {
           "mean": {
             "name": "mean",
-            "value": 0.52,
+            "value": 0.62,
             "params": {}
           },
           "std": {
             "name": "std",
-            "value": 0.5046720495044484,
+            "value": 0.49031435147801467,
             "params": {}
           }
         }
@@ -182,13 +182,13 @@
     ]
   },
   "stats": {
-    "started_at": "2026-07-22T23:24:57+00:00",
-    "completed_at": "2026-07-23T11:59:46+00:00",
+    "started_at": "2026-07-24T21:47:40+00:00",
+    "completed_at": "2026-07-25T02:51:46+00:00",
     "model_usage": {
       "openai/laguna": {
-        "input_tokens": 107109,
-        "output_tokens": 1006810,
-        "total_tokens": 1113919
+        "input_tokens": 137281,
+        "output_tokens": 1157299,
+        "total_tokens": 1294580
       }
     },
     "role_usage": {},
@@ -207,7 +207,7 @@
       "reducer": "median",
       "samples": [
         {
-          "value": 0,
+          "value": 1.0,
           "history": [],
           "sample_id": 0
         },
@@ -277,7 +277,7 @@
           "sample_id": 13
         },
         {
-          "value": 0,
+          "value": 1.0,
           "history": [],
           "sample_id": 14
         },
@@ -297,8 +297,7 @@
           "sample_id": 17
         },
         {
-          "value": 0,
-          "answer": "",
+          "value": 1.0,
           "history": [],
           "sample_id": 18
         },
@@ -358,7 +357,7 @@
           "sample_id": 29
         },
         {
-          "value": 0,
+          "value": 1.0,
           "history": [],
           "sample_id": 30
         },
@@ -389,12 +388,11 @@
         },
         {
           "value": 0,
-          "answer": "",
           "history": [],
           "sample_id": 36
         },
         {
-          "value": 1.0,
+          "value": 0,
           "history": [],
           "sample_id": 37
         },
@@ -429,7 +427,7 @@
           "sample_id": 43
         },
         {
-          "value": 0,
+          "value": 1.0,
           "history": [],
           "sample_id": 44
         },
@@ -449,7 +447,7 @@
           "sample_id": 47
         },
         {
-          "value": 0,
+          "value": 1.0,
           "history": [],
           "sample_id": 48
         },

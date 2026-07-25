@@ -35,6 +35,7 @@ docker run \
     --max-model-len 256K \
     --tool-call-parser poolside_v1 \
     --reasoning-parser poolside_v1 \
+    --override-generation-config '{\"temperature\":0.7,\"top_p\":0.95}' \
     --enable-auto-tool-choice \
     --enable-chunked-prefill \
     --max-num-batched-tokens 32768 \
